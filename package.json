@@ -1,11 +1,11 @@
 {
   "scripts": {
-    "dev": "npm run server --host=0.0.0.0",
+    "dev": "npm run server --port 4000 --host=0.0.0.0",
     "prod": "npm run build && npm run server:prod",
     "build": "vite build && vite build --ssr",
     "build:prerender": "vite-plugin-ssr prerender",
     "generate": "npm run build && npm run build:prerender",
-    "prod:serve": "serve dist/client/ --listen 3000",
+    "prod:serve": "serve dist/client/ --listen 5000",
     "server": "ts-node ./server",
     "server:prod": "cross-env NODE_ENV=production ts-node ./server"
   },
