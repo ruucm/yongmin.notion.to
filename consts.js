@@ -23,7 +23,7 @@ export const cardDatas = [
     links: [
       {
         text: "harbor.school",
-        href: "https://beta.harbor.school",
+        href: "https://harbor.school",
       },
       {
         text: "class.harbor.school",
@@ -59,7 +59,7 @@ export const cardDatas = [
     links: [
       {
         text: "Website",
-        href: "https://smile.seoul.kr/magazine",
+        href: "http://smile.seoul.kr/magazine",
       },
     ],
   },
