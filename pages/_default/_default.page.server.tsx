@@ -4,7 +4,6 @@ import { PageLayout } from "./PageLayout"
 import { html } from "vite-plugin-ssr"
 import { PageContext, ReactComponent } from "./types"
 // import logoUrl from "./logo.svg"
-import favicon from "../../assets/favicons/favicon-32x32.png"
 
 export { render }
 export { passToClient }
@@ -31,7 +30,7 @@ function render(pageContext: PageContext) {
     <html lang="en">
       <head>
         <meta charset="UTF-8" />
-        <link rel="icon" href="${favicon}" />
+        <link rel="icon" href="/images/favicons/favicon-32x32.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="${desc}" />
         <title>${title}</title>
