@@ -42,7 +42,7 @@ export function Page() {
     <Layout>
       <div
         style={{
-          maxWidth: "50%",
+          maxWidth: 720,
         }}
       >
         <h3>About</h3>
