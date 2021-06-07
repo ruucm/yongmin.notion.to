@@ -18,6 +18,9 @@ export function Layout({ children, home = false }) {
               padding: 5,
               cursor: "pointer",
               lineHeight: "2rem",
+              color: "blue",
+              marginTop: "2rem",
+              marginBottom: "2.5rem",
             }}
             ref={hoverRef}
           >

@@ -1,52 +1,114 @@
 /* This CSS is common to all pages */
 
-body {
-  background: hsl(0, 0%, 76%);
-}
-
-a:visited {
-  color: blue;
-}
-
-::-moz-selection {
-  /* Code for Firefox */
-  color: white;
-  background: rgba(0, 0, 255, 0.9);
-}
-
-::selection {
-  color: white;
-  background: rgba(0, 0, 255, 0.9);
-}
-
+/* Reset */
 * {
-  /* direction: ltr; */
-  /* font-family: Georgia; */
-  /* font-family: Arial; */
+  /* font: inherit; */
+  line-height: inherit;
 }
-
-.tags {
-  position: relative;
-  color: #000;
-  text-decoration: none;
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+grid,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+hr,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+main,
+mark,
+menu,
+nav,
+noscript,
+object,
+ol,
+output,
+p,
+pre,
+q,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
 }
-
-.tags::before {
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
   content: "";
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  bottom: 0;
-  left: 0;
-  background-color: blue;
-  visibility: hidden;
-  transform: scaleX(0);
-  transition: all 0.3s ease-in-out 0s;
+  content: none;
 }
-
-.tags.active::before {
-  visibility: visible;
-  transform: scaleX(1);
+a,
+a:active,
+a:visited {
+  color: inherit;
 }
 
 /* Tokens */
@@ -58,7 +120,7 @@ a:visited {
   --monoFont: "IBM Plex Mono";
   --fontSize: 16px;
   --unit: calc(var(--fontSize) * 0.5);
-  --line-height: calc(var(--fontSize) * 1.2);
+  --line-height: calc(var(--fontSize) * 1.15);
   --baseline: var(--unit);
   --body-padding-x: calc(var(--unit) * 8);
   --body-padding-y: calc(var(--unit) * 8);
@@ -182,7 +244,7 @@ a:visited {
   box-shadow: inset 0 0 0 var(--wireWeight) var(--debugGreen4),
     0 0 0 var(--wireWeight) var(--debugGreen4);
 }
-:root.debug :first-child {
+/* :root.debug :first-child {
   box-shadow: inset 0 0 0 var(--wireWeight) var(--debugGreen4),
     0 0 0 var(--wireWeight) var(--debugGreen4),
     0 var(--blockSpacingBottom) 0 0 var(--debugYellow2);
@@ -191,7 +253,7 @@ a:visited {
   box-shadow: inset 0 0 0 var(--wireWeight) var(--debugGreen4),
     0 0 0 var(--wireWeight) var(--debugGreen4),
     0 calc(var(--blockSpacingTop) * -1) 0 0 var(--debugYellow2);
-}
+} */
 :root.debug :first-child:last-child {
   box-shadow: inset 0 0 0 var(--wireWeight) var(--debugGreen4),
     0 0 0 var(--wireWeight) var(--debugGreen4);
@@ -202,6 +264,46 @@ a:visited {
 }
 
 /* Base Styles */
+body {
+  background: hsl(0, 0%, 76%);
+  margin: 8px;
+}
+
+a:visited {
+  color: blue;
+}
+::-moz-selection {
+  /* Code for Firefox */
+  color: white;
+  background: rgba(0, 0, 255, 0.9);
+}
+::selection {
+  color: white;
+  background: rgba(0, 0, 255, 0.9);
+}
+
+.tags {
+  position: relative;
+  color: #000;
+  text-decoration: none;
+}
+.tags::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: blue;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+.tags.active::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
 :root {
   font-family: var(--sansFont), -system-ui, system-ui, sans-serif;
   font-size: var(--fontSize);
@@ -214,4 +316,32 @@ a:visited {
   text-size-adjust: 100%;
   font-variant-ligatures: contextual common-ligatures;
   /* background-color: var(--letterbox-color); */
+}
+address,
+article,
+aside,
+blockquote,
+dd,
+div.highlighter-rouge,
+dl,
+dt,
+fieldset,
+figure,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+nav,
+ol,
+p,
+pre,
+table,
+tfoot,
+ul,
+video {
+  margin-top: var(--blockSpacingTop);
+  margin-bottom: var(--blockSpacingBottom);
 }
