@@ -69,7 +69,6 @@ export function Layout({ children, home = false }) {
                   marginLeft: "4px",
                 }}
               >
-                aa
                 {hasCopied ? "copied" : contactMail}
               </a>
               <br />
