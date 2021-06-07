@@ -1,7 +1,7 @@
 import React from "react"
-import { Layout } from "../components"
-import { useESMComponent } from "../hooks/use-esm-component"
-import { useMobile } from "../hooks/use-mobile"
+import { Layout } from "../../components"
+import { useESMComponent } from "../../hooks/use-esm-component"
+import { useMobile } from "../../hooks/use-mobile"
 
 function paragraphWithImage({ isMobile }) {
   let styles: any = {
