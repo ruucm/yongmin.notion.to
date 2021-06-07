@@ -13,13 +13,12 @@ const wrap = {
 }
 
 export function Card({ title, duration, description, outlink, slug, tags }) {
-  const LinkComp: any = slug ? "a" : "a"
   const linkProps = slug
     ? { href: `/portfolio/${slug}` }
     : { href: outlink, target: "_blank" }
 
   return (
-    <LinkComp
+    <a
       {...linkProps}
       style={{
         textDecoration: "none",
@@ -46,8 +45,8 @@ export function Card({ title, duration, description, outlink, slug, tags }) {
           }}
           style={{
             position: "relative",
-            border: "1px solid black",
             padding: "30px 15px",
+            border: "1px solid black",
           }}
         >
           <h4
@@ -85,6 +84,6 @@ export function Card({ title, duration, description, outlink, slug, tags }) {
           </em>
         </motion.div>
       </motion.div>
-    </LinkComp>
+    </a>
   )
 }

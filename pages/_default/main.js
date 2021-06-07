@@ -1,4 +1,3 @@
-console.log("hey")
 ;(() => {
   // function s() {
   //   d(), i(), o()

@@ -1,0 +1,63 @@
+/* Debug */
+:root.debug address,
+:root.debug article,
+:root.debug aside,
+:root.debug blockquote,
+:root.debug canvas,
+:root.debug dd,
+:root.debug div,
+:root.debug dl,
+:root.debug dt,
+:root.debug fieldset,
+:root.debug figcaption,
+:root.debug figure,
+:root.debug footer,
+:root.debug form,
+:root.debug grid,
+:root.debug h1,
+:root.debug h2,
+:root.debug h3,
+:root.debug h4,
+:root.debug h5,
+:root.debug h6,
+:root.debug header,
+:root.debug hr,
+:root.debug li,
+:root.debug main,
+:root.debug nav,
+:root.debug noscript,
+:root.debug ol,
+:root.debug p,
+:root.debug pre,
+:root.debug section,
+:root.debug table,
+:root.debug tfoot,
+:root.debug ul,
+:root.debug video {
+  box-shadow: inset 0 0 0 var(--wireWeight) var(--debugPink4),
+    0 0 0 var(--wireWeight) var(--debugPink4),
+    0 var(--blockSpacingBottom) 0 0 var(--debugYellow2),
+    0 calc(var(--blockSpacingTop) * -1) 0 0 var(--debugYellow2);
+}
+:root.debug hr {
+  box-shadow: inset 0 0 0 var(--wireWeight) var(--debugGreen4),
+    0 0 0 var(--wireWeight) var(--debugGreen4);
+}
+/* :root.debug :first-child {
+  box-shadow: inset 0 0 0 var(--wireWeight) var(--debugGreen4),
+    0 0 0 var(--wireWeight) var(--debugGreen4),
+    0 var(--blockSpacingBottom) 0 0 var(--debugYellow2);
+}
+:root.debug :last-child {
+  box-shadow: inset 0 0 0 var(--wireWeight) var(--debugGreen4),
+    0 0 0 var(--wireWeight) var(--debugGreen4),
+    0 calc(var(--blockSpacingTop) * -1) 0 0 var(--debugYellow2);
+} */
+:root.debug :first-child:last-child {
+  box-shadow: inset 0 0 0 var(--wireWeight) var(--debugGreen4),
+    0 0 0 var(--wireWeight) var(--debugGreen4);
+}
+:root.debug r-grid > * {
+  box-shadow: inset 0 0 0 var(--wireWeight) var(--debugBlue8),
+    0 0 0 var(--wireWeight) var(--debugBlue8);
+}
