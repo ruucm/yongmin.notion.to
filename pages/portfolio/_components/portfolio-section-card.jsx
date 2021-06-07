@@ -53,6 +53,8 @@ export function PortfolioSectionCard({
 const Image = ({ img, grayscale, zoomed, setZoomed }) => {
   let filter = ""
   if (grayscale) filter += "grayscale(1) brightness(0.5)"
+  const isGif = img.includes("gif")
+
   return (
     <div
       style={{
@@ -70,13 +72,9 @@ const Image = ({ img, grayscale, zoomed, setZoomed }) => {
         className="shade"
         onClick={() => setZoomed(false)}
       />
-      <picture>
-        <source srcSet={`${img}.webp`} type="image/webp" />
-        <source srcSet={`${img}.png`} type="image/png" />
-        <source srcSet={`${img}.jpg`} type="image/jpg" />
-        <source srcSet={`${img}.jpeg`} type="image/jpeg" />
+      {isGif && (
         <motion.img
-          src={`${img}.webp`}
+          src={img}
           alt=""
           onClick={() => setZoomed(!zoomed)}
           layout
@@ -92,7 +90,32 @@ const Image = ({ img, grayscale, zoomed, setZoomed }) => {
             border: "1px solid black",
           }}
         />
-      </picture>
+      )}
+      {!isGif && (
+        <picture>
+          <source srcSet={`${img}.webp`} type="image/webp" />
+          <source srcSet={`${img}.png`} type="image/png" />
+          <source srcSet={`${img}.jpg`} type="image/jpg" />
+          <source srcSet={`${img}.jpeg`} type="image/jpeg" />
+          <motion.img
+            src={`${img}.webp`}
+            alt=""
+            onClick={() => setZoomed(!zoomed)}
+            layout
+            transition={defaultTransition}
+            style={{
+              position: "absolute",
+              top: "0",
+              left: "0",
+              right: "0",
+              bottom: "0",
+              width: "100%",
+              height: "100%",
+              border: "1px solid black",
+            }}
+          />
+        </picture>
+      )}
     </div>
   )
 }

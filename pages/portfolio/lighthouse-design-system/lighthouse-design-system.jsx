@@ -9,14 +9,14 @@ export function Page() {
       <Summary />
       <Gallery
         images={[
-          "lighthouse_01",
-          "lighthouse_02",
-          "lighthouse_03",
-          "lighthouse_04",
-          "lighthouse_05",
-          "lighthouse_06",
-          "lighthouse_07",
-          "lighthouse_08",
+          "/images/lighthouse_01",
+          "/images/lighthouse_02",
+          "/images/lighthouse_03",
+          "/images/lighthouse_04",
+          "/images/lighthouse_05",
+          "/images/lighthouse_06",
+          "/images/lighthouse_07",
+          "/images/lighthouse_08",
         ]}
       />
     </Layout>

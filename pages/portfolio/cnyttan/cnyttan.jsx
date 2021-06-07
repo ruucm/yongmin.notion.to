@@ -8,7 +8,12 @@ export function Page({ slug }) {
     <Layout>
       <Summary slug={slug} />
       <Gallery
-        images={["cynttan_01", "cynttan_02", "cynttan_03", "cynttan_04"]}
+        images={[
+          "/images/cynttan_01",
+          "/images/cynttan_02",
+          "/images/cynttan_03",
+          "/images/cynttan_04",
+        ]}
       />
       <p>
         I handled whole WordPress shopping functions (cart, checkout, refund,

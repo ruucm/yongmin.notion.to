@@ -2,10 +2,6 @@ import React from "react"
 import { Layout } from "../../../components"
 import { PortfolioSectionCard } from "../_components/portfolio-section-card"
 import { AnimateSharedLayout } from "framer-motion"
-import problem_youtube from "../../../assets/problem-youtube.png"
-import solution_video_explorer from "../../../assets/solution-video-explorer.gif"
-import problem_students_management from "../../../assets/problem-students-management.png"
-import solution_students_management from "../../../assets/solution-students-management.png"
 import { SubTitle } from "../_components/sub-title"
 import { Summary } from "../_components/summary"
 
@@ -22,7 +18,7 @@ export function Page({ slug }) {
           }}
         >
           <PortfolioSectionCard
-            img={problem_youtube}
+            img={"/images/problem-youtube"}
             title="[Problems] - Bad Education Content Experience"
             description={`I learn programming and design by myself with youtube videos and blog
         posts. But as a learner's view, there are solid problem on both side.
@@ -35,7 +31,7 @@ export function Page({ slug }) {
             // grayscale
           />
           <PortfolioSectionCard
-            img={solution_video_explorer}
+            img={"/images/solution-video-explorer.gif"}
             title="[Solution] - Video Explorer"
             description={`So I started develop a new UI called "Video Explorer". I combines good
       points of video and post at the same time. It includes whole proccess
@@ -52,7 +48,7 @@ export function Page({ slug }) {
           }}
         >
           <PortfolioSectionCard
-            img={problem_students_management}
+            img={"/images/problem-students-management"}
             title="[Problems] - Seperated CRM and Student Managements"
             description={`I had to offer CRM(Customer relationship management) with student's achievement dashboard.`}
             // grayscale
@@ -60,7 +56,7 @@ export function Page({ slug }) {
           />
 
           <PortfolioSectionCard
-            img={solution_students_management}
+            img={"/images/solution-students-management"}
             title="[Solution] - Student Management System"
             description={`And I need to collect latest resources for students. But we had only one
             junior developer and me with limited time.

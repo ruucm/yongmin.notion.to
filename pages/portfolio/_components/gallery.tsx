@@ -42,12 +42,12 @@ export function Gallery({ images }) {
         else
           return (
             <picture key={id}>
-              <source srcSet={`/images/webp/${image}.webp`} type="image/webp" />
-              <source srcSet={`/images/png/${image}.png`} type="image/png" />
-              <source srcSet={`/images/jpg/${image}.jpg`} type="image/jpg" />
-              <source srcSet={`/images/jpeg/${image}.jpeg`} type="image/jpeg" />
+              <source srcSet={`${image}.webp`} type="image/webp" />
+              <source srcSet={`${image}.png`} type="image/png" />
+              <source srcSet={`${image}.jpg`} type="image/jpg" />
+              <source srcSet={`${image}.jpeg`} type="image/jpeg" />
               <img
-                src={`/images/png/${image}.png`}
+                src={`${image}.png`}
                 alt="portfolio-image"
                 style={{
                   width: "100%",
