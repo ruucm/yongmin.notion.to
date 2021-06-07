@@ -1,21 +1,21 @@
 import React from "react"
-import { Layout } from "../../components"
-import { PortfolioSectionCard } from "./components/portfolio-section-card"
+import { Layout } from "../../../components"
+import { PortfolioSectionCard } from "../components/portfolio-section-card"
 import { AnimateSharedLayout } from "framer-motion"
-import { Summary } from "./components/summary"
-import { Gallery } from "./components/gallery"
-import seli_01 from "../../assets/seli_01.png"
-import seli_02 from "../../assets/seli_02.png"
-import seli_03 from "../../assets/seli_03.png"
-import seli_04 from "../../assets/seli_04.png"
-import seli_cms_problem from "../../assets/seli-cms-problem.png"
-import seli_cms_notion from "../../assets/seli-cms-notion.png"
-import { SubTitle } from "./components/sub-title"
+import { Summary } from "../components/summary"
+import { Gallery } from "../components/gallery"
+import seli_01 from "../../../assets/seli_01.png"
+import seli_02 from "../../../assets/seli_02.png"
+import seli_03 from "../../../assets/seli_03.png"
+import seli_04 from "../../../assets/seli_04.png"
+import seli_cms_problem from "../../../assets/seli-cms-problem.png"
+import seli_cms_notion from "../../../assets/seli-cms-notion.png"
+import { SubTitle } from "../components/sub-title"
 
-export function Page(props) {
+export function Page({ slug }) {
   return (
     <Layout>
-      <Summary />
+      <Summary slug={slug} />
       <Gallery images={[seli_01, seli_02, seli_03, seli_04]} />
       <div
         style={{

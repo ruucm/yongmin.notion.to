@@ -1,18 +1,18 @@
 import React from "react"
-import { Layout } from "../../components"
-import { PortfolioSectionCard } from "./components/portfolio-section-card"
+import { Layout } from "../../../components"
+import { PortfolioSectionCard } from "../components/portfolio-section-card"
 import { AnimateSharedLayout } from "framer-motion"
-import { Summary } from "./components/summary"
-import problem_youtube from "../../assets/problem-youtube.png"
-import solution_video_explorer from "../../assets/solution-video-explorer.gif"
-import problem_students_management from "../../assets/problem-students-management.png"
-import solution_students_management from "../../assets/solution-students-management.png"
-import { SubTitle } from "./components/sub-title"
+import problem_youtube from "../../../assets/problem-youtube.png"
+import solution_video_explorer from "../../../assets/solution-video-explorer.gif"
+import problem_students_management from "../../../assets/problem-students-management.png"
+import solution_students_management from "../../../assets/solution-students-management.png"
+import { SubTitle } from "../components/sub-title"
+import { Summary } from "../components/summary"
 
-export function Page(props) {
+export function Page({ slug }) {
   return (
     <Layout>
-      {/* <Summary /> */}
+      <Summary slug={slug} />
       <AnimateSharedLayout>
         <SubTitle>Education Content Experience</SubTitle>
         <div

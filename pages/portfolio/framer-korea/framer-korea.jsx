@@ -1,16 +1,16 @@
 import React from "react"
-import { Layout } from "../../components"
-import { PortfolioSectionCard } from "./components/portfolio-section-card"
+import { Layout } from "../../../components"
+import { PortfolioSectionCard } from "../components/portfolio-section-card"
 import { AnimateSharedLayout } from "framer-motion"
-import { Summary } from "./components/summary"
-import framer_korea_2019 from "../../assets/framer-korea-2019.png"
-import framer_korea_2020 from "../../assets/framer-korea-2020.png"
-import { SubTitle } from "./components/sub-title"
+import { Summary } from "../components/summary"
+import framer_korea_2019 from "../../../assets/framer-korea-2019.png"
+import framer_korea_2020 from "../../../assets/framer-korea-2020.png"
+import { SubTitle } from "../components/sub-title"
 
-export function Page(props) {
+export function Page({ slug }) {
   return (
     <Layout>
-      <Summary />
+      <Summary slug={slug} />
       <AnimateSharedLayout>
         <SubTitle>2019 Framer Korea Meetup Website</SubTitle>
         <PortfolioSectionCard
