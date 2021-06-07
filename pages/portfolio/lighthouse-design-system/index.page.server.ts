@@ -1,25 +1,39 @@
+import { cardDatas } from "../../../consts"
+import { findValueByKey } from "../../../utils"
+
 export { addPageContext }
 // export { prerender }
 
 type PageContext = {
   pageProps: {
+    slug: string
+    portfolioData: any
     movies: any[]
   }
   documentProps: {
     title: string
+    description: string
   }
 }
+async function addPageContext(pageContext): Promise<PageContext> {
+  const { url } = pageContext
+  const slug = url.split("/")[2]
+  const portfolioData = findValueByKey(cardDatas, "slug", slug)
 
-async function addPageContext(): Promise<PageContext> {
   // const movies = await getStarWarsMovies();
   return {
     pageProps: {
       // We remove data we don't need because we pass `pageContext.movies` to
       // the client; we want to minimize what is sent over the network.
       movies: ["movie 1", "movie 2"],
+      slug,
+      portfolioData,
     },
     // The page's <title>
-    documentProps: { title: "Movie Title" },
+    documentProps: {
+      title: portfolioData.title,
+      description: portfolioData.description,
+    },
   }
 }
 
