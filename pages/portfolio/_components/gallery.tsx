@@ -44,6 +44,8 @@ export function Gallery({ images }) {
             <picture key={id}>
               <source srcSet={`/images/webp/${image}.webp`} type="image/webp" />
               <source srcSet={`/images/png/${image}.png`} type="image/png" />
+              <source srcSet={`/images/jpg/${image}.jpg`} type="image/jpg" />
+              <source srcSet={`/images/jpeg/${image}.jpeg`} type="image/jpeg" />
               <img
                 src={`/images/png/${image}.png`}
                 alt="portfolio-image"
