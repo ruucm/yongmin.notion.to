@@ -26,18 +26,22 @@ export function PortfolioSectionCard({
         setZoomed={setZoomed}
       />
       <div style={descriptionStyles({ isMobile })}>
-        <motion.h4
-          style={{
-            textDecoration: "underline",
-            display: "inline-block",
-            fontWeight: 400,
-          }}
-          layout
-          transition={defaultTransition}
-        >
-          {title}
-        </motion.h4>
-        <br />
+        {title && (
+          <>
+            <motion.h4
+              style={{
+                textDecoration: "underline",
+                display: "inline-block",
+                fontWeight: 400,
+              }}
+              layout
+              transition={defaultTransition}
+            >
+              {title}
+            </motion.h4>
+            <br />
+          </>
+        )}
         <motion.p
           layout
           transition={defaultTransition}
