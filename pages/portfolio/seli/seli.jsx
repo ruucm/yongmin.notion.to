@@ -1,16 +1,16 @@
 import React from "react"
 import { Layout } from "../../../components"
-import { PortfolioSectionCard } from "../components/portfolio-section-card"
+import { PortfolioSectionCard } from "../_components/portfolio-section-card"
 import { AnimateSharedLayout } from "framer-motion"
-import { Summary } from "../components/summary"
-import { Gallery } from "../components/gallery"
+import { Summary } from "../_components/summary"
+import { Gallery } from "../_components/gallery"
 import seli_01 from "../../../assets/seli_01.png"
 import seli_02 from "../../../assets/seli_02.png"
 import seli_03 from "../../../assets/seli_03.png"
 import seli_04 from "../../../assets/seli_04.png"
 import seli_cms_problem from "../../../assets/seli-cms-problem.png"
 import seli_cms_notion from "../../../assets/seli-cms-notion.png"
-import { SubTitle } from "../components/sub-title"
+import { SubTitle } from "../_components/sub-title"
 
 export function Page({ slug }) {
   return (

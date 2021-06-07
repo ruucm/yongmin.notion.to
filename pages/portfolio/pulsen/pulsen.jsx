@@ -1,7 +1,7 @@
 import React from "react"
 import { Layout } from "../../../components"
-import { Summary } from "../components/summary"
-import { Gallery } from "../components/gallery"
+import { Summary } from "../_components/summary"
+import { Gallery } from "../_components/gallery"
 import pulsen from "../../../assets/pulsen.gif"
 
 export function Page({ slug }) {

@@ -1,13 +1,13 @@
 import React from "react"
 import { Layout } from "../../../components"
-import { PortfolioSectionCard } from "../components/portfolio-section-card"
+import { PortfolioSectionCard } from "../_components/portfolio-section-card"
 import { AnimateSharedLayout } from "framer-motion"
 import problem_youtube from "../../../assets/problem-youtube.png"
 import solution_video_explorer from "../../../assets/solution-video-explorer.gif"
 import problem_students_management from "../../../assets/problem-students-management.png"
 import solution_students_management from "../../../assets/solution-students-management.png"
-import { SubTitle } from "../components/sub-title"
-import { Summary } from "../components/summary"
+import { SubTitle } from "../_components/sub-title"
+import { Summary } from "../_components/summary"
 
 export function Page({ slug }) {
   return (
