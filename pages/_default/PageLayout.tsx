@@ -1,5 +1,5 @@
 import React from "react"
-import logo from "./logo.svg"
+// import logo from "./logo.svg"
 import "./PageLayout.css"
 
 export { PageLayout }
@@ -77,7 +77,7 @@ function Logo() {
       }}
     >
       <a href="/">
-        <img src={logo} height={64} width={64} alt="logo" />
+        {/* <img src={logo} height={64} width={64} alt="logo" /> */}
       </a>
     </div>
   )
