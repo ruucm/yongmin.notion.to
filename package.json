@@ -4,6 +4,7 @@
     "prod": "npm run build && npm run server:prod",
     "build": "vite build && vite build --ssr",
     "build:prerender": "vite-plugin-ssr prerender",
+    "generate": "npm run build && npm run build:prerender",
     "prod:serve": "serve dist/client/ --listen 3000",
     "server": "ts-node ./server",
     "server:prod": "cross-env NODE_ENV=production ts-node ./server"
