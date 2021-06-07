@@ -2,12 +2,11 @@ import React from "react"
 import { useHover } from "../hooks/use-hover"
 import { contactMail } from "../consts"
 import { useClipboard } from "../hooks/use-clipboard"
-import { useMobile } from "../hooks/use-mobile"
+import { DesktopOnly } from "../utils/styled-components"
 
 export function Layout({ children, home = false }) {
   const [hoverRef, isHover] = useHover()
   const { hasCopied, onCopy } = useClipboard(contactMail)
-  const isMobile = useMobile()
 
   return (
     <>
@@ -60,22 +59,21 @@ export function Layout({ children, home = false }) {
               display: "inline-block",
             }}
           >
-            {!isMobile && (
-              <>
-                <a
-                  onClick={onCopy}
-                  style={{
-                    color: "blue",
-                    cursor: "pointer",
-                    display: "inline-block",
-                    marginLeft: "4px",
-                  }}
-                >
-                  {hasCopied ? "copied" : contactMail}
-                </a>
-                <br />
-              </>
-            )}
+            <DesktopOnly>
+              <a
+                onClick={onCopy}
+                style={{
+                  color: "blue",
+                  cursor: "pointer",
+                  display: "inline-block",
+                  marginLeft: "4px",
+                }}
+              >
+                aa
+                {hasCopied ? "copied" : contactMail}
+              </a>
+              <br />
+            </DesktopOnly>
             <a
               href="http://twitter.com/ruucm"
               target="_blank"

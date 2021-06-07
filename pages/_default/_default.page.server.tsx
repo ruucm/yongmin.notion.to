@@ -4,6 +4,8 @@ import { PageLayout } from "./PageLayout"
 import { html } from "vite-plugin-ssr"
 import { PageContext, ReactComponent } from "./types"
 import favicon from "../assets/favicons/favicon-32x32.png"
+import { Provider as StyletronProvider } from "styletron-react"
+import { Server as Styletron } from "styletron-engine-atomic"
 
 export { render }
 export { passToClient }
@@ -13,11 +15,21 @@ const passToClient = ["pageProps"]
 
 function render(pageContext: PageContext) {
   const { Page, pageProps } = pageContext
+
+  // 1. Create a server engine instance
+  const engine = new Styletron()
+
   const pageHtml = ReactDOMServer.renderToString(
-    <PageLayout>
-      <Page {...pageProps} />
-    </PageLayout>
+    <StyletronProvider value={engine}>
+      <PageLayout>
+        <Page {...pageProps} />
+      </PageLayout>
+    </StyletronProvider>
   )
+
+  // 3. Extract critical styles after SSR
+  // const styles = engine.getStylesheetsHtml();
+  // → "<style ..."
 
   // See https://github.com/brillout/vite-plugin-ssr#html-head
   const { documentProps } = pageContext
