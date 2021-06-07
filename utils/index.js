@@ -4,3 +4,5 @@ export function findValueByKey(arr, key, match) {
     if (element[key] === match) return element
   }
 }
+
+export const isBrowser = typeof window !== "undefined"
