@@ -29,6 +29,7 @@ export function Summary({ slug = "lighthouse-design-system" }) {
             <a
               href={link.href}
               target="_blank"
+              rel="noreferrer"
               style={{
                 color: "black",
               }}
