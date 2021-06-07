@@ -42,13 +42,7 @@ export function PortfolioSectionCard({
             <br />
           </>
         )}
-        <motion.p
-          layout
-          transition={defaultTransition}
-          style={{
-            lineHeight: "1.55em",
-          }}
-        >
+        <motion.p layout transition={defaultTransition}>
           {description}
         </motion.p>
       </div>

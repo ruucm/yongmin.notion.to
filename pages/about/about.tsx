@@ -8,6 +8,7 @@ function paragraphWithImage({ isMobile }) {
   let styles: any = {
     display: "flex",
     alignItems: "center",
+    marginBottom: "var(--blockSpacingBottom)",
   }
   if (isMobile)
     styles = {
@@ -19,7 +20,7 @@ function paragraphWithImage({ isMobile }) {
 }
 function profileWrap({ isMobile }) {
   let styles: any = {
-    padding: "0 32px 32px 32px",
+    paddingLeft: "16px",
   }
   if (isMobile)
     styles = {
@@ -47,7 +48,11 @@ export function Page() {
       >
         <h3>About</h3>
         <div style={paragraphWithImage({ isMobile })}>
-          <p>
+          <p
+            style={{
+              marginBottom: 0,
+            }}
+          >
             My story starts from making a simple android socket during the army
             services. It directly inspires me and gives me a sight of the
             internet world. I studied programming start from there.
@@ -69,11 +74,7 @@ export function Page() {
           </div>
         </div>
 
-        <p
-          style={{
-            marginTop: 0,
-          }}
-        >
+        <p>
           Then I met Framer. It broads my view of a lot of web worlds and
           designs. I made Harbor School and started to solve the pains of
           designers when they work with developers. So I've been teaching codes
