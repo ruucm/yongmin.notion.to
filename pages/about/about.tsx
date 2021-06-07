@@ -1,5 +1,6 @@
 import React from "react"
 import { Layout } from "../../components"
+import { useESM } from "../../hooks/use-esm"
 import { useESMComponent } from "../../hooks/use-esm-component"
 import { useMobile } from "../../hooks/use-mobile"
 
@@ -31,9 +32,16 @@ function profileWrap({ isMobile }) {
 
 export function Page() {
   const Module3: any = useESMComponent(
-    "https://framerusercontent.com/modules/5EaLh0KVaiYgE67ROHLy/cnPtfAs5hGsPAxvyY8ac/JgWSPuRfa.js"
+    "https://framerusercontent.com/modules/5EaLh0KVaiYgE67ROHLy/2kSwOAlvLpDNdFUntSDL/JgWSPuRfa.js"
   )
   console.log("Module3", Module3)
+
+  const tokens = useESM(
+    "https://module.harbor.school/dist/unsorted/test-style-tokens.css"
+  )
+
+  console.log("tokens", tokens)
+
   const isMobile = useMobile()
 
   return (
