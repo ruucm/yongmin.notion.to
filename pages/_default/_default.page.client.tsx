@@ -13,8 +13,13 @@ async function hydrate() {
   const pageContext = await getPage()
   const { Page, pageProps } = pageContext
 
-  // 1. Create a client engine instance
-  const engine = new Styletron()
+  // Hydrating Server-rendered Styles
+  const hydratedStyles: any = document.getElementsByClassName(
+    "_styletron_hydrate_"
+  )
+  const engine = new Styletron({
+    hydrate: hydratedStyles,
+  })
 
   ReactDOM.hydrate(
     <StyletronProvider value={engine}>

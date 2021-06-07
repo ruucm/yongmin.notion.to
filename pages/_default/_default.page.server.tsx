@@ -28,8 +28,7 @@ function render(pageContext: PageContext) {
   )
 
   // 3. Extract critical styles after SSR
-  // const styles = engine.getStylesheetsHtml();
-  // → "<style ..."
+  const styles = engine.getStylesheetsHtml()
 
   // See https://github.com/brillout/vite-plugin-ssr#html-head
   const { documentProps } = pageContext
@@ -46,6 +45,7 @@ function render(pageContext: PageContext) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="${desc}" />
         <title>${title}</title>
+        ${html.dangerouslySkipEscape(styles)}
       </head>
       <body>
         <div id="page-view">${html.dangerouslySkipEscape(pageHtml)}</div>
