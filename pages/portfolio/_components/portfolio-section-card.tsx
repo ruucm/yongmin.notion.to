@@ -1,7 +1,28 @@
 import React from "react"
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { useMobile } from "../../../hooks/use-mobile"
+import { styled } from "styletron-react"
+import { breakPoint } from "../../../consts"
+
+export const GridWrap = styled(motion.div, ({ $zoomed }: any) => {
+  return {
+    display: "grid",
+    gridTemplateColumns: $zoomed ? "1fr" : "2fr 3fr",
+    gap: 30,
+    direction: "ltr",
+    alignItems: "center",
+    [`@media screen and (max-width: ${breakPoint}px)`]: {
+      gridTemplateColumns: "1fr",
+    },
+  }
+})
+const Description = styled("div", {
+  padding: "30px 15px",
+
+  [`@media screen and (max-width: ${breakPoint}px)`]: {
+    padding: "0px",
+  },
+})
 
 const defaultTransition = {
   duration: 0.36,
@@ -15,17 +36,16 @@ export function PortfolioSectionCard({
   alignRight = false,
 }) {
   const [zoomed, setZoomed] = useState(false)
-  const isMobile = useMobile()
 
   return (
-    <div style={gridWrapStyles({ isMobile, zoomed })}>
+    <GridWrap $zoomed={zoomed}>
       <Image
         img={img}
         grayscale={grayscale}
         zoomed={zoomed}
         setZoomed={setZoomed}
       />
-      <div style={descriptionStyles({ isMobile })}>
+      <Description>
         {title && (
           <>
             <motion.h4
@@ -45,8 +65,8 @@ export function PortfolioSectionCard({
         <motion.p layout transition={defaultTransition}>
           {description}
         </motion.p>
-      </div>
-    </div>
+      </Description>
+    </GridWrap>
   )
 }
 
@@ -118,39 +138,4 @@ const Image = ({ img, grayscale, zoomed, setZoomed }) => {
       )}
     </div>
   )
-}
-
-function gridWrapStyles({ isMobile, zoomed }) {
-  let styles = {
-    display: "grid",
-    gridTemplateColumns: "2fr 3fr",
-    gap: 30,
-    direction: "ltr",
-    alignItems: "center",
-  }
-  if (isMobile)
-    styles = {
-      ...styles,
-      gridTemplateColumns: "1fr",
-    }
-  if (zoomed)
-    styles = {
-      ...styles,
-      gridTemplateColumns: "1fr",
-    }
-
-  return styles
-}
-
-function descriptionStyles({ isMobile }) {
-  let styles = {
-    padding: "30px 15px",
-  }
-  if (isMobile)
-    styles = {
-      ...styles,
-      padding: "0px",
-    }
-
-  return styles
 }

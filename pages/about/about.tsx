@@ -1,43 +1,31 @@
 import React from "react"
 import { Layout } from "../../components"
-import { useESM } from "../../hooks/use-esm"
 import { useESMComponent } from "../../hooks/use-esm-component"
-import { useMobile } from "../../hooks/use-mobile"
+import { styled } from "styletron-react"
+import { breakPoint } from "../../consts"
 
-function paragraphWithImage({ isMobile }) {
-  let styles: any = {
-    display: "flex",
-    alignItems: "center",
-    marginBottom: "var(--blockSpacingBottom)",
-  }
-  if (isMobile)
-    styles = {
-      ...styles,
-      flexWrap: "wrap-reverse",
-    }
+const ParagraphWithImage = styled("div", {
+  display: "flex",
+  alignItems: "center",
+  marginBottom: "var(--blockSpacingBottom)",
+  [`@media screen and (max-width: ${breakPoint}px)`]: {
+    flexWrap: "wrap-reverse",
+  },
+})
 
-  return styles
-}
-function profileWrap({ isMobile }) {
-  let styles: any = {
-    paddingLeft: "16px",
-  }
-  if (isMobile)
-    styles = {
-      ...styles,
-      padding: "16px",
-    }
+const ProfileWrap = styled("div", {
+  paddingLeft: "16px",
 
-  return styles
-}
+  [`@media screen and (max-width: ${breakPoint}px)`]: {
+    padding: "16px",
+  },
+})
 
 export function Page() {
   const Module3: any = useESMComponent(
     "https://framerusercontent.com/modules/5EaLh0KVaiYgE67ROHLy/2kSwOAlvLpDNdFUntSDL/JgWSPuRfa.js"
   )
   console.log("Module3", Module3)
-
-  const isMobile = useMobile()
 
   return (
     <Layout>
@@ -47,7 +35,7 @@ export function Page() {
         }}
       >
         <h3>About</h3>
-        <div style={paragraphWithImage({ isMobile })}>
+        <ParagraphWithImage>
           <p
             style={{
               marginBottom: 0,
@@ -65,14 +53,14 @@ export function Page() {
             functionalities easily.
           </p>
 
-          <div style={profileWrap({ isMobile })}>
+          <ProfileWrap>
             <Module3
               style={{
                 cursor: "pointer",
               }}
             />
-          </div>
-        </div>
+          </ProfileWrap>
+        </ParagraphWithImage>
 
         <p>
           Then I met Framer. It broads my view of a lot of web worlds and

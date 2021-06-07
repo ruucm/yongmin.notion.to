@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { breakPoint } from "../consts"
 import { useWindowResize } from "./use-window"
 
 export function useMobile() {
@@ -6,8 +7,8 @@ export function useMobile() {
 
   const sizeRef = useWindowResize(
     ({ width }) => {
-      if (!isMobile && width <= 768) setIsMobile(true)
-      else if (isMobile && width > 768) setIsMobile(false)
+      if (!isMobile && width <= breakPoint) setIsMobile(true)
+      else if (isMobile && width > breakPoint) setIsMobile(false)
     },
     [isMobile]
   )

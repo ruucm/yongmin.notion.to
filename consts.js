@@ -1,3 +1,11 @@
+/**
+ * UI
+ */
+export const breakPoint = 768
+
+/**
+ * Data
+ */
 export const cardDatas = [
   {
     title: "Lighthouse Design System",

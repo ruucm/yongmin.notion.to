@@ -1,28 +1,21 @@
 import React from "react"
-import { useMobile } from "../../../hooks/use-mobile"
+import { styled } from "styletron-react"
+import { breakPoint } from "../../../consts"
 
-function gridWrap({ isMobile }) {
-  let styles = {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    marginTop: 30,
-    gap: 30,
-    marginBottom: 30,
-  }
-  if (isMobile)
-    styles = {
-      ...styles,
-      gridTemplateColumns: "1fr",
-    }
-
-  return styles
-}
+const GridWrap = styled("div", {
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr",
+  marginTop: "30px",
+  gap: "30px",
+  marginBottom: "30px",
+  [`@media screen and (max-width: ${breakPoint}px)`]: {
+    gridTemplateColumns: "1fr",
+  },
+})
 
 export function Gallery({ images }) {
-  const isMobile = useMobile()
-
   return (
-    <div style={gridWrap({ isMobile })}>
+    <GridWrap>
       {images.map((image, id) => {
         const isGif = image.includes("gif")
 
@@ -58,6 +51,6 @@ export function Gallery({ images }) {
             </picture>
           )
       })}
-    </div>
+    </GridWrap>
   )
 }
