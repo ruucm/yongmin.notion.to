@@ -81,7 +81,7 @@ export function Layout({ children, home = false }) {
                 display: "inline-block",
                 marginLeft: "4px",
               }}
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               @ruucm
             </a>
