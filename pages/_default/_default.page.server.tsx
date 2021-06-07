@@ -3,7 +3,7 @@ import React from "react"
 import { PageLayout } from "./PageLayout"
 import { html } from "vite-plugin-ssr"
 import { PageContext, ReactComponent } from "./types"
-import favicon from "../../public/images/favicons/favicon-32x32.png"
+import favicon from "../assets/favicons/favicon-32x32.png"
 
 export { render }
 export { passToClient }
