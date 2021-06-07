@@ -7,10 +7,10 @@ import { breakPoint } from "../../../consts"
 export const GridWrap = styled(motion.div, ({ $zoomed }: any) => {
   return {
     display: "grid",
-    gridTemplateColumns: $zoomed ? "1fr" : "2fr 3fr",
-    gap: 30,
+    gap: "30px",
     direction: "ltr",
     alignItems: "center",
+    ...getZoomStyles({ $zoomed }),
     [`@media screen and (max-width: ${breakPoint}px)`]: {
       gridTemplateColumns: "1fr",
     },
@@ -138,4 +138,16 @@ const Image = ({ img, grayscale, zoomed, setZoomed }) => {
       )}
     </div>
   )
+}
+
+function getZoomStyles({ $zoomed }) {
+  if ($zoomed) {
+    return {
+      gridTemplateColumns: "1fr",
+    }
+  } else {
+    return {
+      gridTemplateColumns: "2fr 3fr",
+    }
+  }
 }
