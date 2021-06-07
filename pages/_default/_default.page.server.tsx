@@ -28,7 +28,7 @@ function render(pageContext: PageContext) {
     "yongmin ruucm is an experienced front-end developer who loves to deliver useful and joyful software."
 
   return html`<!DOCTYPE html>
-    <html lang="en">
+    <html lang="en" class="debug">
       <head>
         <meta charset="UTF-8" />
         <link rel="icon" href="${favicon}" />
