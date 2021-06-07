@@ -13,7 +13,6 @@ console.log("hey")
   // }
   function addEvents() {
     document.addEventListener("keypress", (e) => {
-      console.log("e", e)
       e.altKey &&
         (e.code == "KeyG"
           ? document.body.classList.toggle("debug-base-grid")

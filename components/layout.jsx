@@ -17,6 +17,7 @@ export function Layout({ children, home = false }) {
               display: "inline-block",
               padding: 5,
               cursor: "pointer",
+              lineHeight: "2rem",
             }}
             ref={hoverRef}
           >
@@ -52,25 +53,40 @@ export function Layout({ children, home = false }) {
               position: "sticky",
               top: "10vh",
               display: "inline-block",
-              lineHeight: 1.6,
             }}
           >
             <a
               onClick={onCopy}
               style={{
                 color: "blue",
-                textDecoration: "underline",
                 cursor: "pointer",
+                display: "inline-block",
+                marginLeft: "4px",
               }}
             >
               {hasCopied ? "copied" : contactMail}
             </a>
             <br />
-            <a href="http://twitter.com/ruucm" target="_blank">
+            <a
+              href="http://twitter.com/ruucm"
+              target="_blank"
+              style={{
+                textDecoration: "none",
+                display: "inline-block",
+                marginLeft: "4px",
+              }}
+            >
               @ruucm
             </a>
             <br />
-            <a href="/about">about</a>
+            <a
+              href="/about"
+              style={{
+                textDecoration: "none",
+              }}
+            >
+              /about
+            </a>
           </div>
 
           {/* <br /> */}
