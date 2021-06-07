@@ -22,8 +22,10 @@ function render(pageContext: PageContext) {
 
   // See https://github.com/brillout/vite-plugin-ssr#html-head
   const { documentProps } = pageContext
-  const title = documentProps?.title || "Vite SSR app"
-  const desc = documentProps?.description || "App using Vite + vite-plugin-ssr"
+  const title = documentProps?.title || "yongmin ruucm"
+  const desc =
+    documentProps?.description ||
+    "yongmin ruucm is an experienced front-end developer who loves to deliver useful and joyful software."
 
   return html`<!DOCTYPE html>
     <html lang="en">

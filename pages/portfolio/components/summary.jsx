@@ -1,22 +1,8 @@
 import React from "react"
-// import { useRouter } from "next/router"
-// import { useLocation } from "react-router-dom"
 import { cardDatas } from "../../../consts"
-import { useClientRouter } from "vite-plugin-ssr/client/router"
 
-export function Summary() {
-  // const router = useRouter()
-  // let location = useLocation()
-  const isBrowser = typeof window !== "undefined"
-  const slug = isBrowser && location.pathname.split("/")[2]
-  const data = isBrowser
-    ? findValueByKey(cardDatas, "slug", slug)
-    : {
-        title: "",
-        duration: "",
-        role: "",
-        links: [],
-      }
+export function Summary({ slug = "lighthouse-design-system" }) {
+  const data = findValueByKey(cardDatas, "slug", slug)
 
   return (
     <div
