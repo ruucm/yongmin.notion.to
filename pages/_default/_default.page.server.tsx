@@ -19,14 +19,14 @@ async function render(pageContext: PageContext) {
   // 1. Create a server engine instance
   const engine = new Styletron()
 
-  const pageHtml = ReactDOMServer.renderToStaticNodeStream(
+  const readstream = ReactDOMServer.renderToNodeStream(
     <StyletronProvider value={engine}>
       <PageLayout>
         <Page {...pageProps} />
       </PageLayout>
     </StyletronProvider>
   )
-  const str2: any = await streamToString(pageHtml)
+  const pageHtml: any = await streamToString(readstream)
 
   // 3. Extract critical styles after SSR
   const styles = engine.getStylesheetsHtml()
@@ -49,7 +49,7 @@ async function render(pageContext: PageContext) {
         ${html.dangerouslySkipEscape(styles)}
       </head>
       <body>
-        <div id="page-view">${html.dangerouslySkipEscape(str2)}</div>
+        <div id="page-view">${html.dangerouslySkipEscape(pageHtml)}</div>
       </body>
     </html>`
 }
