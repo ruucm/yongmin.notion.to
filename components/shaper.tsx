@@ -113,7 +113,9 @@ export function Shaper() {
           height: "1.6rem",
         }}
         onClick={() => {
-          setForegroundColorRgb("255, 255, 255")
+          if (foregroundColorRgb === initialState.foregroundColorRgb)
+            setForegroundColorRgb("255, 255, 255")
+          else setForegroundColorRgb(initialState.foregroundColorRgb)
         }}
       />
     </div>
