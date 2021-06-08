@@ -9,9 +9,6 @@ body {
   margin: 8px;
 }
 
-a:visited {
-  color: blue;
-}
 ::-moz-selection {
   /* Code for Firefox */
   color: white;
