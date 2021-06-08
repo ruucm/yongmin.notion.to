@@ -6,12 +6,13 @@ import { PageContext, ReactComponent } from "./types"
 import favicon from "../assets/favicons/favicon-32x32.png"
 import { Provider as StyletronProvider } from "styletron-react"
 import { Server as Styletron } from "styletron-engine-atomic"
+import { defaultMeta } from "../../consts"
 
 export { render }
 export { passToClient }
 
 // See https://github.com/brillout/vite-plugin-ssr#data-fetching
-const passToClient = ["pageProps"]
+const passToClient = ["pageProps", "documentProps"]
 
 async function render(pageContext: PageContext) {
   const { Page, pageProps } = pageContext
@@ -33,10 +34,8 @@ async function render(pageContext: PageContext) {
 
   // See https://github.com/brillout/vite-plugin-ssr#html-head
   const { documentProps } = pageContext
-  const title = documentProps?.title || "yongmin ruucm"
-  const desc =
-    documentProps?.description ||
-    "A journey of programming to solving creative people's problems."
+  const title = documentProps?.title || defaultMeta.title
+  const desc = documentProps?.description || defaultMeta.description
 
   return html`<!DOCTYPE html>
     <html lang="en">

@@ -4,6 +4,15 @@
 export const breakPoint = 768
 
 /**
+ * Website
+ */
+export const defaultMeta = {
+  title: "yongmin ruucm",
+  description:
+    "A journey of programming to solving creative people's problems.",
+}
+
+/**
  * Data
  */
 export const cardDatas = [
