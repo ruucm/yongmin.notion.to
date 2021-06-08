@@ -8,7 +8,7 @@ import { Shaper } from "./shaper"
 import { Header } from "./header"
 import { motion } from "framer-motion"
 
-const Wrap = styled(motion.div, {
+const Wrap = styled("div", {
   maxWidth: "1080px",
   margin: "0 auto",
 })
@@ -25,29 +25,31 @@ export function Layout({ children, home = false }) {
   const { hasCopied, onCopy } = useClipboard(contactMail)
 
   return (
-    <Wrap
-      initial={{ scale: 0.5 }}
-      animate={{
-        scale: 1,
-        transition: {
-          duration: 1,
-          delay: 1,
-        },
-      }}
-      exit={{
-        scale: 2,
-        y: 300,
-        transition: {
-          duration: 0.3,
-        },
-      }}
-      style={{
-        transformOrigin: "50% 0%",
-      }}
-    >
+    <Wrap>
       <Header />
       <Grid>
-        <main>{children}</main>
+        <motion.main
+          initial={{ scale: 0.5 }}
+          animate={{
+            scale: 1,
+            transition: {
+              duration: 1,
+              delay: 1,
+            },
+          }}
+          exit={{
+            scale: 2,
+            y: 300,
+            transition: {
+              duration: 0.3,
+            },
+          }}
+          style={{
+            transformOrigin: "50% 0%",
+          }}
+        >
+          {children}
+        </motion.main>
         <footer
           style={{
             transform: "rotate(90deg) translateX(100%)",
