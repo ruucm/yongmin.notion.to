@@ -1,19 +1,16 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "skipLibCheck": false,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
+    "module": "CommonJS",
+    "target": "ES2017",
+    "lib": ["DOM"],
     "jsx": "react",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
     "allowJs": true,
     "noImplicitAny": false
+  },
+  "ts-node": {
+    "transpileOnly": true
   }
 }
