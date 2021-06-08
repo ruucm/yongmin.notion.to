@@ -59,18 +59,18 @@ const { hydrationPromise } = useClientRouter({
   onTransitionEnd,
 })
 
-hydrationPromise.then(() => {
-  console.log("Hydration finished; page is now interactive.")
-})
+// hydrationPromise.then(() => {
+//   console.log("Hydration finished; page is now interactive.")
+// })
 
 function onTransitionStart() {
-  console.log("Page transition start")
+  // console.log("Page transition start")
   window.LoadingClass.setState({
     isRouteChanging: true,
     loadingKey: window.LoadingClass.state.loadingKey + 1,
   })
 }
 function onTransitionEnd() {
-  console.log("Page transition end")
+  // console.log("Page transition end")
   window.LoadingClass.setState({ isRouteChanging: false })
 }
