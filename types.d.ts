@@ -8,4 +8,4 @@ declare module "*.png" {
   export default imageUrl
 }
 
-declare var ClientPage: any
+declare var LoadingClass: any
