@@ -3,9 +3,20 @@ import { useHover } from "../hooks/use-hover"
 import { contactMail } from "../consts"
 import { useClipboard } from "../hooks/use-clipboard"
 import { DesktopOnly } from "../utils/styled-components"
+import { styled } from "styletron-react"
+import { breakPoint } from "../consts"
+
+export const Grid = styled("div", {
+  display: "grid",
+  gridTemplateColumns: "3fr 1fr",
+  alignItems: "flex-start",
+  [`@media screen and (max-width: ${breakPoint}px)`]: {
+    gridTemplateColumns: "5fr 1fr",
+  },
+})
 
 export function Layout({ children, home = false }) {
-  const [hoverRef, isHover] = useHover()
+  const [hoverRef, isHover]: any = useHover()
   const { hasCopied, onCopy } = useClipboard(contactMail)
 
   return (
@@ -38,29 +49,19 @@ export function Layout({ children, home = false }) {
         </a>
       </header>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "3fr 1fr",
-          alignItems: "flex-start",
-        }}
-      >
+      <Grid>
         <main>{children}</main>
         <footer
           style={{
             display: "flex",
             transform: "rotate(90deg) translateX(100%)",
             transformOrigin: "100% 0%",
-            background: "skyblue",
+            // background: "skyblue",
             position: "sticky",
             top: "10vh",
           }}
         >
-          <div
-            style={{
-              alignSelf: "stretch",
-            }}
-          >
+          <div>
             <DesktopOnly>
               <a
                 onClick={onCopy}
@@ -97,27 +98,42 @@ export function Layout({ children, home = false }) {
               /about
             </a>
           </div>
-          <div
-            style={{
-              width: 200,
-              height: 200,
-              border: "1px solid",
-            }}
-          >
-            <h4>Typography</h4>
-            <p>Text increment</p>
-            <input
-              type="range"
-              id="cowbell"
-              name="cowbell"
-              min="0"
-              max="100"
-              // value="90"
-              step="30"
-            />
-          </div>
+          <DesktopOnly>
+            <div
+              style={{
+                // width: 200,
+                // height: 200,
+                border: "1px solid",
+                marginLeft: "1rem",
+                padding: "1rem",
+              }}
+            >
+              {/* <h4>Typography</h4> */}
+              <p>Text increment</p>
+              <input
+                type="range"
+                id="cowbell"
+                name="cowbell"
+                min="0"
+                max="100"
+                // value="90"
+                step="30"
+              />
+
+              <p>Base size</p>
+              <input
+                type="range"
+                id="cowbell"
+                name="cowbell"
+                min="0"
+                max="100"
+                // value="90"
+                step="30"
+              />
+            </div>
+          </DesktopOnly>
         </footer>
-      </div>
+      </Grid>
     </>
   )
 }
