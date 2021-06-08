@@ -3,6 +3,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { styled } from "styletron-react"
 import { breakPoint } from "../../../consts"
+import { LazyLoadImage } from "./lazy-load-image"
 
 const Grid = styled(motion.div, ({ $zoomed }: any) => {
   return {
@@ -112,29 +113,25 @@ const Image = ({ img, grayscale, zoomed, setZoomed }) => {
         />
       )}
       {!isGif && (
-        <picture>
-          <source srcSet={`${img}.webp`} type="image/webp" />
-          <source srcSet={`${img}.png`} type="image/png" />
-          <source srcSet={`${img}.jpg`} type="image/jpg" />
-          <source srcSet={`${img}.jpeg`} type="image/jpeg" />
-          <motion.img
-            src={`${img}.webp`}
-            alt=""
-            onClick={() => setZoomed(!zoomed)}
-            layout
-            transition={defaultTransition}
-            style={{
-              position: "absolute",
-              top: "0",
-              left: "0",
-              right: "0",
-              bottom: "0",
-              width: "100%",
-              height: "100%",
-              border: "1px solid",
-            }}
-          />
-        </picture>
+        <LazyLoadImage
+          $as={motion.img}
+          imgUrl={`${img}.webp`}
+          placeholderUrl={`${img}-sharp.webp`}
+          fallbackUrl={`${img}-sharp.webp`}
+          onClick={() => setZoomed(!zoomed)}
+          layout
+          transition={defaultTransition}
+          style={{
+            position: "absolute",
+            top: "0",
+            left: "0",
+            right: "0",
+            bottom: "0",
+            width: "100%",
+            height: "100%",
+            border: "1px solid",
+          }}
+        />
       )}
     </div>
   )
