@@ -4,7 +4,7 @@ import "./main.js"
 import { useClientRouter } from "vite-plugin-ssr/client/router"
 import { PageContext } from "./types"
 import { defaultMeta } from "../../consts"
-import { ClientPage } from "./client-page-class"
+import { ClientPage } from "./client-page"
 
 async function hydrate(page) {
   import("./imports.js").then(async (m) => {
