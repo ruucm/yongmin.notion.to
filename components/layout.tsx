@@ -7,7 +7,7 @@ import { breakPoint } from "../consts"
 import { Shaper } from "./shaper"
 import { Header } from "./header"
 
-export const Grid = styled("div", {
+const Grid = styled("div", {
   display: "grid",
   gridTemplateColumns: "3fr 1fr",
   alignItems: "flex-start",

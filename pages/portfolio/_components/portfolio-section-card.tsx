@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { styled } from "styletron-react"
 import { breakPoint } from "../../../consts"
 
-export const GridWrap = styled(motion.div, ({ $zoomed }: any) => {
+const GridWrap = styled(motion.div, ({ $zoomed }: any) => {
   return {
     display: "grid",
     gap: "30px",
