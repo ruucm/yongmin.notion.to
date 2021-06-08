@@ -107,7 +107,7 @@ const Image = ({ img, grayscale, zoomed, setZoomed }) => {
             bottom: "0",
             width: "100%",
             height: "100%",
-            border: "1px solid black",
+            border: "1px solid",
           }}
         />
       )}
@@ -131,7 +131,7 @@ const Image = ({ img, grayscale, zoomed, setZoomed }) => {
               bottom: "0",
               width: "100%",
               height: "100%",
-              border: "1px solid black",
+              border: "1px solid",
             }}
           />
         </picture>

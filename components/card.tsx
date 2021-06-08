@@ -45,7 +45,7 @@ export function Card({ title, duration, description, outlink, slug, tags }) {
           style={{
             position: "relative",
             padding: "30px 15px",
-            border: "1px solid black",
+            border: "1px solid",
           }}
         >
           <h4

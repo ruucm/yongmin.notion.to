@@ -7,7 +7,7 @@ export function Summary({ slug = "lighthouse-design-system" }) {
   return (
     <div
       style={{
-        border: "1px solid black",
+        border: "1px solid",
         display: "inline-block",
         padding: "30px 15px",
       }}
