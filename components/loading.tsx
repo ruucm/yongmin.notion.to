@@ -18,8 +18,8 @@ const Loading: React.FC<{ isRouteChanging?: boolean }> = ({
         }
 
         .bar {
-          background: var(--primaryB);
-          height: 8px;
+          background: blue;
+          height: 4px;
           left: 0;
           margin-left: ${(-1 + progress) * 100}%;
           position: fixed;
