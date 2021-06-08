@@ -36,7 +36,7 @@ async function render(pageContext: PageContext) {
   const title = documentProps?.title || "yongmin ruucm"
   const desc =
     documentProps?.description ||
-    "yongmin ruucm is an experienced front-end developer who loves to deliver useful and joyful software."
+    "A journey of programming to solving creative people's problems."
 
   return html`<!DOCTYPE html>
     <html lang="en">

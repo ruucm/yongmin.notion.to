@@ -12,10 +12,7 @@ export function Page() {
   return (
     <Layout home>
       <h3>Design Engineer</h3>
-      <p>
-        yongmin ruucm is an experienced front-end developer who loves to deliver
-        useful and joyful software.
-      </p>
+      <p>A journey of programming to solving creative people's problems.</p>
       <AnimateSharedLayout>
         <div
           style={{
