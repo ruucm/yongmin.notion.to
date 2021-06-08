@@ -12,7 +12,7 @@ const Control = styled("div", ({ $active }: any) => {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    cursor: "pointer",
+    cursor: $active ? "crosshair" : "pointer",
     color: $active ? "blue" : "var(--foreground-color)",
   }
 })
