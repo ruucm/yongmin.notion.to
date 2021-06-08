@@ -29,7 +29,7 @@ const styles = {
 
 export function Shaper() {
   const { baseTextSize, foregroundColorRgb, setTheme } = useStore(
-    (state: any) => ({
+    (state) => ({
       baseTextSize: state.baseTextSize,
       foregroundColorRgb: state.foregroundColorRgb,
       setTheme: state.setTheme,
