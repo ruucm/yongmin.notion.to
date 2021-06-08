@@ -1,11 +1,11 @@
 import React from "react"
-import { useHover } from "../hooks/use-hover"
 import { contactMail } from "../consts"
 import { useClipboard } from "../hooks/use-clipboard"
 import { DesktopOnly } from "../utils/styled-components"
 import { styled } from "styletron-react"
 import { breakPoint } from "../consts"
 import { Shaper } from "./shaper"
+import { Header } from "./header"
 
 export const Grid = styled("div", {
   display: "grid",
@@ -17,39 +17,11 @@ export const Grid = styled("div", {
 })
 
 export function Layout({ children, home = false }) {
-  const [hoverRef, isHover]: any = useHover()
   const { hasCopied, onCopy } = useClipboard(contactMail)
 
   return (
     <>
-      <header>
-        <a href="/">
-          <h2
-            style={{
-              // background: home ? "green" : "hsl(120 0% 65% / 1)",
-              display: "inline-block",
-              padding: 5,
-              cursor: "pointer",
-              lineHeight: "2rem",
-              color: "blue",
-              marginTop: "2rem",
-              marginBottom: "2.5rem",
-            }}
-            ref={hoverRef}
-          >
-            {isHover ? "안녕 하세요," : "Hello,"}
-            <br />
-            <span
-              style={{
-                textDecoration: "underline",
-              }}
-            >
-              I'm yongmin ruucm.
-            </span>
-          </h2>
-        </a>
-      </header>
-
+      <Header />
       <Grid>
         <main>{children}</main>
         <footer
