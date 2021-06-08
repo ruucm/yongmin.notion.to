@@ -41,7 +41,7 @@ export function Layout({ children, home = false }) {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "4fr 1fr",
+          gridTemplateColumns: "3fr 1fr",
         }}
       >
         <main>{children}</main>
@@ -95,23 +95,6 @@ export function Layout({ children, home = false }) {
               /about
             </a>
           </div>
-
-          {/* <br /> */}
-          {/* Navigation */}
-          {/* <nav>
-            <ul>
-              <li>
-                <Link href="/carving">
-                  <a>Carving</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/media">
-                  <a>Media</a>
-                </Link>
-              </li>
-            </ul>
-          </nav> */}
         </footer>
       </div>
     </>
