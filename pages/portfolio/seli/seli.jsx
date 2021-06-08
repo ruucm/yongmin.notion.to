@@ -5,6 +5,16 @@ import { AnimateSharedLayout } from "framer-motion"
 import { Summary } from "../_components/summary"
 import { Gallery } from "../_components/gallery"
 import { SubTitle } from "../_components/sub-title"
+import { styled } from "styletron-react"
+
+const Spacing = styled("div", {
+  height: "100px",
+})
+
+const Grid = styled("div", {
+  display: "grid",
+  gap: "30px",
+})
 
 export function Page({ slug }) {
   return (
@@ -18,19 +28,10 @@ export function Page({ slug }) {
           "/images/seli_04",
         ]}
       />
-      <div
-        style={{
-          height: 100,
-        }}
-      />
+      <Spacing />
       <AnimateSharedLayout>
         <SubTitle>Delight Writing Experience for Magazine Website</SubTitle>
-        <div
-          style={{
-            display: "grid",
-            gap: 30,
-          }}
-        >
+        <Grid>
           <PortfolioSectionCard
             img={"/images/seli-cms-problem"}
             title="[Problems] - There are no excellent editors for Web projects."
@@ -42,7 +43,7 @@ export function Page({ slug }) {
             title="[Solution] - Use Notion as CMS(Content Management System)"
             description={`I've seen many people use Notion(notion.so) as their daily notes, blogs, portfolios, even for job postings. And it has a straightforward block-style editing system. It seems much better it linked to the front-end, but there was no official API yet (2020). So I decided to develop my own for this project. I used Github CI (Continous Integration) to link changes from Notion to the website. Python3 was also a good choice for getting Notion contents and performances.`}
           />
-        </div>
+        </Grid>
       </AnimateSharedLayout>
     </Layout>
   )

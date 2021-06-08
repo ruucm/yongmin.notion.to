@@ -103,6 +103,9 @@ q:before {
   content: "";
   content: none;
 }
+a {
+  text-decoration: none;
+}
 a,
 a:active,
 a:visited {

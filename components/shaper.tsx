@@ -78,7 +78,7 @@ export function Shaper() {
     <div style={styles.controlWrap}>
       <Control
         style={{
-          fontSize: 24,
+          fontSize: "24px",
           width: "3rem",
           height: "3rem",
         }}
@@ -94,7 +94,7 @@ export function Shaper() {
 
       <Control
         style={{
-          fontSize: 16,
+          fontSize: "16px",
           width: "2rem",
           height: "2rem",
         }}

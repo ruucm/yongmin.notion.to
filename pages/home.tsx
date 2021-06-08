@@ -6,6 +6,12 @@ import { AnimateSharedLayout, AnimatePresence } from "framer-motion"
 import { removeA } from "../utils/removeA"
 import { styled } from "styletron-react"
 
+const Grid = styled("div", {
+  display: "grid",
+  gridTemplateColumns: "1fr",
+  gap: "20px",
+})
+
 const Tag = styled("em", ({ $active }: any) => {
   return {
     position: "relative",
@@ -27,6 +33,11 @@ const Tag = styled("em", ({ $active }: any) => {
   }
 })
 
+const Tags = styled("div", {
+  textAlign: "right",
+  marginBottom: "7px",
+})
+
 export function Page() {
   const [data, setData] = useState(cardDatas)
   const [tags, setTags] = useState(["develop", "design", "marketing"])
@@ -36,12 +47,7 @@ export function Page() {
       <h3>Design Engineer</h3>
       <p>A journey of programming to solving creative people's problems.</p>
       <AnimateSharedLayout>
-        <div
-          style={{
-            textAlign: "right",
-            marginBottom: 7,
-          }}
-        >
+        <Tags>
           <Tag
             $active={tags.includes("develop")}
             onClick={() =>
@@ -78,15 +84,9 @@ export function Page() {
           >
             Marketing
           </Tag>
-        </div>
+        </Tags>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr",
-            gap: "20px",
-          }}
-        >
+        <Grid>
           {data.map((item: any, id) => (
             <AnimatePresence key={id}>
               {tagFilter(tags, item) && (
@@ -102,7 +102,7 @@ export function Page() {
               )}
             </AnimatePresence>
           ))}
-        </div>
+        </Grid>
       </AnimateSharedLayout>
     </Layout>
   )

@@ -8,20 +8,24 @@ const Wrap = styled("div", {
   padding: "30px 15px",
 })
 
+const H3 = styled("h3", {
+  color: "blue",
+  fontWeight: 400,
+  marginTop: 0,
+})
+
+const P = styled("p", {
+  marginBottom: "0px",
+})
+
 export function Summary({ slug = "lighthouse-design-system" }) {
   const data = findValueByKey(cardDatas, "slug", slug)
 
   return (
     <Wrap>
-      <h3
-        style={{
-          color: "blue",
-          fontWeight: 400,
-          marginTop: 0,
-        }}
-      >
+      <H3>
         {data.title} ({data.duration})
-      </h3>
+      </H3>
       <p>Role - {data.role}</p>
       <p>
         Links -{" "}
@@ -34,13 +38,7 @@ export function Summary({ slug = "lighthouse-design-system" }) {
           </span>
         ))}
       </p>
-      <p
-        style={{
-          marginBottom: 0,
-        }}
-      >
-        {data.description}
-      </p>
+      <P>{data.description}</P>
     </Wrap>
   )
 }

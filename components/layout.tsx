@@ -20,6 +20,26 @@ const Grid = styled("div", {
     gridTemplateColumns: "5fr 1fr",
   },
 })
+const Footer = styled("footer", {
+  transform: "rotate(90deg) translateX(100%)",
+  transformOrigin: "100% 0%",
+  position: "sticky",
+  top: "10vh",
+})
+const Nav = styled("div", {
+  // background: "pink",
+  position: "absolute",
+  display: "flex",
+})
+const Email = styled("span", {
+  color: "blue",
+  cursor: "pointer",
+  display: "inline-block",
+  marginLeft: "4px",
+})
+const Twitter = styled("a", {
+  marginLeft: "4px",
+})
 
 export function Layout({ children, home = false }) {
   const { hasCopied, onCopy } = useClipboard(contactMail)
@@ -52,63 +72,30 @@ export function Layout({ children, home = false }) {
         >
           {children}
         </motion.main>
-        <footer
-          style={{
-            transform: "rotate(90deg) translateX(100%)",
-            transformOrigin: "100% 0%",
-            position: "sticky",
-            top: "10vh",
-          }}
-        >
-          <div
-            style={{
-              // background: "pink",
-              position: "absolute",
-              display: "flex",
-            }}
-          >
+        <Footer>
+          <Nav>
             <div>
               <DesktopOnly>
-                <a
-                  onClick={onCopy}
-                  style={{
-                    color: "blue",
-                    cursor: "pointer",
-                    display: "inline-block",
-                    marginLeft: "4px",
-                  }}
-                >
+                <Email onClick={onCopy}>
                   {hasCopied ? "copied" : contactMail}
-                </a>
+                </Email>
                 <br />
               </DesktopOnly>
-              <a
+              <Twitter
                 href="http://twitter.com/ruucm"
                 target="_blank"
-                style={{
-                  textDecoration: "none",
-                  display: "inline-block",
-                  marginLeft: "4px",
-                }}
                 rel="noopener noreferrer"
               >
                 @ruucm
-              </a>
+              </Twitter>
               <br />
-              <a
-                href="/about"
-                style={{
-                  textDecoration: "none",
-                }}
-              >
-                /about
-              </a>
+              <a href="/about">/about</a>
             </div>
             <DesktopOnly>
               <Shaper />
             </DesktopOnly>
-          </div>
-        </footer>
+          </Nav>
+        </Footer>
       </Grid>
     </Wrap>
   )

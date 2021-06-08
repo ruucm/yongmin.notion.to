@@ -4,6 +4,12 @@ import { PortfolioSectionCard } from "../_components/portfolio-section-card"
 import { AnimateSharedLayout } from "framer-motion"
 import { SubTitle } from "../_components/sub-title"
 import { Summary } from "../_components/summary"
+import { styled } from "styletron-react"
+
+const Grid = styled("div", {
+  display: "grid",
+  gap: "30px",
+})
 
 export function Page({ slug }) {
   return (
@@ -11,12 +17,7 @@ export function Page({ slug }) {
       <Summary slug={slug} />
       <AnimateSharedLayout>
         <SubTitle>Education Content Experience</SubTitle>
-        <div
-          style={{
-            display: "grid",
-            gap: 30,
-          }}
-        >
+        <Grid>
           <PortfolioSectionCard
             img={"/images/problem-youtube"}
             title="[Problems] - Bad Education Content Experience"
@@ -38,15 +39,10 @@ export function Page({ slug }) {
       of tutorial to make the results, and user can find information quickly
       like the blog posts.`}
           />
-        </div>
+        </Grid>
 
         <SubTitle>Internal Student Management System</SubTitle>
-        <div
-          style={{
-            display: "grid",
-            gap: 30,
-          }}
-        >
+        <Grid>
           <PortfolioSectionCard
             img={"/images/problem-students-management"}
             title="[Problems] - Seperated CRM and Student Managements"
@@ -64,7 +60,7 @@ export function Page({ slug }) {
             problem.`}
             // alignRight
           />
-        </div>
+        </Grid>
       </AnimateSharedLayout>
     </Layout>
   )

@@ -13,6 +13,11 @@ const GridWrap = styled("div", {
     gridTemplateColumns: "1fr",
   },
 })
+const Img = styled("img", {
+  width: "100%",
+  display: "block",
+  border: "1px solid",
+})
 
 export function Gallery({ images }) {
   return (
@@ -20,19 +25,7 @@ export function Gallery({ images }) {
       {images.map((image, id) => {
         const isGif = image.includes("gif")
 
-        if (isGif)
-          return (
-            <img
-              key={id}
-              src={image}
-              alt="portfolio-image"
-              style={{
-                width: "100%",
-                display: "block",
-                border: "1px solid",
-              }}
-            />
-          )
+        if (isGif) return <Img key={id} src={image} alt="portfolio-image" />
         else
           return (
             <LazyLoadImage

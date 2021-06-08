@@ -4,6 +4,10 @@ import { useESMComponent } from "../../hooks/use-esm-component"
 import { styled } from "styletron-react"
 import { breakPoint } from "../../consts"
 
+const Wrap = styled("div", {
+  maxWidth: "720px",
+})
+
 const ParagraphWithImage = styled("div", {
   display: "flex",
   alignItems: "center",
@@ -20,6 +24,9 @@ const ProfileWrap = styled("div", {
     padding: "16px",
   },
 })
+const P = styled("p", {
+  marginBottom: "0px",
+})
 
 export function Page() {
   const Module3: any = useESMComponent(
@@ -29,18 +36,10 @@ export function Page() {
 
   return (
     <Layout>
-      <div
-        style={{
-          maxWidth: 720,
-        }}
-      >
+      <Wrap>
         <h3>About</h3>
         <ParagraphWithImage>
-          <p
-            style={{
-              marginBottom: 0,
-            }}
-          >
+          <P>
             My story starts from making a simple android socket during the army
             services. It directly inspires me and gives me a sight of the
             internet world. I studied programming start from there.
@@ -51,7 +50,7 @@ export function Page() {
             works and making a productive way in terms of maintenance homepage.
             I created several wordpress plugins to make web pages and
             functionalities easily.
-          </p>
+          </P>
 
           <ProfileWrap>
             <Module3
@@ -82,7 +81,7 @@ export function Page() {
           screens are essential, like making neat controllers for spaceship
           pilots to Mars.
         </p>
-      </div>
+      </Wrap>
     </Layout>
   )
 }

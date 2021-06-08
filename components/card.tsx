@@ -7,6 +7,18 @@ const Wrap = styled(motion.div, {
   padding: "30px 15px",
   border: "1px solid",
 })
+const H4 = styled("h4", {
+  marginTop: "0px",
+  textTransform: "lowercase",
+})
+const More = styled("div", {
+  color: "blue",
+})
+const Tags = styled("em", {
+  position: "absolute",
+  right: "15px",
+  bottom: "8px",
+})
 
 const wrap = {
   active: {
@@ -23,12 +35,7 @@ export function Card({ title, duration, description, outlink, slug, tags }) {
     : { href: outlink, target: "_blank" }
 
   return (
-    <a
-      {...linkProps}
-      style={{
-        textDecoration: "none",
-      }}
-    >
+    <a {...linkProps}>
       <motion.div
         layoutId={title}
         transition={{
@@ -43,38 +50,23 @@ export function Card({ title, duration, description, outlink, slug, tags }) {
             duration: 0.36,
           }}
         >
-          <h4
-            style={{
-              marginTop: 0,
-              textTransform: "lowercase",
-            }}
-          >
+          <H4>
             {title}
             {duration && ` (${duration})`}
-          </h4>
+          </H4>
           <p>{description}</p>
-          <div
-            style={{
-              color: "blue",
-            }}
-          >
+          <More>
             {slug && "More"}
             {outlink && "More (outlink)"}
-          </div>
-          <em
-            style={{
-              position: "absolute",
-              right: 15,
-              bottom: 8,
-            }}
-          >
+          </More>
+          <Tags>
             {tags.map((tag, id) => (
               <span key={id}>
                 {tag}
                 {id < tags.length - 1 && ","}{" "}
               </span>
             ))}
-          </em>
+          </Tags>
         </Wrap>
       </motion.div>
     </a>

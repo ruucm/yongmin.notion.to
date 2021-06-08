@@ -24,6 +24,11 @@ const Description = styled("div", {
     padding: "0px",
   },
 })
+const Title = styled(motion.h4, {
+  textDecoration: "underline",
+  display: "inline-block",
+  fontWeight: 400,
+})
 
 const defaultTransition = {
   duration: 0.36,
@@ -49,17 +54,9 @@ export function PortfolioSectionCard({
       <Description>
         {title && (
           <>
-            <motion.h4
-              style={{
-                textDecoration: "underline",
-                display: "inline-block",
-                fontWeight: 400,
-              }}
-              layout
-              transition={defaultTransition}
-            >
+            <Title layout transition={defaultTransition}>
               {title}
-            </motion.h4>
+            </Title>
             <br />
           </>
         )}
@@ -76,40 +73,40 @@ const Image = ({ img, grayscale, zoomed, setZoomed }) => {
   if (grayscale) filter += "grayscale(1) brightness(0.5)"
   const isGif = img.includes("gif")
 
+  const Wrap = styled("div", {
+    position: "relative",
+    width: "100%",
+    height: "0",
+    paddingTop: "66.66%",
+    cursor: zoomed ? "zoom-out" : "zoom-in",
+    filter,
+  })
+
+  const GifImage = styled(motion.img, {
+    position: "absolute",
+    top: "0",
+    left: "0",
+    right: "0",
+    bottom: "0",
+    width: "100%",
+    height: "100%",
+    border: "1px solid",
+  })
+
   return (
-    <div
-      style={{
-        position: "relative",
-        width: "100%",
-        height: "0",
-        paddingTop: "66.66%",
-        cursor: zoomed ? "zoom-out" : "zoom-in",
-        filter,
-        // opacity: grayscale ? 0.5 : 1,
-      }}
-    >
+    <Wrap>
       <motion.div
         animate={{ opacity: zoomed ? 1 : 0 }}
         className="shade"
         onClick={() => setZoomed(false)}
       />
       {isGif && (
-        <motion.img
+        <GifImage
           src={img}
           alt=""
           onClick={() => setZoomed(!zoomed)}
           layout
           transition={defaultTransition}
-          style={{
-            position: "absolute",
-            top: "0",
-            left: "0",
-            right: "0",
-            bottom: "0",
-            width: "100%",
-            height: "100%",
-            border: "1px solid",
-          }}
         />
       )}
       {!isGif && (
@@ -133,7 +130,7 @@ const Image = ({ img, grayscale, zoomed, setZoomed }) => {
           }}
         />
       )}
-    </div>
+    </Wrap>
   )
 }
 
