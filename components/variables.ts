@@ -1,21 +1,12 @@
 // import tinycolor from "tinycolor2"
 
+import { ThemeProps } from "../hooks/use-store"
+
 export const getVariables = ({
   baseTextSize,
   foregroundColorRgb,
-  // textSizeIncrement,
-  // fontFamily,
-  // unit,
-  // spaceIncrement,
-  // textFrameRatio,
-  // textFrameY,
-  // accentHue,
-  // accentSaturation,
-  // accentLightness,
-  // greySaturation,
-  // radius,
-  // fieldBorderWidth,
-}) => {
+  backgroundColorHsl,
+}: ThemeProps) => {
   // const getAccentButtonColor = () => {
   //   const accentButtonBgLuminance = tinycolor(
   //     `hsl(${accentHue} ${accentSaturation} ${accentLightness})`
@@ -29,6 +20,7 @@ export const getVariables = ({
     type: `
       --baseTextSize: ${baseTextSize}px;
       --foreground-color-rgb: ${foregroundColorRgb};
+      --background-color-hsl: ${backgroundColorHsl};
     `,
   }
 }

@@ -35,7 +35,8 @@
     var(--foreground-color-rgb),
     var(--foreground-color-a-dimmed)
   );
-  --background-color: hsl(0, 0%, 76%);
+  --background-color-hsl: 0, 0%, 76%;
+  --background-color: hsl(var(--background-color-hsl));
   --letterbox-color: #333;
   --box-link-hover-color: rgba(var(--foreground-color-rgb), 0.07);
   --accent-color: var(--blue);

@@ -16,6 +16,7 @@ export const initialThemeState = {
   textSizeIncrement: "1.47",
   baseTextSize: 16,
   foregroundColorRgb: "0, 0, 0",
+  backgroundColorHsl: "0, 0%, 76%",
   textFrameRatio: "2.37",
   textFrameY: "0.8",
   spaceIncrement: "1.65",

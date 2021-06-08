@@ -13,7 +13,7 @@ const Control = styled("div", ({ $active }: any) => {
     justifyContent: "center",
     alignItems: "center",
     cursor: "pointer",
-    color: $active ? "blue" : "initial",
+    color: $active ? "blue" : "var(--foreground-color)",
   }
 })
 
@@ -28,18 +28,21 @@ const styles = {
 }
 
 export function Shaper() {
-  const { baseTextSize, foregroundColorRgb, setTheme } = useStore(
-    (state) => ({
-      baseTextSize: state.baseTextSize,
-      foregroundColorRgb: state.foregroundColorRgb,
-      setTheme: state.setTheme,
-    }),
-    shallow
-  )
+  const { baseTextSize, foregroundColorRgb, backgroundColorHsl, setTheme } =
+    useStore(
+      (state) => ({
+        baseTextSize: state.baseTextSize,
+        foregroundColorRgb: state.foregroundColorRgb,
+        backgroundColorHsl: state.backgroundColorHsl,
+        setTheme: state.setTheme,
+      }),
+      shallow
+    )
 
   const variables = getVariables({
     baseTextSize,
     foregroundColorRgb,
+    backgroundColorHsl,
     // textSizeIncrement,
     // fontFamily,
     // unit,
@@ -113,10 +116,12 @@ export function Shaper() {
           if (foregroundColorRgb === initialThemeState.foregroundColorRgb)
             setTheme({
               foregroundColorRgb: "255, 255, 255",
+              backgroundColorHsl: "0, 0%, 0%",
             })
           else
             setTheme({
               foregroundColorRgb: initialThemeState.foregroundColorRgb,
+              backgroundColorHsl: initialThemeState.backgroundColorHsl,
             })
         }}
       />
