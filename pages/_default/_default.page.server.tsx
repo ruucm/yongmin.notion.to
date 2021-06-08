@@ -27,9 +27,7 @@ async function render(pageContext: PageContext) {
       <PageLayout>
         <Loading />
         <AnimatePresence exitBeforeEnter initial={false}>
-          <div>
-            <Page {...pageProps} />
-          </div>
+          <Page {...pageProps} />
         </AnimatePresence>
       </PageLayout>
     </StyletronProvider>

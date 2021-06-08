@@ -37,9 +37,7 @@ const { hydrationPromise } = useClientRouter({
             }}
           />
           <AnimatePresence exitBeforeEnter initial={false}>
-            <div key={`${pageProps?.slug}-page`}>
-              <Page {...pageProps} />
-            </div>
+            <Page {...pageProps} key={`${pageProps?.slug}-page`} />
           </AnimatePresence>
         </PageLayout>
       </StyletronProvider>
