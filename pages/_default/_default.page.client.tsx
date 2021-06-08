@@ -8,6 +8,7 @@ import { Client as Styletron } from "styletron-engine-atomic"
 import { PageLayout } from "./PageLayout"
 import { Provider as StyletronProvider, DebugEngine } from "styletron-react"
 import { LoadingClass } from "./loading-class"
+import { AnimatePresence } from "framer-motion"
 
 async function hydrate(page) {
   import("./imports.js").then(async (m) => {
@@ -35,7 +36,11 @@ const { hydrationPromise } = useClientRouter({
               window.LoadingClass = LoadingClass
             }}
           />
-          <Page {...pageProps} />
+          <AnimatePresence exitBeforeEnter>
+            <div key={`${pageProps?.slug}-page`}>
+              <Page {...pageProps} />
+            </div>
+          </AnimatePresence>
         </PageLayout>
       </StyletronProvider>
     )

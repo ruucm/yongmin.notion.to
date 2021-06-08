@@ -25,7 +25,9 @@ async function render(pageContext: PageContext) {
     <StyletronProvider value={engine}>
       <PageLayout>
         <Loading />
-        <Page {...pageProps} />
+        <div>
+          <Page {...pageProps} />
+        </div>
       </PageLayout>
     </StyletronProvider>
   )

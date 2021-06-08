@@ -6,8 +6,9 @@ import { styled } from "styletron-react"
 import { breakPoint } from "../consts"
 import { Shaper } from "./shaper"
 import { Header } from "./header"
+import { motion } from "framer-motion"
 
-const Wrap = styled("div", {
+const Wrap = styled(motion.div, {
   maxWidth: "1080px",
   margin: "0 auto",
 })
@@ -24,7 +25,26 @@ export function Layout({ children, home = false }) {
   const { hasCopied, onCopy } = useClipboard(contactMail)
 
   return (
-    <Wrap>
+    <Wrap
+      initial={{ scale: 0.5 }}
+      animate={{
+        scale: 1,
+        transition: {
+          duration: 1,
+          delay: 1,
+        },
+      }}
+      exit={{
+        scale: 2,
+        y: 300,
+        transition: {
+          duration: 0.3,
+        },
+      }}
+      style={{
+        transformOrigin: "50% 0%",
+      }}
+    >
       <Header />
       <Grid>
         <main>{children}</main>
