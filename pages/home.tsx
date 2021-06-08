@@ -87,7 +87,7 @@ export function Page() {
             gap: "20px",
           }}
         >
-          {data.map((item, id) => (
+          {data.map((item: any, id) => (
             <AnimatePresence key={id}>
               {tagFilter(tags, item) && (
                 <Card
