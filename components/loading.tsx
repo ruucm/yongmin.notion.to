@@ -19,11 +19,11 @@ const Loading: React.FC<{ isRouteChanging?: boolean }> = ({
 
         .bar {
           background: blue;
-          height: 20px;
+          height: 8px;
           left: 0;
           margin-left: ${(-1 + progress) * 100}%;
           position: fixed;
-          bottom: 0;
+          top: 0;
           transition: margin-left ${animationDuration}ms linear;
           width: 100%;
           z-index: 1031;
