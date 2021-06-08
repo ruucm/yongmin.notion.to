@@ -34,7 +34,8 @@ export function Layout({ children, home = false }) {
             opacity: 1,
             scale: 1,
             transition: {
-              duration: 1,
+              duration: 0.7,
+              ease: "linear",
             },
           }}
           exit={{
@@ -43,10 +44,8 @@ export function Layout({ children, home = false }) {
             y: 300,
             transition: {
               duration: 0.3,
+              ease: "linear",
             },
-          }}
-          style={{
-            transformOrigin: "50% 0%",
           }}
         >
           {children}
