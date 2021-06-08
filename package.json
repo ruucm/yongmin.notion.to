@@ -7,7 +7,8 @@
     "generate": "npm run build && npm run build:prerender",
     "prod:serve": "serve dist/client/ --listen 5000",
     "server": "ts-node ./server",
-    "server:prod": "cross-env NODE_ENV=production ts-node ./server"
+    "server:prod": "cross-env NODE_ENV=production ts-node ./server",
+    "deploy": "vercel --prod"
   },
   "dependencies": {
     "@types/express": "^4.17.12",
