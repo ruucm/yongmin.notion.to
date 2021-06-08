@@ -29,15 +29,16 @@ export function Layout({ children, home = false }) {
       <Header />
       <Grid>
         <motion.main
-          initial={{ scale: 0.5 }}
+          initial={{ opacity: 0, scale: 0.5 }}
           animate={{
+            opacity: 1,
             scale: 1,
             transition: {
               duration: 1,
-              delay: 1,
             },
           }}
           exit={{
+            opacity: 0,
             scale: 2,
             y: 300,
             transition: {

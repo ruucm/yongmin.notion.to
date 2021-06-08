@@ -36,7 +36,7 @@ const { hydrationPromise } = useClientRouter({
               window.LoadingClass = LoadingClass
             }}
           />
-          <AnimatePresence exitBeforeEnter>
+          <AnimatePresence exitBeforeEnter initial={false}>
             <div key={`${pageProps?.slug}-page`}>
               <Page {...pageProps} />
             </div>

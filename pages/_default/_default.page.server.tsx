@@ -8,6 +8,7 @@ import { Provider as StyletronProvider } from "styletron-react"
 import { Server as Styletron } from "styletron-engine-atomic"
 import { defaultMeta } from "../../consts"
 import Loading from "../../components/loading"
+import { AnimatePresence } from "framer-motion"
 
 export { render }
 export { passToClient }
@@ -25,9 +26,11 @@ async function render(pageContext: PageContext) {
     <StyletronProvider value={engine}>
       <PageLayout>
         <Loading />
-        <div>
-          <Page {...pageProps} />
-        </div>
+        <AnimatePresence exitBeforeEnter initial={false}>
+          <div>
+            <Page {...pageProps} />
+          </div>
+        </AnimatePresence>
       </PageLayout>
     </StyletronProvider>
   )
