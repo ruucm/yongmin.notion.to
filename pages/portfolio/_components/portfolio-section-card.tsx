@@ -18,7 +18,6 @@ const GridWrap = styled(motion.div, ({ $zoomed }: any) => {
 })
 const Description = styled("div", {
   padding: "30px 15px",
-
   [`@media screen and (max-width: ${breakPoint}px)`]: {
     padding: "0px",
   },
