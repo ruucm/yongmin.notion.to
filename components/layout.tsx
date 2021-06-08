@@ -7,6 +7,10 @@ import { breakPoint } from "../consts"
 import { Shaper } from "./shaper"
 import { Header } from "./header"
 
+const Wrap = styled("div", {
+  maxWidth: "1080px",
+  margin: "0 auto",
+})
 const Grid = styled("div", {
   display: "grid",
   gridTemplateColumns: "3fr 1fr",
@@ -20,7 +24,7 @@ export function Layout({ children, home = false }) {
   const { hasCopied, onCopy } = useClipboard(contactMail)
 
   return (
-    <>
+    <Wrap>
       <Header />
       <Grid>
         <main>{children}</main>
@@ -82,6 +86,6 @@ export function Layout({ children, home = false }) {
           </div>
         </footer>
       </Grid>
-    </>
+    </Wrap>
   )
 }

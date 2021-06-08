@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { styled } from "styletron-react"
 import { breakPoint } from "../../../consts"
 
-const GridWrap = styled(motion.div, ({ $zoomed }: any) => {
+const Grid = styled(motion.div, ({ $zoomed }: any) => {
   return {
     display: "grid",
     gap: "30px",
@@ -18,6 +18,7 @@ const GridWrap = styled(motion.div, ({ $zoomed }: any) => {
 })
 const Description = styled("div", {
   padding: "30px 15px",
+  textAlign: "right",
   [`@media screen and (max-width: ${breakPoint}px)`]: {
     padding: "0px",
   },
@@ -37,7 +38,7 @@ export function PortfolioSectionCard({
   const [zoomed, setZoomed] = useState(false)
 
   return (
-    <GridWrap $zoomed={zoomed}>
+    <Grid $zoomed={zoomed}>
       <Image
         img={img}
         grayscale={grayscale}
@@ -65,7 +66,7 @@ export function PortfolioSectionCard({
           {description}
         </motion.p>
       </Description>
-    </GridWrap>
+    </Grid>
   )
 }
 
@@ -146,7 +147,7 @@ function getZoomStyles({ $zoomed }) {
     }
   } else {
     return {
-      gridTemplateColumns: "2fr 3fr",
+      gridTemplateColumns: "1fr 1fr",
     }
   }
 }
