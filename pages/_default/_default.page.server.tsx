@@ -7,6 +7,7 @@ import favicon from "../assets/favicons/favicon-32x32.png"
 import { Provider as StyletronProvider } from "styletron-react"
 import { Server as Styletron } from "styletron-engine-atomic"
 import { defaultMeta } from "../../consts"
+import Loading from "../../components/loading"
 
 export { render }
 export { passToClient }
@@ -23,6 +24,7 @@ async function render(pageContext: PageContext) {
   const readstream = ReactDOMServer.renderToNodeStream(
     <StyletronProvider value={engine}>
       <PageLayout>
+        <Loading />
         <Page {...pageProps} />
       </PageLayout>
     </StyletronProvider>

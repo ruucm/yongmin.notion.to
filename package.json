@@ -11,6 +11,7 @@
     "deploy": "vercel --prod"
   },
   "dependencies": {
+    "@tanem/react-nprogress": "^3.0.67",
     "@types/express": "^4.17.12",
     "@types/node": "^15.12.1",
     "@types/react": "^17.0.9",

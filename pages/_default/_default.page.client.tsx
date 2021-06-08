@@ -1,13 +1,10 @@
 import ReactDOM from "react-dom"
 import React from "react"
-import { getPage } from "vite-plugin-ssr/client"
-import { PageLayout } from "./PageLayout"
 import "./main.js"
-import { Provider as StyletronProvider, DebugEngine } from "styletron-react"
-import { Client as Styletron } from "styletron-engine-atomic"
 import { useClientRouter } from "vite-plugin-ssr/client/router"
 import { PageContext } from "./types"
 import { defaultMeta } from "../../consts"
+import { ClientPage } from "./client-page-class"
 
 async function hydrate(page) {
   import("./imports.js").then(async (m) => {
@@ -17,21 +14,13 @@ async function hydrate(page) {
 
 const { hydrationPromise } = useClientRouter({
   async render(pageContext: PageContext) {
-    const { Page, pageProps } = pageContext
-
-    // Hydrating Server-rendered Styles
-    const hydratedStyles: any = document.getElementsByClassName(
-      "_styletron_hydrate_"
-    )
-    const engine = new Styletron({
-      hydrate: hydratedStyles,
-    })
     const page = (
-      <StyletronProvider value={engine}>
-        <PageLayout>
-          <Page {...pageProps} />
-        </PageLayout>
-      </StyletronProvider>
+      <ClientPage
+        ref={(ClientPage) => {
+          window.ClientPage = ClientPage
+        }}
+        pageContext={pageContext}
+      />
     )
     const container = document.getElementById("page-view")
     // Render the page
@@ -59,11 +48,9 @@ hydrationPromise.then(() => {
 
 function onTransitionStart() {
   console.log("Page transition start")
-  // For example:
-  // document.body.classList.add("page-transition")
+  window.ClientPage.setState({ isRouteChanging: true })
 }
 function onTransitionEnd() {
   console.log("Page transition end")
-  // For example:
-  // document.body.classList.remove("page-transition")
+  window.ClientPage.setState({ isRouteChanging: false })
 }

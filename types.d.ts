@@ -7,3 +7,5 @@ declare module "*.png" {
   const imageUrl: string
   export default imageUrl
 }
+
+declare var ClientPage: any
