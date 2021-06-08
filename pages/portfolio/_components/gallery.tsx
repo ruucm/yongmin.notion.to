@@ -18,6 +18,11 @@ const Img = styled("img", {
   display: "block",
   border: "1px solid",
 })
+const StyledLazyLoadImage = styled(LazyLoadImage, {
+  width: "100%",
+  display: "block",
+  border: "1px solid",
+})
 
 export function Gallery({ images }) {
   return (
@@ -28,7 +33,7 @@ export function Gallery({ images }) {
         if (isGif) return <Img key={id} src={image} alt="portfolio-image" />
         else
           return (
-            <LazyLoadImage
+            <StyledLazyLoadImage
               key={id}
               imgUrl={`${image}.webp`}
               placeholderUrl={`${image}-sharp.webp`}

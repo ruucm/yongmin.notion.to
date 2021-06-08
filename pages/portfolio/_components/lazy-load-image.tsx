@@ -5,10 +5,10 @@ export function LazyLoadImage({
   imgUrl,
   placeholderUrl,
   fallbackUrl,
-  $as = "img",
+  as = "img",
   ...rest
 }: any) {
-  const Comp: any = $as
+  const Comp: any = as
   const { loading, imgSrc, onError } = useLazyImg(
     imgUrl,
     placeholderUrl,
@@ -16,16 +16,5 @@ export function LazyLoadImage({
     {},
     fallbackUrl
   )
-  return (
-    <Comp
-      src={imgSrc}
-      alt="portfolio-image"
-      style={{
-        width: "100%",
-        display: "block",
-        border: "1px solid",
-      }}
-      {...rest}
-    />
-  )
+  return <Comp src={imgSrc} alt="portfolio-image" {...rest} />
 }

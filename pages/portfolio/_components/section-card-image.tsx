@@ -15,8 +15,17 @@ const Wrap = styled("div", ({ $zoomed, $filter }: any) => {
     ...getCursurStyles({ $zoomed }),
   }
 })
-
 const GifImage = styled(motion.img, {
+  position: "absolute",
+  top: "0",
+  left: "0",
+  right: "0",
+  bottom: "0",
+  width: "100%",
+  height: "100%",
+  border: "1px solid",
+})
+const StyledLazyLoadImage = styled(LazyLoadImage, {
   position: "absolute",
   top: "0",
   left: "0",
@@ -53,24 +62,14 @@ export function SectionCardImage({ img, grayscale, zoomed, setZoomed }) {
         />
       )}
       {!isGif && (
-        <LazyLoadImage
-          $as={motion.img}
+        <StyledLazyLoadImage
           imgUrl={`${img}.webp`}
           placeholderUrl={`${img}-sharp.webp`}
           fallbackUrl={`${img}-sharp.webp`}
           onClick={() => setZoomed(!zoomed)}
+          as={motion.img}
           layout
           transition={defaultTransition}
-          style={{
-            position: "absolute",
-            top: "0",
-            left: "0",
-            right: "0",
-            bottom: "0",
-            width: "100%",
-            height: "100%",
-            border: "1px solid",
-          }}
         />
       )}
     </Wrap>
