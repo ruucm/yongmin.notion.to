@@ -1,17 +1,18 @@
 import React from "react"
 import { cardDatas } from "../../../consts"
+import { styled } from "styletron-react"
+
+const Wrap = styled("div", {
+  border: "1px solid",
+  display: "inline-block",
+  padding: "30px 15px",
+})
 
 export function Summary({ slug = "lighthouse-design-system" }) {
   const data = findValueByKey(cardDatas, "slug", slug)
 
   return (
-    <div
-      style={{
-        border: "1px solid",
-        display: "inline-block",
-        padding: "30px 15px",
-      }}
-    >
+    <Wrap>
       <h3
         style={{
           color: "blue",
@@ -40,7 +41,7 @@ export function Summary({ slug = "lighthouse-design-system" }) {
       >
         {data.description}
       </p>
-    </div>
+    </Wrap>
   )
 }
 

@@ -1,7 +1,12 @@
 import React from "react"
 import { motion } from "framer-motion"
-// @ts-ignore
-// import { Button } from "https://framerusercontent.com/modules/9yCP42jHRUKb7D1zVIaf/D19x3J7yt8o0t0SYRaJY/Button.js"
+import { styled } from "styletron-react"
+
+const Wrap = styled(motion.div, {
+  position: "relative",
+  padding: "30px 15px",
+  border: "1px solid",
+})
 
 const wrap = {
   active: {
@@ -35,17 +40,12 @@ export function Card({ title, duration, description, outlink, slug, tags }) {
           }
         }
       >
-        <motion.div
+        <Wrap
           initial={wrap.inActive}
           animate={wrap.active}
           exit={wrap.inActive}
           transition={{
             duration: 0.36,
-          }}
-          style={{
-            position: "relative",
-            padding: "30px 15px",
-            border: "1px solid",
           }}
         >
           <h4
@@ -81,7 +81,7 @@ export function Card({ title, duration, description, outlink, slug, tags }) {
               </span>
             ))}
           </em>
-        </motion.div>
+        </Wrap>
       </motion.div>
     </a>
   )
