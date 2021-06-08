@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"
 import React from "react"
 // import logo from "./logo.svg"
 import "./PageLayout.css"
@@ -9,7 +10,21 @@ type Children = React.ReactNode
 function PageLayout({ children }: { children: Children }) {
   return (
     <React.StrictMode>
-      {children}
+      <motion.div
+        initial={{ scale: 0.5 }}
+        animate={{
+          scale: 1,
+          transition: {
+            duration: 1,
+            delay: 1,
+          },
+        }}
+        style={{
+          transformOrigin: "50% 0%",
+        }}
+      >
+        {children}
+      </motion.div>
       {/* <Layout>
         <Sidebar>
           <Logo />
