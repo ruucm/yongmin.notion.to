@@ -1,13 +1,12 @@
 import React from "react"
 import { useHover } from "../hooks/use-hover"
-import { Link } from "./Link"
 
 export function Header() {
   const [hoverRef, isHover]: any = useHover()
 
   return (
     <header>
-      <Link href="/">
+      <a href="/">
         <h2
           style={{
             // background: home ? "green" : "hsl(120 0% 65% / 1)",
@@ -31,7 +30,7 @@ export function Header() {
             I'm yongmin ruucm.
           </span>
         </h2>
-      </Link>
+      </a>
     </header>
   )
 }
