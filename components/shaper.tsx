@@ -1,24 +1,9 @@
 import React, { useLayoutEffect, useEffect, useRef, useState } from "react"
 import { darkModeStyles, getVariables } from "./variables"
 import { styled } from "styletron-react"
-
-const initialState = {
-  fontFamily: "system-ui, sans-serif",
-  textSizeIncrement: "1.47",
-  baseTextSize: 16,
-  foregroundColorRgb: "0, 0, 0",
-  textFrameRatio: "2.37",
-  textFrameY: "0.8",
-  spaceIncrement: "1.65",
-  unit: "0.5",
-  accentHue: "254",
-  accentSaturation: "31",
-  accentLightness: "50",
-  greySaturation: "5",
-  radius: "0.4",
-  fieldBorderWidth: "2",
-  buttonRound: false,
-}
+import { useStore } from "../hooks/use-store"
+import shallow from "zustand/shallow"
+import { initialThemeState } from "../consts"
 
 const Control = styled("div", ({ $active }: any) => {
   return {
@@ -43,9 +28,13 @@ const styles = {
 }
 
 export function Shaper() {
-  const [baseTextSize, setBaseTextSize] = useState(initialState.baseTextSize)
-  const [foregroundColorRgb, setForegroundColorRgb] = useState(
-    initialState.foregroundColorRgb
+  const { baseTextSize, foregroundColorRgb, setTheme } = useStore(
+    (state: any) => ({
+      baseTextSize: state.baseTextSize,
+      foregroundColorRgb: state.foregroundColorRgb,
+      setTheme: state.setTheme,
+    }),
+    shallow
   )
 
   const variables = getVariables({
@@ -91,7 +80,11 @@ export function Shaper() {
           height: "3rem",
         }}
         $active={baseTextSize === 24}
-        onClick={() => setBaseTextSize(24)}
+        onClick={() =>
+          setTheme({
+            baseTextSize: 24,
+          })
+        }
       >
         Aa
       </Control>
@@ -103,7 +96,11 @@ export function Shaper() {
           height: "2rem",
         }}
         $active={baseTextSize === 16}
-        onClick={() => setBaseTextSize(16)}
+        onClick={() =>
+          setTheme({
+            baseTextSize: 16,
+          })
+        }
       >
         Aa
       </Control>
@@ -113,9 +110,14 @@ export function Shaper() {
           height: "1.6rem",
         }}
         onClick={() => {
-          if (foregroundColorRgb === initialState.foregroundColorRgb)
-            setForegroundColorRgb("255, 255, 255")
-          else setForegroundColorRgb(initialState.foregroundColorRgb)
+          if (foregroundColorRgb === initialThemeState.foregroundColorRgb)
+            setTheme({
+              foregroundColorRgb: "255, 255, 255",
+            })
+          else
+            setTheme({
+              foregroundColorRgb: initialThemeState.foregroundColorRgb,
+            })
         }}
       />
     </div>

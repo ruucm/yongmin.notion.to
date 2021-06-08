@@ -11,6 +11,23 @@ export const defaultMeta = {
   description:
     "A journey of programming to solving creative people's problems.",
 }
+export const initialThemeState = {
+  fontFamily: "system-ui, sans-serif",
+  textSizeIncrement: "1.47",
+  baseTextSize: 16,
+  foregroundColorRgb: "0, 0, 0",
+  textFrameRatio: "2.37",
+  textFrameY: "0.8",
+  spaceIncrement: "1.65",
+  unit: "0.5",
+  accentHue: "254",
+  accentSaturation: "31",
+  accentLightness: "50",
+  greySaturation: "5",
+  radius: "0.4",
+  fieldBorderWidth: "2",
+  buttonRound: false,
+}
 
 /**
  * Data
