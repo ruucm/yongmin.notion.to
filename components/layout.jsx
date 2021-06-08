@@ -42,21 +42,23 @@ export function Layout({ children, home = false }) {
         style={{
           display: "grid",
           gridTemplateColumns: "3fr 1fr",
+          alignItems: "flex-start",
         }}
       >
         <main>{children}</main>
         <footer
           style={{
-            WebkitWritingMode: "vertical-rl",
-            MsWritingMode: "tb-rl",
-            writingMode: "vertical-rl",
+            display: "flex",
+            transform: "rotate(90deg) translateX(100%)",
+            transformOrigin: "100% 0%",
+            background: "skyblue",
+            position: "sticky",
+            top: "10vh",
           }}
         >
           <div
             style={{
-              position: "sticky",
-              top: "10vh",
-              display: "inline-block",
+              alignSelf: "stretch",
             }}
           >
             <DesktopOnly>
@@ -94,6 +96,25 @@ export function Layout({ children, home = false }) {
             >
               /about
             </a>
+          </div>
+          <div
+            style={{
+              width: 200,
+              height: 200,
+              border: "1px solid",
+            }}
+          >
+            <h4>Typography</h4>
+            <p>Text increment</p>
+            <input
+              type="range"
+              id="cowbell"
+              name="cowbell"
+              min="0"
+              max="100"
+              // value="90"
+              step="30"
+            />
           </div>
         </footer>
       </div>
