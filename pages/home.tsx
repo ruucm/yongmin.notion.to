@@ -4,6 +4,28 @@ import { Card, Layout } from "../components"
 import { cardDatas } from "../consts"
 import { AnimateSharedLayout, AnimatePresence } from "framer-motion"
 import { removeA } from "../utils/removeA"
+import { styled } from "styletron-react"
+
+const Tag = styled("em", ({ $active }: any) => {
+  return {
+    position: "relative",
+    textDecoration: "none",
+    cursor: "pointer",
+    marginLeft: "10px",
+    "::before": {
+      content: "''",
+      position: "absolute",
+      width: "100%",
+      height: "1px",
+      bottom: 0,
+      left: 0,
+      backgroundColor: "blue",
+      visibility: $active ? "visible" : "hidden",
+      transform: $active ? "scaleX(1)" : "scaleX(0)",
+      transition: "all 0.3s ease-in-out 0s",
+    },
+  }
+})
 
 export function Page() {
   const [data, setData] = useState(cardDatas)
@@ -20,12 +42,8 @@ export function Page() {
             marginBottom: 7,
           }}
         >
-          <em
-            className={`tags ${tags.includes("develop") && "active"}`}
-            style={{
-              cursor: "pointer",
-              marginLeft: 10,
-            }}
+          <Tag
+            $active={tags.includes("develop")}
             onClick={() =>
               setTags(
                 tags.includes("develop")
@@ -35,13 +53,9 @@ export function Page() {
             }
           >
             Develop
-          </em>
-          <em
-            className={`tags ${tags.includes("design") && "active"}`}
-            style={{
-              cursor: "pointer",
-              marginLeft: 10,
-            }}
+          </Tag>
+          <Tag
+            $active={tags.includes("design")}
             onClick={() =>
               setTags(
                 tags.includes("design")
@@ -51,13 +65,9 @@ export function Page() {
             }
           >
             Design
-          </em>
-          <em
-            className={`tags ${tags.includes("marketing") && "active"}`}
-            style={{
-              cursor: "pointer",
-              marginLeft: 10,
-            }}
+          </Tag>
+          <Tag
+            $active={tags.includes("marketing")}
             onClick={() =>
               setTags(
                 tags.includes("marketing")
@@ -67,7 +77,7 @@ export function Page() {
             }
           >
             Marketing
-          </em>
+          </Tag>
         </div>
 
         <div

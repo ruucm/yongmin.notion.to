@@ -2,6 +2,7 @@
 
 export const getVariables = ({
   baseTextSize,
+  foregroundColorRgb,
   // textSizeIncrement,
   // fontFamily,
   // unit,
@@ -25,7 +26,10 @@ export const getVariables = ({
   // }
 
   return {
-    type: `--baseTextSize: ${baseTextSize}px;`,
+    type: `
+      --baseTextSize: ${baseTextSize}px;
+      --foreground-color-rgb: ${foregroundColorRgb};
+    `,
   }
 }
 

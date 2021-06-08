@@ -6,6 +6,7 @@ const initialState = {
   fontFamily: "system-ui, sans-serif",
   textSizeIncrement: "1.47",
   baseTextSize: 16,
+  foregroundColorRgb: "0, 0, 0",
   textFrameRatio: "2.37",
   textFrameY: "0.8",
   spaceIncrement: "1.65",
@@ -43,9 +44,13 @@ const styles = {
 
 export function Shaper() {
   const [baseTextSize, setBaseTextSize] = useState(initialState.baseTextSize)
+  const [foregroundColorRgb, setForegroundColorRgb] = useState(
+    initialState.foregroundColorRgb
+  )
 
   const variables = getVariables({
     baseTextSize,
+    foregroundColorRgb,
     // textSizeIncrement,
     // fontFamily,
     // unit,
@@ -106,6 +111,9 @@ export function Shaper() {
         style={{
           width: "1.6rem",
           height: "1.6rem",
+        }}
+        onClick={() => {
+          setForegroundColorRgb("255, 255, 255")
         }}
       />
     </div>

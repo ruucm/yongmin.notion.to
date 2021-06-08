@@ -26,14 +26,7 @@ export function Summary({ slug = "lighthouse-design-system" }) {
         Links -{" "}
         {data.links.map((link, id) => (
           <span key={id}>
-            <a
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                color: "black",
-              }}
-            >
+            <a href={link.href} target="_blank" rel="noopener noreferrer">
               {link.text}
             </a>
             {id < data.links.length - 1 && ` / `}

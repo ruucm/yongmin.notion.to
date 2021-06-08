@@ -22,7 +22,6 @@ export function Card({ title, duration, description, outlink, slug, tags }) {
       {...linkProps}
       style={{
         textDecoration: "none",
-        color: "black",
       }}
     >
       <motion.div
