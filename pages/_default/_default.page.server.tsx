@@ -13,19 +13,20 @@ export { passToClient }
 // See https://github.com/brillout/vite-plugin-ssr#data-fetching
 const passToClient = ["pageProps"]
 
-function render(pageContext: PageContext) {
+async function render(pageContext: PageContext) {
   const { Page, pageProps } = pageContext
 
   // 1. Create a server engine instance
   const engine = new Styletron()
 
-  const pageHtml = ReactDOMServer.renderToString(
+  const pageHtml = ReactDOMServer.renderToStaticNodeStream(
     <StyletronProvider value={engine}>
       <PageLayout>
         <Page {...pageProps} />
       </PageLayout>
     </StyletronProvider>
   )
+  const str2: any = await streamToString(pageHtml)
 
   // 3. Extract critical styles after SSR
   const styles = engine.getStylesheetsHtml()
@@ -48,7 +49,16 @@ function render(pageContext: PageContext) {
         ${html.dangerouslySkipEscape(styles)}
       </head>
       <body>
-        <div id="page-view">${html.dangerouslySkipEscape(pageHtml)}</div>
+        <div id="page-view">${html.dangerouslySkipEscape(str2)}</div>
       </body>
     </html>`
+}
+
+function streamToString(stream) {
+  const chunks: any = []
+  return new Promise((resolve, reject) => {
+    stream.on("data", (chunk) => chunks.push(Buffer.from(chunk)))
+    stream.on("error", (err) => reject(err))
+    stream.on("end", () => resolve(Buffer.concat(chunks).toString("utf8")))
+  })
 }
