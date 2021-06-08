@@ -29,19 +29,21 @@ export function Layout({ children, home = false }) {
       <Header />
       <Grid>
         <motion.main
-          initial={{ opacity: 0, scale: 0.5 }}
+          initial={{
+            opacity: 0,
+            y: "5vh",
+          }}
           animate={{
             opacity: 1,
-            scale: 1,
+            y: 0,
             transition: {
-              duration: 0.7,
+              duration: 0.3,
               ease: "linear",
             },
           }}
           exit={{
             opacity: 0,
-            scale: 2,
-            y: 300,
+            y: "10vh",
             transition: {
               duration: 0.3,
               ease: "linear",
