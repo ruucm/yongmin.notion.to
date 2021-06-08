@@ -1,6 +1,7 @@
 import React from "react"
 import { styled } from "styletron-react"
 import { breakPoint } from "../../../consts"
+import { LazyLoadImage } from "./lazy-load-image"
 
 const GridWrap = styled("div", {
   display: "grid",
@@ -34,21 +35,12 @@ export function Gallery({ images }) {
           )
         else
           return (
-            <picture key={id}>
-              <source srcSet={`${image}.webp`} type="image/webp" />
-              <source srcSet={`${image}.png`} type="image/png" />
-              <source srcSet={`${image}.jpg`} type="image/jpg" />
-              <source srcSet={`${image}.jpeg`} type="image/jpeg" />
-              <img
-                src={`${image}.png`}
-                alt="portfolio-image"
-                style={{
-                  width: "100%",
-                  display: "block",
-                  border: "1px solid",
-                }}
-              />
-            </picture>
+            <LazyLoadImage
+              key={id}
+              imgUrl={`${image}.webp`}
+              placeholderUrl={`${image}-sharp.webp`}
+              fallbackUrl={`${image}-sharp.webp`}
+            />
           )
       })}
     </GridWrap>
