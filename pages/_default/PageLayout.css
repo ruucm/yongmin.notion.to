@@ -43,7 +43,7 @@ body {
 
 :root {
   font-family: var(--sansFont), -system-ui, system-ui, sans-serif;
-  font-size: var(--fontSize);
+  font-size: var(--baseTextSize);
   line-height: var(--line-height);
   color: var(--foreground-color);
   /* letter-spacing: -0.01em; */

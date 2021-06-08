@@ -54,54 +54,60 @@ export function Layout({ children, home = false }) {
         <main>{children}</main>
         <footer
           style={{
-            display: "flex",
             transform: "rotate(90deg) translateX(100%)",
             transformOrigin: "100% 0%",
-            // background: "skyblue",
             position: "sticky",
             top: "10vh",
           }}
         >
-          <div>
-            <DesktopOnly>
+          <div
+            style={{
+              // background: "pink",
+              position: "absolute",
+              display: "flex",
+            }}
+          >
+            <div>
+              <DesktopOnly>
+                <a
+                  onClick={onCopy}
+                  style={{
+                    color: "blue",
+                    cursor: "pointer",
+                    display: "inline-block",
+                    marginLeft: "4px",
+                  }}
+                >
+                  {hasCopied ? "copied" : contactMail}
+                </a>
+                <br />
+              </DesktopOnly>
               <a
-                onClick={onCopy}
+                href="http://twitter.com/ruucm"
+                target="_blank"
                 style={{
-                  color: "blue",
-                  cursor: "pointer",
+                  textDecoration: "none",
                   display: "inline-block",
                   marginLeft: "4px",
                 }}
+                rel="noopener noreferrer"
               >
-                {hasCopied ? "copied" : contactMail}
+                @ruucm
               </a>
               <br />
+              <a
+                href="/about"
+                style={{
+                  textDecoration: "none",
+                }}
+              >
+                /about
+              </a>
+            </div>
+            <DesktopOnly>
+              <Shaper />
             </DesktopOnly>
-            <a
-              href="http://twitter.com/ruucm"
-              target="_blank"
-              style={{
-                textDecoration: "none",
-                display: "inline-block",
-                marginLeft: "4px",
-              }}
-              rel="noopener noreferrer"
-            >
-              @ruucm
-            </a>
-            <br />
-            <a
-              href="/about"
-              style={{
-                textDecoration: "none",
-              }}
-            >
-              /about
-            </a>
           </div>
-          <DesktopOnly>
-            <Shaper />
-          </DesktopOnly>
         </footer>
       </Grid>
     </>

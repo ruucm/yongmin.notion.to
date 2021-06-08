@@ -5,9 +5,9 @@
   --sansFont: "Arial";
   --titleFont: "InterDisplay";
   --monoFont: "IBM Plex Mono";
-  --fontSize: 16px;
-  --unit: calc(var(--fontSize) * 0.5);
-  --line-height: calc(var(--fontSize) * 1.55);
+  --baseTextSize: 16px;
+  --unit: calc(var(--baseTextSize) * 0.5);
+  --line-height: calc(var(--baseTextSize) * 1.55);
   --baseline: var(--unit);
   --body-padding-x: calc(var(--unit) * 8);
   --body-padding-y: calc(var(--unit) * 8);
