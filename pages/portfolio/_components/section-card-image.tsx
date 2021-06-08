@@ -9,7 +9,7 @@ const Wrap = styled("div", ({ $zoomed, $filter }: any) => {
   return {
     position: "relative",
     width: "100%",
-    height: "0",
+    height: "0px",
     paddingTop: "66.66%",
     filter: $filter,
     ...getCursurStyles({ $zoomed }),

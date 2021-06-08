@@ -33,6 +33,9 @@ export function Page() {
     "https://framerusercontent.com/modules/5EaLh0KVaiYgE67ROHLy/2kSwOAlvLpDNdFUntSDL/JgWSPuRfa.js"
   )
   console.log("Module3", Module3)
+  const StyledModule = styled(Module3, {
+    cursor: "pointer",
+  })
 
   return (
     <Layout>
@@ -53,11 +56,7 @@ export function Page() {
           </P>
 
           <ProfileWrap>
-            <Module3
-              style={{
-                cursor: "pointer",
-              }}
-            />
+            <StyledModule />
           </ProfileWrap>
         </ParagraphWithImage>
 

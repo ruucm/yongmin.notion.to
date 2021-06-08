@@ -5,15 +5,40 @@ import { useStore } from "../hooks/use-store"
 import shallow from "zustand/shallow"
 import { initialThemeState } from "../consts"
 
-const Control = styled("div", ({ $active }: any) => {
+const baseControlStyles = {
+  border: "1px solid",
+  borderRadius: "1000px",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+}
+
+const Control1 = styled("div", ({ $active }: any) => {
   return {
-    border: "1px solid",
-    borderRadius: "1000px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    cursor: $active ? "crosshair" : "pointer",
-    color: $active ? "blue" : "var(--foreground-color)",
+    ...baseControlStyles,
+    ...getActiveStyles({ $active }),
+    fontSize: "24px",
+    width: "3rem",
+    height: "3rem",
+  }
+})
+
+const Control2 = styled("div", ({ $active }: any) => {
+  return {
+    ...baseControlStyles,
+    ...getActiveStyles({ $active }),
+    fontSize: "16px",
+    width: "2rem",
+    height: "2rem",
+  }
+})
+
+const Control3 = styled("div", ({ $active }: any) => {
+  return {
+    ...baseControlStyles,
+    ...getActiveStyles({ $active }),
+    width: "1.6rem",
+    height: "1.6rem",
   }
 })
 
@@ -76,12 +101,7 @@ export function Shaper() {
   }, [variables])
   return (
     <div style={styles.controlWrap}>
-      <Control
-        style={{
-          fontSize: "24px",
-          width: "3rem",
-          height: "3rem",
-        }}
+      <Control1
         $active={baseTextSize === 24}
         onClick={() =>
           setTheme({
@@ -90,14 +110,9 @@ export function Shaper() {
         }
       >
         Aa
-      </Control>
+      </Control1>
 
-      <Control
-        style={{
-          fontSize: "16px",
-          width: "2rem",
-          height: "2rem",
-        }}
+      <Control2
         $active={baseTextSize === 16}
         onClick={() =>
           setTheme({
@@ -106,12 +121,8 @@ export function Shaper() {
         }
       >
         Aa
-      </Control>
-      <Control
-        style={{
-          width: "1.6rem",
-          height: "1.6rem",
-        }}
+      </Control2>
+      <Control3
         onClick={() => {
           if (foregroundColorRgb === initialThemeState.foregroundColorRgb)
             setTheme({
@@ -130,3 +141,17 @@ export function Shaper() {
 }
 
 Shaper.defaultProps = {}
+
+function getActiveStyles({ $active }) {
+  if ($active) {
+    return {
+      cursor: "crosshair",
+      color: "blue",
+    }
+  } else {
+    return {
+      cursor: "pointer",
+      color: "var(--foreground-color)",
+    }
+  }
+}
