@@ -3,7 +3,6 @@ import { PageLayout } from "./PageLayout"
 import "./main.js"
 import { Provider as StyletronProvider, DebugEngine } from "styletron-react"
 import { Client as Styletron } from "styletron-engine-atomic"
-import { NProgress } from "@tanem/react-nprogress"
 import Loading from "../../components/loading"
 import { PageContext } from "./types"
 
@@ -13,6 +12,7 @@ interface IProps {
 
 interface IState {
   isRouteChanging?: boolean
+  loadingKey?: number
 }
 
 export class ClientPage extends React.Component<IProps, IState> {
@@ -20,6 +20,7 @@ export class ClientPage extends React.Component<IProps, IState> {
     super(props)
     this.state = {
       isRouteChanging: false,
+      loadingKey: 0,
     }
   }
 
@@ -37,7 +38,10 @@ export class ClientPage extends React.Component<IProps, IState> {
     return (
       <StyletronProvider value={engine}>
         <PageLayout>
-          <Loading isRouteChanging={this.state.isRouteChanging} />
+          <Loading
+            isRouteChanging={this.state.isRouteChanging}
+            key={this.state.loadingKey}
+          />
           <Page {...pageProps} />
         </PageLayout>
       </StyletronProvider>

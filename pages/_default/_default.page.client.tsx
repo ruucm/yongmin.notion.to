@@ -48,7 +48,10 @@ hydrationPromise.then(() => {
 
 function onTransitionStart() {
   console.log("Page transition start")
-  window.ClientPage.setState({ isRouteChanging: true })
+  window.ClientPage.setState({
+    isRouteChanging: true,
+    loadingKey: window.ClientPage.state.loadingKey + 1,
+  })
 }
 function onTransitionEnd() {
   console.log("Page transition end")
