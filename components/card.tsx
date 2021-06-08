@@ -34,11 +34,6 @@ export function Card({ title, duration, description, outlink, slug, tags }) {
         transition={{
           duration: 0.36,
         }}
-        style={
-          {
-            // background: "hsla(0, 0%, 100%, 0.4)",
-          }
-        }
       >
         <Wrap
           initial={wrap.inActive}
@@ -63,7 +58,6 @@ export function Card({ title, duration, description, outlink, slug, tags }) {
               color: "blue",
             }}
           >
-            {/* <Button text="More" /> */}
             {slug && "More"}
             {outlink && "More (outlink)"}
           </div>
