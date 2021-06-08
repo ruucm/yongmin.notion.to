@@ -37,7 +37,9 @@
   );
   --background-color-hsl: 0, 0%, 76%;
   --background-color: hsl(var(--background-color-hsl));
-  --letterbox-color: #333;
+  /* --primaryA: hsl(240, 100%, 50%); */
+  --primaryB: #00aaaa;
+  /* --letterbox-color: #333;
   --box-link-hover-color: rgba(var(--foreground-color-rgb), 0.07);
   --accent-color: var(--blue);
   --accent-color-darkmode: #9ac9fe;
@@ -57,7 +59,7 @@
   --blue: #0366d6;
   --sunset-pink: #ff7b81;
   --light-pink: #ffb3ba;
-  --xlight-pink: #ffd1d9;
+  --xlight-pink: #ffd1d9; */
 }
 :root {
   --debugGrey05: hsla(0, 0%, 47.1%, 0.05);

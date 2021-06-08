@@ -18,7 +18,7 @@ const Loading: React.FC<{ isRouteChanging?: boolean }> = ({
         }
 
         .bar {
-          background: #00AAAA;
+          background: var(--primaryB);
           height: 8px;
           left: 0;
           margin-left: ${(-1 + progress) * 100}%;
