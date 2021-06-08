@@ -78,50 +78,36 @@ export function Shaper() {
     `
   }, [variables])
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "flex-start",
-      }}
-    >
-      <div style={styles.controlWrap}>
-        <Control
-          style={{
-            fontSize: 24,
-            width: 50,
-            height: 50,
-          }}
-          $active={baseTextSize === 24}
-          onClick={() => setBaseTextSize(24)}
-        >
-          Aa
-        </Control>
-
-        <Control
-          style={{
-            fontSize: 16,
-            width: 40,
-            height: 40,
-          }}
-          $active={baseTextSize === 16}
-          onClick={() => setBaseTextSize(16)}
-        >
-          Aa
-        </Control>
-      </div>
-      <div
+    <div style={styles.controlWrap}>
+      <Control
         style={{
-          ...styles.controlWrap,
-          marginLeft: "1rem",
+          fontSize: 24,
+          width: "3rem",
+          height: "3rem",
         }}
+        $active={baseTextSize === 24}
+        onClick={() => setBaseTextSize(24)}
       >
-        <Control
-          style={{
-            width: 30,
-            height: 30,
-          }}
-        />
-      </div>
+        Aa
+      </Control>
+
+      <Control
+        style={{
+          fontSize: 16,
+          width: "2rem",
+          height: "2rem",
+        }}
+        $active={baseTextSize === 16}
+        onClick={() => setBaseTextSize(16)}
+      >
+        Aa
+      </Control>
+      <Control
+        style={{
+          width: "1.6rem",
+          height: "1.6rem",
+        }}
+      />
     </div>
   )
 }
