@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom"
 import React from "react"
-import "./main.js"
+import "./debug.js"
 import { useClientRouter } from "vite-plugin-ssr/client/router"
 import { PageContext } from "./types"
 import { defaultMeta } from "../../consts"
