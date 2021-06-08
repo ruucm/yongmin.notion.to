@@ -68,33 +68,35 @@ export function PortfolioSectionCard({
   )
 }
 
+const Wrap = styled("div", ({ $zoomed, $filter }: any) => {
+  return {
+    position: "relative",
+    width: "100%",
+    height: "0",
+    paddingTop: "66.66%",
+    filter: $filter,
+    ...getCursurStyles({ $zoomed }),
+  }
+})
+
+const GifImage = styled(motion.img, {
+  position: "absolute",
+  top: "0",
+  left: "0",
+  right: "0",
+  bottom: "0",
+  width: "100%",
+  height: "100%",
+  border: "1px solid",
+})
+
 const Image = ({ img, grayscale, zoomed, setZoomed }) => {
   let filter = ""
   if (grayscale) filter += "grayscale(1) brightness(0.5)"
   const isGif = img.includes("gif")
 
-  const Wrap = styled("div", {
-    position: "relative",
-    width: "100%",
-    height: "0",
-    paddingTop: "66.66%",
-    cursor: zoomed ? "zoom-out" : "zoom-in",
-    filter,
-  })
-
-  const GifImage = styled(motion.img, {
-    position: "absolute",
-    top: "0",
-    left: "0",
-    right: "0",
-    bottom: "0",
-    width: "100%",
-    height: "100%",
-    border: "1px solid",
-  })
-
   return (
-    <Wrap>
+    <Wrap $zoomed={zoomed} $filter={filter}>
       <motion.div
         animate={{ opacity: zoomed ? 1 : 0 }}
         className="shade"
@@ -142,6 +144,18 @@ function getZoomStyles({ $zoomed }) {
   } else {
     return {
       gridTemplateColumns: "1fr 1fr",
+    }
+  }
+}
+
+function getCursurStyles({ $zoomed }) {
+  if ($zoomed) {
+    return {
+      cursor: "zoom-out",
+    }
+  } else {
+    return {
+      cursor: "zoom-in",
     }
   }
 }
