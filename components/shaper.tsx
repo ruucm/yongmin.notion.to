@@ -42,15 +42,13 @@ const Control3 = styled("div", ({ $active }: any) => {
   }
 })
 
-const styles = {
-  controlWrap: {
-    border: "1px solid",
-    marginLeft: "3rem",
-    padding: "1rem",
-    display: "flex",
-    alignItems: "center",
-  },
-}
+const Controls = styled("div", {
+  border: "1px solid",
+  marginLeft: "3rem",
+  padding: "1rem",
+  display: "flex",
+  alignItems: "center",
+})
 
 export function Shaper() {
   const { baseTextSize, foregroundColorRgb, backgroundColorHsl, setTheme } =
@@ -100,7 +98,7 @@ export function Shaper() {
     `
   }, [variables])
   return (
-    <div style={styles.controlWrap}>
+    <Controls>
       <Control1
         $active={baseTextSize === 24}
         onClick={() =>
@@ -136,7 +134,7 @@ export function Shaper() {
             })
         }}
       />
-    </div>
+    </Controls>
   )
 }
 
