@@ -6,7 +6,10 @@ export function LazyLoadImage({
   placeholderUrl,
   fallbackUrl,
   as = "img",
-  ...rest
+  className,
+  onClick,
+  layout,
+  transition,
 }: any) {
   const Comp: any = as
   const { loading, imgSrc, onError } = useLazyImg(
@@ -16,5 +19,14 @@ export function LazyLoadImage({
     {},
     fallbackUrl
   )
-  return <Comp src={imgSrc} alt="portfolio-image" {...rest} />
+  return (
+    <Comp
+      src={imgSrc}
+      alt="portfolio-image"
+      className={className}
+      onClick={onClick}
+      layout={layout}
+      transition={transition}
+    />
+  )
 }
