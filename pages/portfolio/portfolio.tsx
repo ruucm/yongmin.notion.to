@@ -44,8 +44,14 @@ export function Page() {
 
   return (
     <Layout home>
-      <h3>Design Engineer</h3>
-      <p>A journey of programming to solving creative people's problems.</p>
+      <h3>
+        Design teams who want to close gap between their designs and real
+        products.
+      </h3>
+      <p>
+        I made several projects and experiments, to sovle how design team works
+        in the mindset of productivity and seamless communications.
+      </p>
       <AnimateSharedLayout>
         <Tags>
           <Tag

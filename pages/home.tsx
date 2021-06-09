@@ -46,64 +46,72 @@ export function Page() {
     <Layout home>
       <h3>Design Engineer</h3>
       <p>A journey of programming to solving creative people's problems.</p>
-      <AnimateSharedLayout>
-        <Tags>
-          <Tag
-            $active={tags.includes("develop")}
-            onClick={() =>
-              setTags(
-                tags.includes("develop")
-                  ? removeA(tags, "develop")
-                  : [...tags, "develop"]
-              )
-            }
-          >
-            Develop
-          </Tag>
-          <Tag
-            $active={tags.includes("design")}
-            onClick={() =>
-              setTags(
-                tags.includes("design")
-                  ? removeA(tags, "design")
-                  : [...tags, "design"]
-              )
-            }
-          >
-            Design
-          </Tag>
-          <Tag
-            $active={tags.includes("marketing")}
-            onClick={() =>
-              setTags(
-                tags.includes("marketing")
-                  ? removeA(tags, "marketing")
-                  : [...tags, "marketing"]
-              )
-            }
-          >
-            Marketing
-          </Tag>
-        </Tags>
 
-        <Grid>
-          {data.map((item: any, id) => (
-            <AnimatePresence key={id} initial={false}>
-              {tagFilter(tags, item) && (
-                <Card
-                  title={item.title}
-                  duration={item.duration}
-                  description={item.description}
-                  outlink={item.outlink}
-                  slug={item.slug}
-                  // link={item.key && `/portfolio/${item.key}`}
-                  tags={item.tags}
-                />
-              )}
-            </AnimatePresence>
-          ))}
-        </Grid>
-      </AnimateSharedLayout>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+        }}
+      >
+        <a
+          style={{
+            width: 300,
+            height: 300,
+            border: "1px solid",
+            borderRadius: 1000,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            textAlign: "center",
+          }}
+          href="/portfolio"
+        >
+          Design teams who want to close gap between their designs and real
+          products.
+        </a>
+        <div
+          style={{
+            width: 300,
+            height: 300,
+            border: "1px solid",
+            borderRadius: 1000,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            textAlign: "center",
+          }}
+        >
+          Designers who want to learn codes.
+        </div>
+        <div
+          style={{
+            width: 300,
+            height: 300,
+            border: "1px solid",
+            borderRadius: 1000,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            textAlign: "center",
+          }}
+        >
+          UI designers
+        </div>
+        <div
+          style={{
+            width: 300,
+            height: 300,
+            border: "1px solid",
+            borderRadius: 1000,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            textAlign: "center",
+          }}
+        >
+          Content writers, who wants to integrate his writing experiences.
+        </div>
+      </div>
     </Layout>
   )
 }
