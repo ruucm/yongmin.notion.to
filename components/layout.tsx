@@ -51,23 +51,22 @@ export function Layout({ children, home = false }) {
         <motion.main
           initial={{
             opacity: 0,
-            y: "5vh",
+            scale: 1.01,
           }}
           animate={{
             opacity: 1,
-            y: 0,
-            transition: {
-              duration: 0.3,
-              ease: "linear",
-            },
+            scale: 1,
           }}
           exit={{
             opacity: 0,
-            y: "10vh",
-            transition: {
-              duration: 0.3,
-              ease: "linear",
-            },
+            scale: 0.99,
+          }}
+          transition={{
+            duration: 0.28,
+            // ease: "linear",
+          }}
+          style={{
+            transformOrigin: "50% 0%",
           }}
         >
           {children}
