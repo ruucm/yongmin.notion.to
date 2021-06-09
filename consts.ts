@@ -35,6 +35,8 @@ export const placeholderImages = import.meta.globEager(
   "/pages/assets/placeholders/*.png"
 )
 
+export const imageBasePath = "/images"
+
 /**
  * Data
  */

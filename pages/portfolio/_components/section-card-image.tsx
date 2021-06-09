@@ -2,7 +2,7 @@ import React from "react"
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { styled } from "styletron-react"
-import { breakPoint, placeholderImages } from "../../../consts"
+import { breakPoint, imageBasePath, placeholderImages } from "../../../consts"
 import { LazyLoadImage } from "./lazy-load-image"
 import { Responsive } from "../../../utils/styled-components"
 
@@ -55,7 +55,7 @@ export function SectionCardImage({ imageName, grayscale, zoomed, setZoomed }) {
       {isGif && (
         <Responsive>
           <GifImage
-            src={`/public/images/${imageName}`}
+            src={`${imageBasePath}/${imageName}`}
             alt=""
             onClick={() => setZoomed(!zoomed)}
             layout

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import React from "react"
 import { styled } from "styletron-react"
+import { imageBasePath } from "../../../consts"
 import { Responsive } from "../../../utils/styled-components"
 
 const Image = styled(motion.img, {
@@ -32,13 +33,19 @@ export function LazyLoadImage({
         transition={transition}
       />
       <picture>
-        <source srcSet={`/public/images/${imageName}.webp`} type="image/webp" />
-        <source srcSet={`/public/images/${imageName}.png`} type="image/png" />
-        <source srcSet={`/public/images/${imageName}.jpg`} type="image/jpg" />
-        <source srcSet={`/public/images/${imageName}.jpeg`} type="image/jpeg" />
+        <source
+          srcSet={`${imageBasePath}/${imageName}.webp`}
+          type="image/webp"
+        />
+        <source srcSet={`${imageBasePath}/${imageName}.png`} type="image/png" />
+        <source srcSet={`${imageBasePath}/${imageName}.jpg`} type="image/jpg" />
+        <source
+          srcSet={`${imageBasePath}/${imageName}.jpeg`}
+          type="image/jpeg"
+        />
 
         <Image
-          src={`/public/images/${imageName}.png`}
+          src={`${imageBasePath}/${imageName}.png`}
           alt="portfolio-image"
           className={className}
           onClick={onClick}
