@@ -5,14 +5,14 @@ import { styled } from "styletron-react"
 import { breakPoint } from "../../../consts"
 import { LazyLoadImage } from "./lazy-load-image"
 
-const Wrap = styled("div", ({ $zoomed, $filter }: any) => {
+const Wrap2 = styled("div", ({ $zoomed, $filter }: any) => {
   return {
     position: "relative",
     width: "100%",
     height: "0px",
     paddingTop: "66.66%",
-    filter: $filter,
-    ...getCursurStyles({ $zoomed }),
+    // filter: $filter,
+    // ...getCursurStyles({ $zoomed }),
   }
 })
 const GifImage = styled(motion.img, {
@@ -46,7 +46,7 @@ export function SectionCardImage({ img, grayscale, zoomed, setZoomed }) {
   const isGif = img.includes("gif")
 
   return (
-    <Wrap $zoomed={zoomed} $filter={filter}>
+    <Wrap2 $zoomed={zoomed} $filter={filter}>
       <motion.div
         animate={{ opacity: zoomed ? 1 : 0 }}
         onClick={() => setZoomed(false)}
@@ -71,7 +71,7 @@ export function SectionCardImage({ img, grayscale, zoomed, setZoomed }) {
           transition={defaultTransition}
         />
       )}
-    </Wrap>
+    </Wrap2>
   )
 }
 

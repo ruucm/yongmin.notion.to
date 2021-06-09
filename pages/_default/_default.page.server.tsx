@@ -9,6 +9,7 @@ import { Server as Styletron } from "styletron-engine-atomic"
 import { defaultMeta } from "../../consts"
 import Loading from "../../components/loading"
 import { AnimatePresence } from "framer-motion"
+import { ServerStyleSheet } from "styled-components"
 
 export { render }
 export { passToClient }
@@ -19,10 +20,11 @@ const passToClient = ["pageProps", "documentProps"]
 async function render(pageContext: PageContext) {
   const { Page, pageProps } = pageContext
 
+  const sheet = new ServerStyleSheet()
+
   // 1. Create a server engine instance
   const engine = new Styletron()
-
-  const readstream = ReactDOMServer.renderToNodeStream(
+  const App = (
     <StyletronProvider value={engine}>
       <PageLayout>
         <Loading />
@@ -32,10 +34,14 @@ async function render(pageContext: PageContext) {
       </PageLayout>
     </StyletronProvider>
   )
-  const pageHtml: any = await streamToString(readstream)
+
+  const pageHtml = ReactDOMServer.renderToString(sheet.collectStyles(App))
+  const styleTags = sheet.getStyleTags() // or sheet.getStyleElement();
+  console.log("styleTags", styleTags)
+  // const pageHtml: any = await streamToString(readstream)
 
   // 3. Extract critical styles after SSR
-  const styles = engine.getStylesheetsHtml()
+  // const styles = engine.getStylesheetsHtml()
 
   // See https://github.com/brillout/vite-plugin-ssr#html-head
   const { documentProps } = pageContext
@@ -50,7 +56,7 @@ async function render(pageContext: PageContext) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="${desc}" />
         <title>${title}</title>
-        ${html.dangerouslySkipEscape(styles)}
+        ${html.dangerouslySkipEscape(styleTags)}
       </head>
       <body>
         <div id="page-view">${html.dangerouslySkipEscape(pageHtml)}</div>

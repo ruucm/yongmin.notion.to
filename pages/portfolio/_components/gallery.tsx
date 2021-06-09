@@ -2,6 +2,7 @@ import React from "react"
 import { styled } from "styletron-react"
 import { breakPoint } from "../../../consts"
 import { LazyLoadImage } from "./lazy-load-image"
+import { LazyLoadImage2 } from "./lazy-load-image-2"
 
 const GridWrap = styled("div", {
   display: "grid",
@@ -18,11 +19,13 @@ const Img = styled("img", {
   display: "block",
   border: "1px solid",
 })
-const StyledLazyLoadImage = styled(LazyLoadImage, {
-  width: "100%",
-  display: "block",
-  border: "1px solid",
-})
+// const StyledLazyLoadImage = styled(LazyLoadImage, {
+//   width: "100%",
+//   display: "block",
+//   border: "1px solid",
+//   background: "green",
+//   height: "initial",
+// })
 
 export function Gallery({ images }) {
   return (
@@ -33,7 +36,7 @@ export function Gallery({ images }) {
         if (isGif) return <Img key={id} src={image} alt="portfolio-image" />
         else
           return (
-            <StyledLazyLoadImage
+            <LazyLoadImage2
               key={id}
               imgUrl={`${image}.webp`}
               placeholderUrl={`${image}-sharp.webp`}
