@@ -1,5 +1,6 @@
 import React from "react"
 import useLazyImg from "../../../hooks/use-lazy-image"
+import dummy from "../../assets/dummy.png"
 
 export function LazyLoadImage({
   imgUrl,
@@ -12,9 +13,10 @@ export function LazyLoadImage({
   transition,
 }: any) {
   const Comp: any = as
+
   const { loading, imgSrc, onError } = useLazyImg(
     imgUrl,
-    placeholderUrl,
+    dummy,
     null,
     {},
     fallbackUrl

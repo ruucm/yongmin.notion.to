@@ -31,7 +31,9 @@ export function Gallery({ images }) {
         const isGif = image.includes("gif")
 
         if (isGif) return <Img key={id} src={image} alt="portfolio-image" />
-        else
+        else {
+          // const dummy = await (await import("../../assets/dummy.png")).default
+          // console.log("dummy", dummy)
           return (
             <StyledLazyLoadImage
               key={id}
@@ -40,6 +42,7 @@ export function Gallery({ images }) {
               fallbackUrl={`${image}-sharp.webp`}
             />
           )
+        }
       })}
     </GridWrap>
   )
