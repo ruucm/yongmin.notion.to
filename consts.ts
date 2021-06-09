@@ -121,6 +121,20 @@ export const cardDatas = [
     ],
   },
   {
+    title: "Notion CMS",
+    description: `Developed whole system (React + Python + Github CI)`,
+    duration: "Oct 2020 ~ Dec 2020",
+    slug: "notion-cms",
+    tags: ["writers"],
+    role: "Developer",
+    links: [
+      {
+        text: "SLEI Magazine",
+        href: "http://smile.seoul.kr/magazine",
+      },
+    ],
+  },
+  {
     title: "Framer Korea",
     description: `Lead Developer (React) / Program Manager`,
     duration: "2018 ~ ",
@@ -143,7 +157,7 @@ export const cardDatas = [
     description: `Developed whole website (React + Python + Github CI)`,
     duration: "Oct 2020 ~ Dec 2020",
     slug: "seli",
-    tags: ["writers"],
+    tags: [],
     role: "Developer",
     links: [
       {
