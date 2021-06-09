@@ -49,7 +49,6 @@ export function SectionCardImage({ img, grayscale, zoomed, setZoomed }) {
     <Wrap $zoomed={zoomed} $filter={filter}>
       <motion.div
         animate={{ opacity: zoomed ? 1 : 0 }}
-        className="shade"
         onClick={() => setZoomed(false)}
       />
       {isGif && (
