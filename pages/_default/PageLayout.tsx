@@ -16,7 +16,7 @@ function PageLayout({ children }: { children: Children }) {
       <Wrap
         initial={{ scale: 0.5 }}
         animate={{
-          scale: 1,
+          scale: 0.99, // prevent transform: none; (fix safari position error)
           transition: {
             duration: 1,
             delay: 1,
