@@ -24,8 +24,8 @@ async function render(pageContext: PageContext) {
 
   const readstream = ReactDOMServer.renderToNodeStream(
     <StyletronProvider value={engine}>
+      <Loading />
       <PageLayout>
-        <Loading />
         <AnimatePresence exitBeforeEnter initial={false}>
           <Page {...pageProps} />
         </AnimatePresence>

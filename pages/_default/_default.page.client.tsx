@@ -30,12 +30,12 @@ const { hydrationPromise } = useClientRouter({
 
     const page = (
       <StyletronProvider value={engine}>
+        <LoadingClass
+          ref={(LoadingClass) => {
+            window.LoadingClass = LoadingClass
+          }}
+        />
         <PageLayout>
-          <LoadingClass
-            ref={(LoadingClass) => {
-              window.LoadingClass = LoadingClass
-            }}
-          />
           <AnimatePresence exitBeforeEnter initial={false}>
             <Page {...pageProps} key={`${pageProps?.slug}-page`} />
           </AnimatePresence>
