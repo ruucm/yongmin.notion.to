@@ -46,7 +46,7 @@ const allTags = [...availableTags] // Make a new array. it stays as same value, 
 
 export function Page() {
   const params: any = getUrlParams()
-  const [tags, setTags] = useState(params?.tags.split(",") || availableTags)
+  const [tags, setTags] = useState(params?.tags?.split(",") || availableTags)
 
   return (
     <Layout home>
