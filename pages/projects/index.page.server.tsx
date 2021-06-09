@@ -1,9 +1,7 @@
 export { addPageContext }
 
 type PageContext = {
-  pageProps: {
-    search: { tags?: string }
-  }
+  pageProps: {}
   documentProps: {
     title: string
     description: string
@@ -11,12 +9,8 @@ type PageContext = {
 }
 
 async function addPageContext(pageContext): Promise<PageContext> {
-  const { urlParsed } = pageContext
-
   return {
-    pageProps: {
-      search: urlParsed.search,
-    },
+    pageProps: {},
     documentProps: {
       title: "Projects",
       description:

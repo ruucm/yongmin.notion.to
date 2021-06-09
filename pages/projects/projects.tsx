@@ -5,6 +5,7 @@ import { availableTags, cardDatas } from "../../consts"
 import { AnimateSharedLayout, AnimatePresence } from "framer-motion"
 import { removeA } from "../../utils/removeA"
 import { styled } from "styletron-react"
+import { getUrlParams } from "../../utils"
 
 const Grid = styled("div", {
   display: "grid",
@@ -43,8 +44,9 @@ const Tag = styled("em", ({ $active }: any): any => {
 
 const allTags = [...availableTags] // Make a new array. it stays as same value, after updatin states.
 
-export function Page({ search }) {
-  const [tags, setTags] = useState(search?.tags.split(",") || availableTags)
+export function Page() {
+  const params: any = getUrlParams()
+  const [tags, setTags] = useState(params?.tags.split(",") || availableTags)
 
   return (
     <Layout home>

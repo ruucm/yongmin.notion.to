@@ -6,3 +6,11 @@ export function findValueByKey(arr, key, match) {
 }
 
 export const isBrowser = typeof window !== "undefined"
+
+export function getUrlParams() {
+  if (isBrowser) {
+    const urlSearchParams: any = new URLSearchParams(window.location.search)
+    const params = Object.fromEntries(urlSearchParams.entries())
+    return params
+  }
+}
