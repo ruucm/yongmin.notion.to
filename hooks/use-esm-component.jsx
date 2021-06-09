@@ -1,5 +1,5 @@
 import React from "react"
-import { useEffect, useState, useLayoutEffect } from "react"
+import { useEffect, useState } from "react"
 
 export function EmptyComp() {
   return <></>

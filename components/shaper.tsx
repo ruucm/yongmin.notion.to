@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef } from "react"
 import { darkModeStyles, getVariables } from "./variables"
 import { styled } from "styletron-react"
 import { useStore } from "../hooks/use-store"
