@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react"
 import { Plane, useCurtains } from "react-curtains"
 import { Vec2 } from "curtainsjs"
 import { vertexShader, fragmentShader } from "./shaders"
+import fish from "./fish-illustration-1-rotated.png"
 
 // import "./index.css"
 
@@ -149,11 +150,7 @@ function SimplePlane() {
       onRender={onRender}
       onAfterResize={onAfterResize}
     >
-      <img
-        src="/pages/assets/fish-illustration-1-rotated.png"
-        data-sampler="simplePlaneTexture"
-        alt=""
-      />
+      <img src={fish} data-sampler="simplePlaneTexture" alt="" />
     </Plane>
   )
 }
