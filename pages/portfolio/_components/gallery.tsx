@@ -27,18 +27,19 @@ const StyledLazyLoadImage = styled(LazyLoadImage, {
 export function Gallery({ images }) {
   return (
     <GridWrap>
-      {images.map((image, id) => {
-        const isGif = image.includes("gif")
+      {images.map((imageName, id) => {
+        const isGif = imageName.includes("gif")
 
-        if (isGif) return <Img key={id} src={image} alt="portfolio-image" />
+        if (isGif) return <Img key={id} src={imageName} alt="portfolio-image" />
         else {
           const placeholderImage =
-            placeholderImages[`/pages/assets/placeholders/${image}.png`].default
+            placeholderImages[`/pages/assets/placeholders/${imageName}.png`]
+              .default
           return (
             <StyledLazyLoadImage
               key={id}
-              imgUrl={`${image}.webp`}
               placeholderImage={placeholderImage}
+              imageName={imageName}
             />
           )
         }

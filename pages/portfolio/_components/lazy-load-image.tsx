@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { styled } from "styletron-react"
 
 const FixedSize = styled("div", ({ $zoomed, $filter }: any) => {
@@ -11,8 +11,8 @@ const FixedSize = styled("div", ({ $zoomed, $filter }: any) => {
 })
 
 export function LazyLoadImage({
-  imgUrl,
   placeholderImage,
+  imageName,
   as = "img",
   className,
   onClick,
@@ -39,14 +39,21 @@ export function LazyLoadImage({
         layout={layout}
         transition={transition}
       />
-      <ImageComp
-        src={imgUrl}
-        alt="portfolio-image"
-        className={className}
-        onClick={onClick}
-        layout={layout}
-        transition={transition}
-      />
+      <picture>
+        <source srcSet={`/public/images/${imageName}.webp`} type="image/webp" />
+        <source srcSet={`/public/images/${imageName}.png`} type="image/png" />
+        <source srcSet={`/public/images/${imageName}.jpg`} type="image/jpg" />
+        <source srcSet={`/public/images/${imageName}.jpeg`} type="image/jpeg" />
+
+        <ImageComp
+          src={`/public/images/${imageName}.png`}
+          alt="portfolio-image"
+          className={className}
+          onClick={onClick}
+          layout={layout}
+          transition={transition}
+        />
+      </picture>
     </FixedSize>
   )
 }
