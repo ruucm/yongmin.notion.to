@@ -11,6 +11,8 @@ export function PostLayout({ children }) {
           display: "block",
           textAlign: "right",
           fontSize: "1.5rem",
+          marginTop: "2rem",
+          marginBottom: "2.5rem",
         }}
       >
         ← Back
