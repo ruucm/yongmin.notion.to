@@ -1,6 +1,4 @@
-import React from "react"
-import useLazyImg from "../../../hooks/use-lazy-image"
-import dummy from "../../assets/dummy.png"
+import React, { useEffect, useState } from "react"
 import { styled } from "styletron-react"
 
 const FixedSize = styled("div", ({ $zoomed, $filter }: any) => {
@@ -32,27 +30,21 @@ export function LazyLoadImage({
     height: "100%",
   })
 
-  const { loading, imgSrc, onError } = useLazyImg(
-    imgUrl,
-    placeholderUrl,
-    null,
-    {},
-    fallbackUrl
-  )
+  // @ts-ignore
+  const images = import.meta.globEager("/public/images/*.webp")
 
   return (
     <FixedSize>
       <ImageComp
-        src={dummy}
+        src={images[`/public${placeholderUrl}`].default}
         alt="portfolio-image"
         className={className}
         onClick={onClick}
         layout={layout}
         transition={transition}
-        style={{}}
       />
       <ImageComp
-        src={imgSrc}
+        src={imgUrl}
         alt="portfolio-image"
         className={className}
         onClick={onClick}
