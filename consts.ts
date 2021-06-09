@@ -41,13 +41,19 @@ export const placeholderImages = import.meta.globEager(
 /**
  * Data
  */
+export const availableTags = [
+  "design-teams",
+  "techy-designers",
+  "prototypers",
+  "writers",
+]
 export const cardDatas = [
   {
     title: "Lighthouse Design System",
     description: `Open-sourced Design System solution to re-invent designing and developing workflows.`,
     duration: "2020 ~ ",
     slug: "lighthouse-design-system",
-    tags: ["design", "develop"],
+    tags: ["design-teams"],
     role: "Developer / System Designer",
     links: [
       {
@@ -61,7 +67,7 @@ export const cardDatas = [
     description: `As the founder of Harbor School, I learned how software impacts people and society and markets.`,
     duration: "2018 ~ ",
     slug: "harbor-school",
-    tags: ["develop", "marketing"],
+    tags: ["techy-designers", "prototypers"],
     role: "Founder / Developer / Instructor",
     links: [
       {
@@ -75,11 +81,51 @@ export const cardDatas = [
     ],
   },
   {
+    title: "Framer Packages",
+    description: ``,
+    duration: "2018 ~ 2021",
+    slug: "framer-packages",
+    tags: ["prototypers"],
+    role: "Developer / Designer",
+    links: [
+      {
+        text: "Enhanced Lottie",
+        href: "https://packages.framer.com/package/ruucm-h/enhanced-lottie",
+      },
+      {
+        text: "Number Count",
+        href: "https://packages.framer.com/package/ruucm-h/number-count",
+      },
+      {
+        text: "Confetti +",
+        href: "https://packages.framer.com/package/ruucm-h/confetti",
+      },
+      {
+        text: "Saturation Gradients",
+        href: "https://packages.framer.com/package/ruucm-h/mesh-gradients",
+      },
+    ],
+  },
+  {
+    title: "Framer Code Generators",
+    description: ``,
+    duration: "2019",
+    slug: "framer-code-generators",
+    tags: ["techy-designers"],
+    role: "Developer",
+    links: [
+      {
+        text: "Framer Code Generators",
+        href: "https://marketplace.visualstudio.com/items?itemName=ruucm.framerx-code-generators",
+      },
+    ],
+  },
+  {
     title: "Framer Korea",
     description: `Lead Developer (React) / Program Manager`,
     duration: "2018 ~ ",
     slug: "framer-korea",
-    tags: ["develop", "design"],
+    tags: [],
     role: "Developer / Motion Designer",
     links: [
       {
@@ -97,7 +143,7 @@ export const cardDatas = [
     description: `Developed whole website (React + Python + Github CI)`,
     duration: "Oct 2020 ~ Dec 2020",
     slug: "seli",
-    tags: ["develop"],
+    tags: ["writers"],
     role: "Developer",
     links: [
       {
@@ -111,7 +157,7 @@ export const cardDatas = [
     description: `Developed whole website (React + Framer)`,
     duration: "Mar 2019 - May 2019",
     slug: "pulsen",
-    tags: ["develop"],
+    tags: [],
     role: "Developer",
     links: [
       {
@@ -125,7 +171,7 @@ export const cardDatas = [
     description: `Developed whole website (Wordpress + PHP + React).`,
     duration: "Oct 2018 - Nov 2018",
     slug: "cnyttan",
-    tags: ["develop"],
+    tags: [],
     role: "Developer",
     links: [
       {
@@ -146,7 +192,7 @@ export const cardDatas = [
     duration: "2014 ~ 2016",
     // outlink: "https://www.instagram.com/vincent.project/",
     slug: "vincent-project",
-    tags: ["design", "develop"],
+    tags: [],
     role: "Developer / Program Manager",
     links: [
       {

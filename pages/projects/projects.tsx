@@ -1,7 +1,7 @@
 import React from "react"
 import { useState } from "react"
 import { Card, Layout } from "../../components"
-import { cardDatas } from "../../consts"
+import { availableTags, cardDatas } from "../../consts"
 import { AnimateSharedLayout, AnimatePresence } from "framer-motion"
 import { removeA } from "../../utils/removeA"
 import { styled } from "styletron-react"
@@ -41,9 +41,11 @@ const Tag = styled("em", ({ $active }: any): any => {
   }
 })
 
+const allTags = [...availableTags] // Make a new array. it stays as same value, after updatin states.
+
 export function Page() {
   const [data, setData] = useState(cardDatas)
-  const [tags, setTags] = useState(["develop", "design", "marketing"])
+  const [tags, setTags] = useState(availableTags)
 
   return (
     <Layout home>
@@ -57,42 +59,19 @@ export function Page() {
       </p>
       <AnimateSharedLayout>
         <Tags>
-          <Tag
-            $active={tags.includes("develop")}
-            onClick={() =>
-              setTags(
-                tags.includes("develop")
-                  ? removeA(tags, "develop")
-                  : [...tags, "develop"]
-              )
-            }
-          >
-            Develop
-          </Tag>
-          <Tag
-            $active={tags.includes("design")}
-            onClick={() =>
-              setTags(
-                tags.includes("design")
-                  ? removeA(tags, "design")
-                  : [...tags, "design"]
-              )
-            }
-          >
-            Design
-          </Tag>
-          <Tag
-            $active={tags.includes("marketing")}
-            onClick={() =>
-              setTags(
-                tags.includes("marketing")
-                  ? removeA(tags, "marketing")
-                  : [...tags, "marketing"]
-              )
-            }
-          >
-            Marketing
-          </Tag>
+          {allTags.map((tag, id) => (
+            <Tag
+              key={id}
+              $active={tags.includes(tag)}
+              onClick={() =>
+                setTags(
+                  tags.includes(tag) ? removeA(tags, tag) : [...tags, tag]
+                )
+              }
+            >
+              {tag}
+            </Tag>
+          ))}
         </Tags>
 
         <Grid>
