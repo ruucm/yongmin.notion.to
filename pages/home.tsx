@@ -1,10 +1,17 @@
 import React from "react"
-import { useState } from "react"
-import { Card, Layout } from "../components"
-import { cardDatas } from "../consts"
-import { AnimateSharedLayout, AnimatePresence } from "framer-motion"
-import { removeA } from "../utils/removeA"
+import { Layout } from "../components"
 import { styled } from "styletron-react"
+
+const Circle = styled("a", {
+  width: "300px",
+  height: "300px",
+  border: "1px solid",
+  borderRadius: "1000px",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  textAlign: "center",
+})
 
 export function Page() {
   return (
@@ -18,63 +25,10 @@ export function Page() {
           flexWrap: "wrap",
         }}
       >
-        <a
-          style={{
-            width: 300,
-            height: 300,
-            border: "1px solid",
-            borderRadius: 1000,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            textAlign: "center",
-          }}
-          href="/projects"
-        >
-          Design Teams
-        </a>
-        <div
-          style={{
-            width: 300,
-            height: 300,
-            border: "1px solid",
-            borderRadius: 1000,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            textAlign: "center",
-          }}
-        >
-          Techy Designers
-        </div>
-        <div
-          style={{
-            width: 300,
-            height: 300,
-            border: "1px solid",
-            borderRadius: 1000,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            textAlign: "center",
-          }}
-        >
-          Prototypers
-        </div>
-        <div
-          style={{
-            width: 300,
-            height: 300,
-            border: "1px solid",
-            borderRadius: 1000,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            textAlign: "center",
-          }}
-        >
-          Writers
-        </div>
+        <Circle href="/projects?tags=design-teams">Design Teams</Circle>
+        <Circle href="/projects?tags=techy-designers">Techy Designers</Circle>
+        <Circle href="/projects?tags=prototypers">Prototypers</Circle>
+        <Circle href="/projects?tags=writers">Writers</Circle>
       </div>
     </Layout>
   )
