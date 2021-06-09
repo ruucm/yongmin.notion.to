@@ -1,24 +1,24 @@
 import React from "react"
 import { motion } from "framer-motion"
-import { styled } from "styletron-react"
+import styled from "styled-components"
 
-const Wrap = styled(motion.div, {
-  position: "relative",
-  padding: "30px 15px",
-  border: "1px solid",
-})
-const H4 = styled("h4", {
-  marginTop: "0px",
-  textTransform: "lowercase",
-})
-const More = styled("div", {
-  color: "blue",
-})
-const Tags = styled("em", {
-  position: "absolute",
-  right: "15px",
-  bottom: "8px",
-})
+const Wrap = styled.div`
+  position: relative;
+  padding: 30px 15px;
+  border: 1px solid;
+`
+const H4 = styled.h4`
+  margin-top: 0px;
+  text-transform: lowercase;
+`
+const More = styled.div`
+  color: blue;
+`
+const Tags = styled.em`
+  position: absolute;
+  right: 15px;
+  bottom: 8px;
+`
 
 const wrap = {
   active: {

@@ -1,20 +1,19 @@
 import React from "react"
 import { useHover } from "../hooks/use-hover"
-import { styled } from "styletron-react"
+import styled from "styled-components"
 
-const H2 = styled("h2", {
-  // background: home ? "green" : "hsl(120 0% 65% / 1)",
-  display: "inline-block",
-  padding: 5,
-  cursor: "pointer",
-  lineHeight: "2rem",
-  color: "blue",
-  marginTop: "2rem",
-  marginBottom: "2.5rem",
-})
-const UnderLine = styled("span", {
-  textDecoration: "underline",
-})
+const H2 = styled.h2`
+  display: inline-block;
+  padding: 5px;
+  cursor: pointer;
+  line-height: 2rem;
+  color: blue;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+`
+const UnderLine = styled.span`
+  text-decoration: underline;
+`
 
 export function Header() {
   const [hoverRef, isHover]: any = useHover()

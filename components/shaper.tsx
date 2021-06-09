@@ -1,54 +1,79 @@
 import React, { useLayoutEffect, useEffect, useRef, useState } from "react"
 import { darkModeStyles, getVariables } from "./variables"
-import { styled } from "styletron-react"
 import { useStore } from "../hooks/use-store"
 import shallow from "zustand/shallow"
 import { initialThemeState } from "../consts"
+import styled from "styled-components"
 
-const baseControlStyles = {
-  border: "1px solid",
-  borderRadius: "1000px",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-}
+const BaseControl = styled.div`
+  border: 1px solid;
+  border-radius: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 
-const Control1 = styled("div", ({ $active }: any) => {
-  return {
-    ...baseControlStyles,
-    ...getActiveStyles({ $active }),
-    fontSize: "24px",
-    width: "3rem",
-    height: "3rem",
-  }
-})
+const Control1 = styled(BaseControl)`
+  font-size: 24px;
+  width: 3rem;
+  height: 3rem;
+`
 
-const Control2 = styled("div", ({ $active }: any) => {
-  return {
-    ...baseControlStyles,
-    ...getActiveStyles({ $active }),
-    fontSize: "16px",
-    width: "2rem",
-    height: "2rem",
-  }
-})
+const Control2 = styled(BaseControl)`
+  font-size: 16px;
+  width: 2rem;
+  height: 2rem;
+`
 
-const Control3 = styled("div", ({ $active }: any) => {
-  return {
-    ...baseControlStyles,
-    ...getActiveStyles({ $active }),
-    width: "1.6rem",
-    height: "1.6rem",
-  }
-})
+const Control3 = styled(BaseControl)`
+  width: 1.6rem;
+  height: 1.6rem;
+`
 
-const Controls = styled("div", {
-  border: "1px solid",
-  marginLeft: "3rem",
-  padding: "1rem",
-  display: "flex",
-  alignItems: "center",
-})
+const Controls = styled.div`
+  border: 1px solid;
+  margin-left: 3rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+`
+
+// const Control1 = styled("div", ({ $active }: any) => {
+//   return {
+//     ...baseControlStyles,
+//     ...getActiveStyles({ $active }),
+//     fontSize: "24px",
+//     width: "3rem",
+//     height: "3rem",
+//   }
+// })
+
+// const Control2 = styled("div", ({ $active }: any) => {
+//   return {
+//     ...baseControlStyles,
+//     ...getActiveStyles({ $active }),
+//     fontSize: "16px",
+//     width: "2rem",
+//     height: "2rem",
+//   }
+// })
+
+// const Control3 = styled("div", ({ $active }: any) => {
+//   return {
+//     ...baseControlStyles,
+//     ...getActiveStyles({ $active }),
+//     width: "1.6rem",
+//     height: "1.6rem",
+//   }
+// })
+
+// const Controls = styled("div", {
+//   border: "1px solid",
+//   marginLeft: "3rem",
+//   padding: "1rem",
+//   display: "flex",
+//   alignItems: "center",
+// })
 
 export function Shaper() {
   const { baseTextSize, foregroundColorRgb, backgroundColorHsl, setTheme } =

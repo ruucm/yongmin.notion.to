@@ -5,16 +5,15 @@ import { AnimateSharedLayout } from "framer-motion"
 import { Summary } from "../_components/summary"
 import { Gallery } from "../_components/gallery"
 import { SubTitle } from "../_components/sub-title"
-import { styled } from "styletron-react"
+import styled from "styled-components"
 
-const Spacing = styled("div", {
-  height: "100px",
-})
-
-const Grid = styled("div", {
-  display: "grid",
-  gap: "30px",
-})
+const Spacing = styled.div`
+  height: 100px;
+`
+const Grid = styled.div`
+  display: grid;
+  gap: 30px;
+`
 
 export function Page({ slug }) {
   return (

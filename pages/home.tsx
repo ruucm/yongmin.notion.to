@@ -4,13 +4,13 @@ import { Card, Layout } from "../components"
 import { cardDatas } from "../consts"
 import { AnimateSharedLayout, AnimatePresence } from "framer-motion"
 import { removeA } from "../utils/removeA"
-import { styled } from "styletron-react"
+import styled from "styled-components"
 
-const Grid = styled("div", {
-  display: "grid",
-  gridTemplateColumns: "1fr",
-  gap: "20px",
-})
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+`
 
 const Tag = styled("em", ({ $active }: any) => {
   return {
@@ -33,10 +33,10 @@ const Tag = styled("em", ({ $active }: any) => {
   }
 })
 
-const Tags = styled("div", {
-  textAlign: "right",
-  marginBottom: "7px",
-})
+const Tags = styled.div`
+  text-align: right;
+  margin-bottom: 7px;
+`
 
 export function Page() {
   const [data, setData] = useState(cardDatas)
