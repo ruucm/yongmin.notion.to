@@ -61,6 +61,7 @@ export function Layout({ children, home = false }) {
             transition: {
               duration: 0.72,
               ease: "linear",
+              delay: 0.36,
             },
           }}
           exit={{
