@@ -83,18 +83,20 @@ export function Layout({ children, home = false }) {
           <Nav>
             <div>
               <DesktopOnly>
-                <Email onClick={onCopy}>
+                {/* <Email onClick={onCopy}>
                   {hasCopied ? "copied" : contactMail}
                 </Email>
+                <br /> */}
+                <Twitter
+                  href="http://twitter.com/ruucm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  @ruucm
+                </Twitter>
                 <br />
               </DesktopOnly>
-              <Twitter
-                href="http://twitter.com/ruucm"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                @ruucm
-              </Twitter>
+              <a href="/projects">/projects</a>
               <br />
               <a href="/about">/about</a>
             </div>
