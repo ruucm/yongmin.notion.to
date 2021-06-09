@@ -1,6 +1,11 @@
 import React from "react"
 import { styled } from "styletron-react"
-import { breakPoint, imageBasePath, placeholderImages } from "../../../consts"
+import {
+  breakPoint,
+  imageBasePath,
+  placeholderBasePath,
+  placeholderImages,
+} from "../../../consts"
 import { LazyLoadImage } from "./lazy-load-image"
 
 const GridWrap = styled("div", {
@@ -40,8 +45,7 @@ export function Gallery({ images }) {
           )
         else {
           const placeholderImage =
-            placeholderImages[`/pages/assets/placeholders/${imageName}.png`]
-              .default
+            placeholderImages[`${placeholderBasePath}/${imageName}.png`].default
           return (
             <StyledLazyLoadImage
               key={id}

@@ -2,7 +2,12 @@ import React from "react"
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { styled } from "styletron-react"
-import { breakPoint, imageBasePath, placeholderImages } from "../../../consts"
+import {
+  breakPoint,
+  imageBasePath,
+  placeholderBasePath,
+  placeholderImages,
+} from "../../../consts"
 import { LazyLoadImage } from "./lazy-load-image"
 import { Responsive } from "../../../utils/styled-components"
 
@@ -66,8 +71,7 @@ export function SectionCardImage({ imageName, grayscale, zoomed, setZoomed }) {
       {!isGif && (
         <StyledLazyLoadImage
           placeholderImage={
-            placeholderImages[`/pages/assets/placeholders/${imageName}.png`]
-              .default
+            placeholderImages[`${placeholderBasePath}/${imageName}.png`].default
           }
           imageName={imageName}
           // motion props

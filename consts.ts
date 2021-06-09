@@ -30,12 +30,13 @@ export const initialThemeState = {
   buttonRound: false,
 }
 
+export const imageBasePath = "/images"
+export const placeholderBasePath = "/pages/assets/placeholders"
+
 // @ts-ignore
 export const placeholderImages = import.meta.globEager(
-  "/pages/assets/placeholders/*.png"
+  `/pages/assets/placeholders/*.png`
 )
-
-export const imageBasePath = "/images"
 
 /**
  * Data
