@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom"
 import React from "react"
-import "./debug.js"
+import "./debug.ts"
 import { useClientRouter } from "vite-plugin-ssr/client/router"
 import { PageContext } from "./types"
 import { defaultMeta } from "../../consts"
@@ -11,7 +11,7 @@ import { LoadingClass } from "./loading-class"
 import { AnimatePresence } from "framer-motion"
 
 async function hydrate(page) {
-  import("./imports.js").then(async (m) => {
+  import("./imports").then(async (m) => {
     ReactDOM.hydrate(page, document.getElementById("page-view"))
   })
 }
