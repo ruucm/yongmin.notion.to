@@ -9,6 +9,7 @@ import { PageLayout } from "./PageLayout"
 import { Provider as StyletronProvider, DebugEngine } from "styletron-react"
 import { LoadingClass } from "./loading-class"
 import { AnimatePresence } from "framer-motion"
+import { Curtains } from "react-curtains"
 
 async function hydrate(page) {
   import("./imports").then(async (m) => {
@@ -29,18 +30,20 @@ const { hydrationPromise } = useClientRouter({
     })
 
     const page = (
-      <StyletronProvider value={engine}>
-        <LoadingClass
-          ref={(LoadingClass) => {
-            window.LoadingClass = LoadingClass
-          }}
-        />
-        <PageLayout>
-          <AnimatePresence exitBeforeEnter initial={false}>
-            <Page {...pageProps} key={`${pageProps?.slug}-page`} />
-          </AnimatePresence>
-        </PageLayout>
-      </StyletronProvider>
+      <Curtains pixelRatio={Math.min(1.5, window.devicePixelRatio)}>
+        <StyletronProvider value={engine}>
+          <LoadingClass
+            ref={(LoadingClass) => {
+              window.LoadingClass = LoadingClass
+            }}
+          />
+          <PageLayout>
+            <AnimatePresence exitBeforeEnter initial={false}>
+              <Page {...pageProps} key={`${pageProps?.slug}-page`} />
+            </AnimatePresence>
+          </PageLayout>
+        </StyletronProvider>
+      </Curtains>
     )
     const container = document.getElementById("page-view")
     // Render the page

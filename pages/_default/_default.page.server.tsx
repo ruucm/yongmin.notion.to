@@ -9,6 +9,7 @@ import { Server as Styletron } from "styletron-engine-monolithic"
 import { defaultMeta } from "../../consts"
 import Loading from "../../components/loading"
 import { AnimatePresence } from "framer-motion"
+import { Curtains } from "react-curtains"
 
 export { render }
 export { passToClient }
@@ -23,14 +24,18 @@ async function render(pageContext: PageContext) {
   const engine = new Styletron()
 
   const readstream = ReactDOMServer.renderToNodeStream(
-    <StyletronProvider value={engine}>
-      <Loading />
-      <PageLayout>
-        <AnimatePresence exitBeforeEnter initial={false}>
-          <Page {...pageProps} />
-        </AnimatePresence>
-      </PageLayout>
-    </StyletronProvider>
+    <Curtains
+    // pixelRatio={Math.min(1.5, window.devicePixelRatio)}
+    >
+      <StyletronProvider value={engine}>
+        <Loading />
+        <PageLayout>
+          <AnimatePresence exitBeforeEnter initial={false}>
+            <Page {...pageProps} />
+          </AnimatePresence>
+        </PageLayout>
+      </StyletronProvider>
+    </Curtains>
   )
   const pageHtml: any = await streamToString(readstream)
 

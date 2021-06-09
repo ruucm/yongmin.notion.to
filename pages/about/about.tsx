@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Layout } from "../../components"
 import { useESMComponent } from "../../hooks/use-esm-component"
 import { styled } from "styletron-react"
 import { breakPoint } from "../../consts"
+import SimplePlane from "../../components/SimplePlane"
 
 const Wrap = styled("div", {
   maxWidth: "720px",
@@ -36,6 +37,10 @@ export function Page() {
   const StyledModule = styled(Module3, {
     cursor: "pointer",
   })
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   return (
     <Layout>

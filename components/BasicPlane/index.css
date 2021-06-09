@@ -1,0 +1,12 @@
+.BasicPlane {
+  width: 100%;
+  height: 80vh;
+  /* margin: 10vh auto; */
+  position: absolute;
+  background: pink;
+  /* display: none; */
+}
+
+.BasicPlane img {
+  display: none;
+}
