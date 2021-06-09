@@ -12,7 +12,16 @@ const Grid = styled("div", {
   gap: "20px",
 })
 
-const Tag = styled("em", ({ $active }: any) => {
+const Tags = styled("div", {
+  textAlign: "right",
+  marginBottom: "7px",
+  // move Tag's transition at here, cause it emits weird errors.
+  "em::before": {
+    transition: "all 0.3s ease-in-out",
+  },
+})
+
+const Tag = styled("em", ({ $active }: any): any => {
   return {
     position: "relative",
     textDecoration: "none",
@@ -28,14 +37,8 @@ const Tag = styled("em", ({ $active }: any) => {
       backgroundColor: "blue",
       visibility: $active ? "visible" : "hidden",
       transform: $active ? "scaleX(1)" : "scaleX(0)",
-      transition: "all 0.3s ease-in-out 0s",
     },
   }
-})
-
-const Tags = styled("div", {
-  textAlign: "right",
-  marginBottom: "7px",
 })
 
 export function Page() {
