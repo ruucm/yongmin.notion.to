@@ -8,12 +8,7 @@ export function Page({ slug }) {
     <Layout>
       <Summary slug={slug} />
       <Gallery
-        images={[
-          "/images/vincent_01",
-          "/images/vincent_02",
-          "/images/vincent_03",
-          "/images/vincent_04",
-        ]}
+        images={["vincent_01", "vincent_02", "vincent_03", "vincent_04"]}
       />
     </Layout>
   )

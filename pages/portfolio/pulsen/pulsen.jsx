@@ -7,7 +7,7 @@ export function Page({ slug }) {
   return (
     <Layout>
       <Summary slug={slug} />
-      <Gallery images={["/images/pulsen.gif"]} />
+      <Gallery images={["pulsen.gif"]} />
     </Layout>
   )
 }

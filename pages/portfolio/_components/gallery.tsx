@@ -30,7 +30,14 @@ export function Gallery({ images }) {
       {images.map((imageName, id) => {
         const isGif = imageName.includes("gif")
 
-        if (isGif) return <Img key={id} src={imageName} alt="portfolio-image" />
+        if (isGif)
+          return (
+            <Img
+              key={id}
+              src={`/public/images/${imageName}`}
+              alt="portfolio-image"
+            />
+          )
         else {
           const placeholderImage =
             placeholderImages[`/pages/assets/placeholders/${imageName}.png`]
