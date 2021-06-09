@@ -21,26 +21,36 @@ export function LazyLoadImage({
     {},
     fallbackUrl
   )
-  if (loading)
-    return (
-      <Comp
-        src={dummy}
-        alt="portfolio-image"
-        className={className}
-        onClick={onClick}
-        layout={layout}
-        transition={transition}
-      />
-    )
-  else
-    return (
-      <Comp
-        src={imgSrc}
-        alt="portfolio-image"
-        className={className}
-        onClick={onClick}
-        layout={layout}
-        transition={transition}
-      />
-    )
+  // if (loading)
+  //   return (
+  //     <Comp
+  //       src={dummy}
+  //       alt="portfolio-image"
+  //       className={className}
+  //       onClick={onClick}
+  //       layout={layout}
+  //       transition={transition}
+  //     />
+  //   )
+  // else
+  //   return (
+  //     <Comp
+  //       src={imgSrc}
+  //       alt="portfolio-image"
+  //       className={className}
+  //       onClick={onClick}
+  //       layout={layout}
+  //       transition={transition}
+  //     />
+  //   )
+  return (
+    <Comp
+      src={dummy}
+      alt="portfolio-image"
+      className={className}
+      onClick={onClick}
+      layout={layout}
+      transition={transition}
+    />
+  )
 }
