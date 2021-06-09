@@ -1,6 +1,8 @@
 import React from "react"
 import { Layout } from "../components"
 import { styled } from "styletron-react"
+import { availableTags } from "../consts"
+import { titleCase } from "../utils"
 
 const Circle = styled("a", {
   width: "300px",
@@ -25,10 +27,15 @@ export function Page() {
           flexWrap: "wrap",
         }}
       >
-        <Circle href="/projects?tags=design-teams">Design Teams</Circle>
-        <Circle href="/projects?tags=techy-designers">Techy Designers</Circle>
-        <Circle href="/projects?tags=prototypers">Prototypers</Circle>
-        <Circle href="/projects?tags=writers">Writers</Circle>
+        {availableTags.map((tag, id) => (
+          <Circle key={id} href={`/projects?tags=${tag}`}>
+            <div>
+              <em>for</em>
+              <br />
+              {titleCase(tag.replace("-", " "))}
+            </div>
+          </Circle>
+        ))}
       </div>
     </Layout>
   )
