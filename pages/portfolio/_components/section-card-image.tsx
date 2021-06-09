@@ -1,9 +1,7 @@
 import React from "react"
-import { useState } from "react"
 import { motion } from "framer-motion"
 import { styled } from "styletron-react"
 import {
-  breakPoint,
   imageBasePath,
   placeholderBasePath,
   placeholderImages,
@@ -13,10 +11,6 @@ import { Responsive } from "../../../utils/styled-components"
 
 const Wrap = styled("div", ({ $zoomed, $filter }: any) => {
   return {
-    // position: "relative",
-    // width: "100%",
-    // height: "0px",
-    // paddingTop: "66.66%",
     filter: $filter,
     ...getCursurStyles({ $zoomed }),
   }
@@ -60,6 +54,7 @@ export function SectionCardImage({ imageName, grayscale, zoomed, setZoomed }) {
       {isGif && (
         <Responsive>
           <GifImage
+            // gif imageName has it's extension
             src={`${imageBasePath}/${imageName}`}
             alt=""
             onClick={() => setZoomed(!zoomed)}

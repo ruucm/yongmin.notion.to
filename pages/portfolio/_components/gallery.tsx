@@ -39,6 +39,7 @@ export function Gallery({ images }) {
           return (
             <Img
               key={id}
+              // gif imageName has it's extension
               src={`${imageBasePath}/${imageName}`}
               alt="portfolio-image"
             />
