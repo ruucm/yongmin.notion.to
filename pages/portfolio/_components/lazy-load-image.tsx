@@ -12,8 +12,7 @@ const FixedSize = styled("div", ({ $zoomed, $filter }: any) => {
 
 export function LazyLoadImage({
   imgUrl,
-  placeholderUrl,
-  fallbackUrl,
+  placeholderImage,
   as = "img",
   className,
   onClick,
@@ -30,13 +29,10 @@ export function LazyLoadImage({
     height: "100%",
   })
 
-  // @ts-ignore
-  const images = import.meta.globEager("/public/images/*.webp")
-
   return (
     <FixedSize>
       <ImageComp
-        src={images[`/public${placeholderUrl}`].default}
+        src={placeholderImage}
         alt="portfolio-image"
         className={className}
         onClick={onClick}

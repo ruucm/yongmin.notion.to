@@ -25,6 +25,9 @@ const StyledLazyLoadImage = styled(LazyLoadImage, {
 })
 
 export function Gallery({ images }) {
+  // @ts-ignore
+  const sharpImages = import.meta.globEager("/public/images/*.webp")
+
   return (
     <GridWrap>
       {images.map((image, id) => {
@@ -32,14 +35,13 @@ export function Gallery({ images }) {
 
         if (isGif) return <Img key={id} src={image} alt="portfolio-image" />
         else {
-          // const dummy = await (await import("../../assets/dummy.png")).default
-          // console.log("dummy", dummy)
+          const placeholderImage =
+            sharpImages[`/public${image}-sharp.webp`].default
           return (
             <StyledLazyLoadImage
               key={id}
               imgUrl={`${image}.webp`}
-              placeholderUrl={`${image}-sharp.webp`}
-              fallbackUrl={`${image}-sharp.webp`}
+              placeholderImage={placeholderImage}
             />
           )
         }
