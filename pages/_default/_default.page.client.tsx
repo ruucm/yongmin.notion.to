@@ -4,9 +4,7 @@ import "./debug.js"
 import { useClientRouter } from "vite-plugin-ssr/client/router"
 import { PageContext } from "./types"
 import { defaultMeta } from "../../consts"
-import { Client as Styletron } from "styletron-engine-atomic"
 import { PageLayout } from "./PageLayout"
-import { Provider as StyletronProvider, DebugEngine } from "styletron-react"
 import { LoadingClass } from "./loading-class"
 import { AnimatePresence } from "framer-motion"
 
@@ -20,27 +18,17 @@ const { hydrationPromise } = useClientRouter({
   async render(pageContext: PageContext) {
     const { Page, pageProps } = pageContext
 
-    // Hydrating Server-rendered Styles
-    const hydratedStyles: any = document.getElementsByClassName(
-      "_styletron_hydrate_"
-    )
-    const engine = new Styletron({
-      hydrate: hydratedStyles,
-    })
-
     const page = (
-      <StyletronProvider value={engine}>
-        <PageLayout>
-          <LoadingClass
-            ref={(LoadingClass) => {
-              window.LoadingClass = LoadingClass
-            }}
-          />
-          <AnimatePresence exitBeforeEnter initial={false}>
-            <Page {...pageProps} key={`${pageProps?.slug}-page`} />
-          </AnimatePresence>
-        </PageLayout>
-      </StyletronProvider>
+      <PageLayout>
+        <LoadingClass
+          ref={(LoadingClass) => {
+            window.LoadingClass = LoadingClass
+          }}
+        />
+        <AnimatePresence exitBeforeEnter initial={false}>
+          <Page {...pageProps} key={`${pageProps?.slug}-page`} />
+        </AnimatePresence>
+      </PageLayout>
     )
     const container = document.getElementById("page-view")
     // Render the page

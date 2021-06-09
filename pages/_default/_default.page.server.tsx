@@ -4,8 +4,6 @@ import { PageLayout } from "./PageLayout"
 import { html } from "vite-plugin-ssr"
 import { PageContext, ReactComponent } from "./types"
 import favicon from "../assets/favicons/favicon-32x32.png"
-import { Provider as StyletronProvider } from "styletron-react"
-import { Server as Styletron } from "styletron-engine-atomic"
 import { defaultMeta } from "../../consts"
 import Loading from "../../components/loading"
 import { AnimatePresence } from "framer-motion"
@@ -22,17 +20,13 @@ async function render(pageContext: PageContext) {
 
   const sheet = new ServerStyleSheet()
 
-  // 1. Create a server engine instance
-  const engine = new Styletron()
   const App = (
-    <StyletronProvider value={engine}>
-      <PageLayout>
-        <Loading />
-        <AnimatePresence exitBeforeEnter initial={false}>
-          <Page {...pageProps} />
-        </AnimatePresence>
-      </PageLayout>
-    </StyletronProvider>
+    <PageLayout>
+      <Loading />
+      <AnimatePresence exitBeforeEnter initial={false}>
+        <Page {...pageProps} />
+      </AnimatePresence>
+    </PageLayout>
   )
 
   const pageHtml = ReactDOMServer.renderToString(sheet.collectStyles(App))

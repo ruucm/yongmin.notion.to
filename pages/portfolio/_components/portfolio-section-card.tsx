@@ -1,34 +1,33 @@
 import React from "react"
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { styled } from "styletron-react"
 import { breakPoint } from "../../../consts"
 import { SectionCardImage } from "./section-card-image"
+import styled from "styled-components"
 
-const Grid = styled(motion.div, ({ $zoomed }: any) => {
-  return {
-    display: "grid",
-    gap: "30px",
-    direction: "ltr",
-    alignItems: "center",
-    ...getZoomStyles({ $zoomed }),
-    [`@media screen and (max-width: ${breakPoint}px)`]: {
-      gridTemplateColumns: "1fr",
-    },
+const Grid = styled(motion.div)`
+  display: grid;
+  gap: 30px;
+  direction: ltr;
+  align-items: center;
+  /* ...getZoomStyles({ $zoomed }), */
+  @media (max-width: ${breakPoint}px) {
+    grid-template-columns: 1fr;
   }
-})
-const Description = styled("div", {
-  padding: "30px 15px",
-  textAlign: "right",
-  [`@media screen and (max-width: ${breakPoint}px)`]: {
-    padding: "0px",
-  },
-})
-const Title = styled(motion.h4, {
-  textDecoration: "underline",
-  display: "inline-block",
-  fontWeight: 400,
-})
+`
+const Description = styled.div`
+  padding: 30px 15px;
+  text-align: right;
+
+  @media (max-width: ${breakPoint}px) {
+    padding: 0px;
+  }
+`
+const Title = styled.h4`
+  text-decoration: underline;
+  display: inline-block;
+  font-weight: 400px;
+`
 
 const defaultTransition = {
   duration: 0.36,

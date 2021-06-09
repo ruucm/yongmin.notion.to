@@ -1,6 +1,5 @@
 import React from "react"
 import useLazyImg from "../../../hooks/use-lazy-image"
-// import { styled } from "styletron-react"
 import styled from "styled-components"
 
 const Wrap = styled.img`

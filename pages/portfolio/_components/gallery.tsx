@@ -1,24 +1,27 @@
 import React from "react"
-import { styled } from "styletron-react"
 import { breakPoint } from "../../../consts"
 import { LazyLoadImage } from "./lazy-load-image"
 import { LazyLoadImage2 } from "./lazy-load-image-2"
+import styled from "styled-components"
 
-const GridWrap = styled("div", {
-  display: "grid",
-  gridTemplateColumns: "1fr 1fr",
-  marginTop: "30px",
-  gap: "30px",
-  marginBottom: "30px",
-  [`@media screen and (max-width: ${breakPoint}px)`]: {
-    gridTemplateColumns: "1fr",
-  },
-})
-const Img = styled("img", {
-  width: "100%",
-  display: "block",
-  border: "1px solid",
-})
+const GridWrap = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 30px;
+  gap: 30px;
+  margin-bottom: 30px;
+
+  @media (max-width: ${breakPoint}px) {
+    grid-template-columns: 1fr;
+  }
+`
+
+const Img = styled.img`
+  width: 100%;
+  display: block;
+  border: 1px solid;
+`
+
 // const StyledLazyLoadImage = styled(LazyLoadImage, {
 //   width: "100%",
 //   display: "block",

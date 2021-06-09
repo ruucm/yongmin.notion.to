@@ -1,32 +1,31 @@
 import React from "react"
 import { Layout } from "../../components"
 import { useESMComponent } from "../../hooks/use-esm-component"
-import { styled } from "styletron-react"
 import { breakPoint } from "../../consts"
+import styled from "styled-components"
 
-const Wrap = styled("div", {
-  maxWidth: "720px",
-})
+const Wrap = styled.div`
+  max-width: 720px;
+`
+const ParagraphWithImage = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--blockSpacingBottom);
+  @media (max-width: ${breakPoint}px) {
+    flex-wrap: wrap-reverse;
+  }
+`
 
-const ParagraphWithImage = styled("div", {
-  display: "flex",
-  alignItems: "center",
-  marginBottom: "var(--blockSpacingBottom)",
-  [`@media screen and (max-width: ${breakPoint}px)`]: {
-    flexWrap: "wrap-reverse",
-  },
-})
+const ProfileWrap = styled.div`
+  padding-left: 16px;
+  @media (max-width: ${breakPoint}px) {
+    padding: 16px;
+  }
+`
 
-const ProfileWrap = styled("div", {
-  paddingLeft: "16px",
-
-  [`@media screen and (max-width: ${breakPoint}px)`]: {
-    padding: "16px",
-  },
-})
-const P = styled("p", {
-  marginBottom: "0px",
-})
+const P = styled.p`
+  margin-bottom: 0px;
+`
 
 export function Page() {
   const Module3: any = useESMComponent(

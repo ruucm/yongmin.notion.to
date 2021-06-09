@@ -1,40 +1,36 @@
 import React from "react"
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { styled } from "styletron-react"
 import { breakPoint } from "../../../consts"
 import { LazyLoadImage } from "./lazy-load-image"
+import styled from "styled-components"
 
-const Wrap2 = styled("div", ({ $zoomed, $filter }: any) => {
-  return {
-    position: "relative",
-    width: "100%",
-    height: "0px",
-    paddingTop: "66.66%",
-    // filter: $filter,
-    // ...getCursurStyles({ $zoomed }),
-  }
-})
-const GifImage = styled(motion.img, {
-  position: "absolute",
-  top: "0",
-  left: "0",
-  right: "0",
-  bottom: "0",
-  width: "100%",
-  height: "100%",
-  border: "1px solid",
-})
-const StyledLazyLoadImage = styled(LazyLoadImage, {
-  position: "absolute",
-  top: "0",
-  left: "0",
-  right: "0",
-  bottom: "0",
-  width: "100%",
-  height: "100%",
-  border: "1px solid",
-})
+const Wrap2 = styled.div`
+  position: relative;
+  width: 100%;
+  height: 0px;
+  padding-top: 66.66%;
+`
+const GifImage = styled(motion.img)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid;
+`
+const StyledLazyLoadImage = styled(LazyLoadImage)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid;
+`
 
 const defaultTransition = {
   duration: 0.36,

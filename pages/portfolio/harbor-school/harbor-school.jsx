@@ -4,12 +4,12 @@ import { PortfolioSectionCard } from "../_components/portfolio-section-card"
 import { AnimateSharedLayout } from "framer-motion"
 import { SubTitle } from "../_components/sub-title"
 import { Summary } from "../_components/summary"
-import { styled } from "styletron-react"
+import styled from "styled-components"
 
-const Grid = styled("div", {
-  display: "grid",
-  gap: "30px",
-})
+const Grid = styled.div`
+  display: grid;
+  gap: 30px;
+`
 
 export function Page({ slug }) {
   return (
