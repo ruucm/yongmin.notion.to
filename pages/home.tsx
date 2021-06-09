@@ -88,7 +88,7 @@ export function Page() {
 
         <Grid>
           {data.map((item: any, id) => (
-            <AnimatePresence key={id}>
+            <AnimatePresence key={id} initial={false}>
               {tagFilter(tags, item) && (
                 <Card
                   title={item.title}
