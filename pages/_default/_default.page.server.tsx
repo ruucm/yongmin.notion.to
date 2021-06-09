@@ -22,7 +22,7 @@ async function render(pageContext: PageContext) {
   // 1. Create a server engine instance
   const engine = new Styletron()
 
-  const readstream = ReactDOMServer.renderToNodeStream(
+  const readstream = ReactDOMServer.renderToStaticNodeStream(
     <StyletronProvider value={engine}>
       <PageLayout>
         <Loading />
