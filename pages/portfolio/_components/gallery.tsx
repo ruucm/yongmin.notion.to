@@ -1,6 +1,6 @@
 import React from "react"
 import { styled } from "styletron-react"
-import { breakPoint } from "../../../consts"
+import { breakPoint, sharpImages } from "../../../consts"
 import { LazyLoadImage } from "./lazy-load-image"
 
 const GridWrap = styled("div", {
@@ -25,9 +25,6 @@ const StyledLazyLoadImage = styled(LazyLoadImage, {
 })
 
 export function Gallery({ images }) {
-  // @ts-ignore
-  const sharpImages = import.meta.globEager("/public/images/*.webp")
-
   return (
     <GridWrap>
       {images.map((image, id) => {

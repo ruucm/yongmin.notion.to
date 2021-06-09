@@ -30,6 +30,9 @@ export const initialThemeState = {
   buttonRound: false,
 }
 
+// @ts-ignore
+export const sharpImages = import.meta.globEager("/public/images/*-sharp.webp")
+
 /**
  * Data
  */
