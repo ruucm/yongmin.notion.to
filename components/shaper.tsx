@@ -143,7 +143,7 @@ Shaper.defaultProps = {}
 function getActiveStyles({ $active }) {
   if ($active) {
     return {
-      cursor: "crosshair",
+      cursor: "default",
       color: "blue",
     }
   } else {
