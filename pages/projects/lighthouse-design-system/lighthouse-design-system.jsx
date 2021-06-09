@@ -1,11 +1,11 @@
 import React from "react"
-import { Layout } from "../../../components"
 import { Summary } from "../_components/summary"
 import { Gallery } from "../_components/gallery"
+import { PostLayout } from "../../../components/post-layout"
 
-export function Page() {
+export function Page({ slug }) {
   return (
-    <Layout>
+    <PostLayout slug={slug}>
       <Summary />
       <Gallery
         images={[
@@ -19,6 +19,6 @@ export function Page() {
           "lighthouse_08",
         ]}
       />
-    </Layout>
+    </PostLayout>
   )
 }

@@ -1,11 +1,11 @@
 import React from "react"
-import { Layout } from "../../../components"
 import { ProjectSectionCard } from "../_components/project-section-card"
 import { AnimateSharedLayout } from "framer-motion"
 import { Summary } from "../_components/summary"
 import { Gallery } from "../_components/gallery"
 import { SubTitle } from "../_components/sub-title"
 import { styled } from "styletron-react"
+import { PostLayout } from "../../../components/post-layout"
 
 const Spacing = styled("div", {
   height: "100px",
@@ -18,7 +18,7 @@ const Grid = styled("div", {
 
 export function Page({ slug }) {
   return (
-    <Layout>
+    <PostLayout>
       <Summary slug={slug} />
       <Gallery images={["seli_01", "seli_02", "seli_03", "seli_04"]} />
       <Spacing />
@@ -38,6 +38,6 @@ export function Page({ slug }) {
           />
         </Grid>
       </AnimateSharedLayout>
-    </Layout>
+    </PostLayout>
   )
 }

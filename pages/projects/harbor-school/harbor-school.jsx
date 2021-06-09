@@ -1,10 +1,10 @@
 import React from "react"
-import { Layout } from "../../../components"
 import { ProjectSectionCard } from "../_components/project-section-card"
 import { AnimateSharedLayout } from "framer-motion"
 import { SubTitle } from "../_components/sub-title"
 import { Summary } from "../_components/summary"
 import { styled } from "styletron-react"
+import { PostLayout } from "../../../components/post-layout"
 
 const Grid = styled("div", {
   display: "grid",
@@ -13,7 +13,7 @@ const Grid = styled("div", {
 
 export function Page({ slug }) {
   return (
-    <Layout>
+    <PostLayout>
       <Summary slug={slug} />
       <AnimateSharedLayout>
         <SubTitle>Education Content Experience</SubTitle>
@@ -62,6 +62,6 @@ export function Page({ slug }) {
           />
         </Grid>
       </AnimateSharedLayout>
-    </Layout>
+    </PostLayout>
   )
 }

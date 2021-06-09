@@ -11,6 +11,7 @@ import { motion } from "framer-motion"
 const Wrap = styled("div", {
   maxWidth: "1080px",
   margin: "0 auto",
+  paddingBottom: "2rem",
 })
 const Grid = styled("div", {
   display: "grid",

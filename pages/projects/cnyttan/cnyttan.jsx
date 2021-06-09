@@ -1,11 +1,11 @@
 import React from "react"
-import { Layout } from "../../../components"
 import { Summary } from "../_components/summary"
 import { Gallery } from "../_components/gallery"
+import { PostLayout } from "../../../components/post-layout"
 
 export function Page({ slug }) {
   return (
-    <Layout>
+    <PostLayout>
       <Summary slug={slug} />
       <Gallery
         images={["cynttan_01", "cynttan_02", "cynttan_03", "cynttan_04"]}
@@ -15,6 +15,6 @@ export function Page({ slug }) {
         membership, shipping) as REST API for making dynamic checkout front page
         with React.
       </p>
-    </Layout>
+    </PostLayout>
   )
 }

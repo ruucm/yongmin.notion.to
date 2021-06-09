@@ -1,13 +1,13 @@
 import React from "react"
-import { Layout } from "../../../components"
 import { Summary } from "../_components/summary"
 import { Gallery } from "../_components/gallery"
+import { PostLayout } from "../../../components/post-layout"
 
 export function Page({ slug }) {
   return (
-    <Layout>
+    <PostLayout>
       <Summary slug={slug} />
       <Gallery images={["pulsen.gif"]} />
-    </Layout>
+    </PostLayout>
   )
 }
