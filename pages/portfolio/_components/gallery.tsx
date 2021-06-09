@@ -1,6 +1,6 @@
 import React from "react"
 import { styled } from "styletron-react"
-import { breakPoint, sharpImages } from "../../../consts"
+import { breakPoint, placeholderImages } from "../../../consts"
 import { LazyLoadImage } from "./lazy-load-image"
 
 const GridWrap = styled("div", {
@@ -33,7 +33,7 @@ export function Gallery({ images }) {
         if (isGif) return <Img key={id} src={image} alt="portfolio-image" />
         else {
           const placeholderImage =
-            sharpImages[`/public${image}-sharp.webp`].default
+            placeholderImages[`/pages/assets/placeholders/${image}.png`].default
           return (
             <StyledLazyLoadImage
               key={id}

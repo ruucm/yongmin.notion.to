@@ -31,7 +31,9 @@ export const initialThemeState = {
 }
 
 // @ts-ignore
-export const sharpImages = import.meta.globEager("/public/images/*-sharp.webp")
+export const placeholderImages = import.meta.globEager(
+  "/pages/assets/placeholders/*.png"
+)
 
 /**
  * Data
