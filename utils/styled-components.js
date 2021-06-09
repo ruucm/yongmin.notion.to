@@ -13,3 +13,10 @@ export const MobileOnly = styled("div", {
     display: "block",
   },
 })
+
+export const Responsive = styled("div", {
+  position: "relative",
+  width: "100%",
+  height: "0px",
+  paddingTop: "66.66%",
+})

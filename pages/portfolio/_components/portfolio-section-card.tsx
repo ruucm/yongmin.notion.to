@@ -35,7 +35,7 @@ const defaultTransition = {
 }
 
 export function PortfolioSectionCard({
-  img,
+  imageName,
   title,
   description,
   grayscale = false,
@@ -46,7 +46,7 @@ export function PortfolioSectionCard({
   return (
     <Grid $zoomed={zoomed}>
       <SectionCardImage
-        img={img}
+        imageName={imageName}
         grayscale={grayscale}
         zoomed={zoomed}
         setZoomed={setZoomed}

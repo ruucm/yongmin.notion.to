@@ -1,39 +1,31 @@
+import { motion } from "framer-motion"
 import React from "react"
 import { styled } from "styletron-react"
+import { Responsive } from "../../../utils/styled-components"
 
-const FixedSize = styled("div", ({ $zoomed, $filter }: any) => {
-  return {
-    position: "relative",
-    width: "100%",
-    height: "0px",
-    paddingTop: "66.66%",
-  }
+const Image = styled(motion.img, {
+  position: "absolute",
+  top: "0",
+  left: "0",
+  right: "0",
+  bottom: "0",
+  width: "100%",
+  height: "100%",
 })
 
 export function LazyLoadImage({
   placeholderImage,
   imageName,
-  as = "img",
   className,
   onClick,
   layout,
   transition,
 }: any) {
-  const ImageComp = styled(as, {
-    position: "absolute",
-    top: "0",
-    left: "0",
-    right: "0",
-    bottom: "0",
-    width: "100%",
-    height: "100%",
-  })
-
   return (
-    <FixedSize>
-      <ImageComp
+    <Responsive>
+      <Image
         src={placeholderImage}
-        alt="portfolio-image"
+        alt="portfolio-image-placholder"
         className={className}
         onClick={onClick}
         layout={layout}
@@ -45,7 +37,7 @@ export function LazyLoadImage({
         <source srcSet={`/public/images/${imageName}.jpg`} type="image/jpg" />
         <source srcSet={`/public/images/${imageName}.jpeg`} type="image/jpeg" />
 
-        <ImageComp
+        <Image
           src={`/public/images/${imageName}.png`}
           alt="portfolio-image"
           className={className}
@@ -54,6 +46,6 @@ export function LazyLoadImage({
           transition={transition}
         />
       </picture>
-    </FixedSize>
+    </Responsive>
   )
 }

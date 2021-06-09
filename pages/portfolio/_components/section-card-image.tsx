@@ -2,15 +2,16 @@ import React from "react"
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { styled } from "styletron-react"
-import { breakPoint } from "../../../consts"
+import { breakPoint, placeholderImages } from "../../../consts"
 import { LazyLoadImage } from "./lazy-load-image"
+import { Responsive } from "../../../utils/styled-components"
 
 const Wrap = styled("div", ({ $zoomed, $filter }: any) => {
   return {
-    position: "relative",
-    width: "100%",
-    height: "0px",
-    paddingTop: "66.66%",
+    // position: "relative",
+    // width: "100%",
+    // height: "0px",
+    // paddingTop: "66.66%",
     filter: $filter,
     ...getCursurStyles({ $zoomed }),
   }
@@ -40,10 +41,10 @@ const defaultTransition = {
   duration: 0.36,
 }
 
-export function SectionCardImage({ img, grayscale, zoomed, setZoomed }) {
+export function SectionCardImage({ imageName, grayscale, zoomed, setZoomed }) {
   let filter = ""
   if (grayscale) filter += "grayscale(1) brightness(0.5)"
-  const isGif = img.includes("gif")
+  const isGif = imageName.includes("gif")
 
   return (
     <Wrap $zoomed={zoomed} $filter={filter}>
@@ -52,21 +53,25 @@ export function SectionCardImage({ img, grayscale, zoomed, setZoomed }) {
         onClick={() => setZoomed(false)}
       />
       {isGif && (
-        <GifImage
-          src={img}
-          alt=""
-          onClick={() => setZoomed(!zoomed)}
-          layout
-          transition={defaultTransition}
-        />
+        <Responsive>
+          <GifImage
+            src={`/public/images/${imageName}`}
+            alt=""
+            onClick={() => setZoomed(!zoomed)}
+            layout
+            transition={defaultTransition}
+          />
+        </Responsive>
       )}
       {!isGif && (
         <StyledLazyLoadImage
-          imgUrl={`${img}.webp`}
-          placeholderUrl={`${img}-sharp.webp`}
-          fallbackUrl={`${img}-sharp.webp`}
+          placeholderImage={
+            placeholderImages[`/pages/assets/placeholders/${imageName}.png`]
+              .default
+          }
+          imageName={imageName}
+          // motion props
           onClick={() => setZoomed(!zoomed)}
-          as={motion.img}
           layout
           transition={defaultTransition}
         />

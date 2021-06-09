@@ -12,7 +12,7 @@ export function Page({ slug }) {
       <AnimateSharedLayout>
         <SubTitle>2019 Framer Korea Meetup Website</SubTitle>
         <PortfolioSectionCard
-          img={"/images/framer-korea-2019"}
+          imageName={"/images/framer-korea-2019"}
           title=""
           description={`I developed whole websites using Gatsby.js with the other junior developer. I used Framer to communicate with a designer for motion.
 
@@ -22,7 +22,7 @@ export function Page({ slug }) {
 
         <SubTitle>2020 Framer Korea Meetup Website</SubTitle>
         <PortfolioSectionCard
-          img={"/images/framer-korea-2020"}
+          imageName={"/images/framer-korea-2020"}
           title=""
           description={`
           I developed whole websites using Gatsby.js. I prototyped motions of the website on Framer and moved it to the React development environment without hassle.`}

@@ -19,7 +19,7 @@ export function Page({ slug }) {
         <SubTitle>Education Content Experience</SubTitle>
         <Grid>
           <PortfolioSectionCard
-            img={"/images/problem-youtube"}
+            imageName={"problem-youtube"}
             title="[Problems] - Bad Education Content Experience"
             description={`I learn programming and design by myself with youtube videos and blog
         posts. But as a learner's view, there are solid problem on both side.
@@ -32,7 +32,7 @@ export function Page({ slug }) {
             // grayscale
           />
           <PortfolioSectionCard
-            img={"/images/solution-video-explorer.gif"}
+            imageName={"solution-video-explorer.gif"}
             title="[Solution] - Video Explorer"
             description={`So I started develop a new UI called "Video Explorer". I combines good
       points of video and post at the same time. It includes whole proccess
@@ -44,7 +44,7 @@ export function Page({ slug }) {
         <SubTitle>Internal Student Management System</SubTitle>
         <Grid>
           <PortfolioSectionCard
-            img={"/images/problem-students-management"}
+            imageName={"problem-students-management"}
             title="[Problems] - Seperated CRM and Student Managements"
             description={`I had to offer CRM(Customer relationship management) with student's achievement dashboard.`}
             // grayscale
@@ -52,7 +52,7 @@ export function Page({ slug }) {
           />
 
           <PortfolioSectionCard
-            img={"/images/solution-students-management"}
+            imageName={"solution-students-management"}
             title="[Solution] - Student Management System"
             description={`And I need to collect latest resources for students. But we had only one
             junior developer and me with limited time.
