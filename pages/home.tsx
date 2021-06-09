@@ -64,7 +64,7 @@ export function Page() {
             alignItems: "center",
             textAlign: "center",
           }}
-          href="/portfolio"
+          href="/projects"
         >
           Design teams who want to close gap between their designs and real
           products.

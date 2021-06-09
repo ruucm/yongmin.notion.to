@@ -41,7 +41,7 @@ export function Gallery({ images }) {
               key={id}
               // gif imageName has it's extension
               src={`${imageBasePath}/${imageName}`}
-              alt="portfolio-image"
+              alt="projects-image"
             />
           )
         else {

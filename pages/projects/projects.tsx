@@ -102,7 +102,7 @@ export function Page() {
                   description={item.description}
                   outlink={item.outlink}
                   slug={item.slug}
-                  // link={item.key && `/portfolio/${item.key}`}
+                  // link={item.key && `/projects/${item.key}`}
                   tags={item.tags}
                 />
               )}

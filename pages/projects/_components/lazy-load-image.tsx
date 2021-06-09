@@ -26,7 +26,7 @@ export function LazyLoadImage({
     <Responsive>
       <Image
         src={placeholderImage}
-        alt="portfolio-image-placholder"
+        alt="projects-image-placholder"
         className={className}
         onClick={onClick}
         layout={layout}
@@ -46,7 +46,7 @@ export function LazyLoadImage({
 
         <Image
           src={`${imageBasePath}/${imageName}.png`}
-          alt="portfolio-image"
+          alt="projects-image"
           className={className}
           onClick={onClick}
           layout={layout}

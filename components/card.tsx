@@ -31,7 +31,7 @@ const wrap = {
 
 export function Card({ title, duration, description, outlink, slug, tags }) {
   const linkProps = slug
-    ? { href: `/portfolio/${slug}` }
+    ? { href: `/projects/${slug}` }
     : { href: outlink, target: "_blank" }
 
   return (

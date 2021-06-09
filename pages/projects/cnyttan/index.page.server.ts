@@ -6,7 +6,7 @@ export { addPageContext }
 type PageContext = {
   pageProps: {
     slug: string
-    portfolioData: any
+    projectsData: any
   }
   documentProps: {
     title: string
@@ -17,19 +17,19 @@ type PageContext = {
 async function addPageContext(pageContext): Promise<PageContext> {
   const { url } = pageContext
   const slug = url.split("/")[2]
-  const portfolioData = findValueByKey(cardDatas, "slug", slug)
+  const projectsData = findValueByKey(cardDatas, "slug", slug)
 
   return {
     pageProps: {
       // We remove data we don't need because we pass `pageContext.movies` to
       // the client; we want to minimize what is sent over the network.
       slug,
-      portfolioData,
+      projectsData,
     },
     // The page's <title>
     documentProps: {
-      title: portfolioData.title,
-      description: portfolioData.description,
+      title: projectsData.title,
+      description: projectsData.description,
     },
   }
 }
