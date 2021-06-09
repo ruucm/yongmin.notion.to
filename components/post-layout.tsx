@@ -15,7 +15,7 @@ export function PostLayout({ children }) {
           marginBottom: "2.5rem",
         }}
       >
-        ← Back
+        Back
       </a>
     </Layout>
   )
