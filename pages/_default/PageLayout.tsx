@@ -1,6 +1,5 @@
 import { motion } from "framer-motion"
 import React from "react"
-// import logo from "./logo.svg"
 import "./PageLayout.css"
 import { styled } from "styletron-react"
 
@@ -26,14 +25,6 @@ function PageLayout({ children }: { children: Children }) {
       >
         {children}
       </Wrap>
-      {/* <Layout>
-        <Sidebar>
-          <Logo />
-          <a className="navitem" href="/">Home</a>
-          <a className="navitem" href="/about">About</a>
-        </Sidebar>
-        <Content>{children}</Content>
-      </Layout> */}
     </React.StrictMode>
   )
 }
