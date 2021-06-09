@@ -43,19 +43,14 @@ const Tag = styled("em", ({ $active }: any): any => {
 
 const allTags = [...availableTags] // Make a new array. it stays as same value, after updatin states.
 
-export function Page() {
-  const [data, setData] = useState(cardDatas)
-  const [tags, setTags] = useState(availableTags)
+export function Page({ search }) {
+  const [tags, setTags] = useState(search?.tags.split(",") || availableTags)
 
   return (
     <Layout home>
-      <h3>
-        Design teams who want to close gap between their designs and real
-        products.
-      </h3>
+      <h3>Projects</h3>
       <p>
-        I made several projects and experiments, to sovle how design team works
-        in the mindset of productivity and seamless communications.
+        I'm making projects and experiments for productivity and joy in screens.
       </p>
       <AnimateSharedLayout>
         <Tags>
@@ -75,7 +70,7 @@ export function Page() {
         </Tags>
 
         <Grid>
-          {data.map((item: any, id) => (
+          {cardDatas.map((item: any, id) => (
             <AnimatePresence key={id} initial={false}>
               {tagFilter(tags, item) && (
                 <Card
