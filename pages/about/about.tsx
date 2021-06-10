@@ -5,6 +5,8 @@ import { styled } from "styletron-react"
 import { breakPoint, contactMail } from "../../consts"
 import { useClipboard } from "../../hooks/use-clipboard"
 import { HoverText } from "../../components/hover-text"
+import { useRef } from "react"
+import { useState } from "react"
 
 const Wrap = styled("div", {
   maxWidth: "720px",
@@ -61,7 +63,9 @@ export function Page() {
             hovered={"지 용민"}
           ></HoverText>
           , and ruucm is my prefered nick name. I've used to this nickname from
-          2010~. And you can pronounce it as "ro͝om".
+          2010~. And you can pronounce it as "ro͝om
+          <PlayRuucm />
+          ".
           <br />I like screens and pixels. I love how people can react and
           explore these worlds with their eyes and hands and ears, sharing it to
           others.
@@ -126,5 +130,60 @@ export function Page() {
         </div>
       </Wrap>
     </Layout>
+  )
+}
+
+function PlayRuucm() {
+  const auidoRef = useRef(null)
+  const [playing, setPlaying] = useState(false)
+
+  return (
+    <>
+      <audio
+        src="/audios/ruucm.mp3"
+        ref={auidoRef}
+        onEnded={() => {
+          console.log("complete")
+          setPlaying(false)
+        }}
+      >
+        Your browser does not support the
+        <code>audio</code> element.
+      </audio>
+      <span
+        style={{
+          display: "inline-flex",
+          background: playing ? "white" : "initial",
+          border: "1px solid",
+          justifyContent: "center",
+          alignItems: "center",
+          borderRadius: 100,
+          marginLeft: 4,
+          padding: 4,
+          cursor: "pointer",
+        }}
+        onClick={() => {
+          const audio: any = auidoRef.current
+          audio.play()
+          setPlaying(true)
+        }}
+      >
+        <svg
+          width="9"
+          height="9"
+          viewBox="0 0 9 9"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          style={{
+            display: "block",
+          }}
+        >
+          <path
+            d="M0.875 4.99219V3.67969L8.46094 0.476562V1.875L2.44531 4.34375L8.46094 6.83594V8.23438L0.875 4.99219Z"
+            fill="black"
+          />
+        </svg>
+      </span>
+    </>
   )
 }
