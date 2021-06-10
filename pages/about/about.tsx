@@ -4,6 +4,7 @@ import { useESMComponent } from "../../hooks/use-esm-component"
 import { styled } from "styletron-react"
 import { breakPoint, contactMail } from "../../consts"
 import { useClipboard } from "../../hooks/use-clipboard"
+import { HoverText } from "../../components/hover-text"
 
 const Wrap = styled("div", {
   maxWidth: "720px",
@@ -53,8 +54,14 @@ export function Page() {
       <Wrap>
         <h3>About</h3>
         <p>
-          My name is Yongmin Ji, and ruucm is my nick name. I've used to this
-          nickname from 2010~. And you can pronounce it as "room".
+          My name is{" "}
+          <HoverText
+            as={"span"}
+            normal={"Yongmin Ji"}
+            hovered={"지 용민"}
+          ></HoverText>
+          , and ruucm is my prefered nick name. I've used to this nickname from
+          2010~. And you can pronounce it as "ro͝om".
           <br />I like screens and pixels. I love how people can react and
           explore these worlds with their eyes and hands and ears, sharing it to
           others.
