@@ -1,4 +1,5 @@
 import * as React from "react"
+import { youtubeVideoDefaltRatio } from "../../../consts"
 import { AspectRatio } from "../../../utils/aspect-ratio"
 
 export function VideoGrid({ videos }) {
@@ -10,7 +11,7 @@ export function VideoGrid({ videos }) {
       }}
     >
       {videos.map((videoId, id) => (
-        <AspectRatio ratio={3584 / 2240}>
+        <AspectRatio ratio={youtubeVideoDefaltRatio}>
           <iframe
             key={id}
             frameBorder="0"

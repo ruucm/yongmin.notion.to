@@ -3,6 +3,7 @@
  */
 export const breakPoint = 768
 export const imageDefaltRatio = 1720 / 1053
+export const youtubeVideoDefaltRatio = 3584 / 2240
 
 /**
  * Website
