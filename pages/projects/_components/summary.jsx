@@ -3,9 +3,8 @@ import { cardDatas } from "../../../consts"
 import { styled } from "styletron-react"
 
 const Wrap = styled("div", {
-  border: "1px solid",
   display: "inline-block",
-  padding: "30px 15px",
+  padding: "30px 0px",
 })
 
 const H3 = styled("h3", {

@@ -20,7 +20,9 @@ export function Page() {
     <Layout home>
       <h3>Design Engineer</h3>
       <p>A journey of programming to solving creative people's problems.</p>
-
+      <br />
+      <br />
+      <br />
       <div
         style={{
           display: "flex",

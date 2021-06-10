@@ -5,7 +5,6 @@ import { styled } from "styletron-react"
 const Wrap = styled(motion.div, {
   position: "relative",
   padding: "30px 15px",
-  border: "1px solid",
 })
 const H4 = styled("h4", {
   marginTop: "0px",

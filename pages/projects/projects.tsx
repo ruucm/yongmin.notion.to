@@ -55,6 +55,9 @@ export function Page() {
       <p>
         I'm making projects and experiments for productivity and joy in screens.
       </p>
+      <br />
+      <br />
+      <br />
       <AnimateSharedLayout>
         <Tags>
           {allTags.map((tag, id) => (
