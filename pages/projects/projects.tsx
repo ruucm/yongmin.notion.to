@@ -53,7 +53,8 @@ export function Page() {
     <Layout home>
       <h3>Projects</h3>
       <p>
-        I'm making projects and experiments for productivity and joy in screens.
+        I'm making projects and experiments for productivity and pleasure in
+        screens.
       </p>
       <br />
       <br />

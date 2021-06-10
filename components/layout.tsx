@@ -1,6 +1,4 @@
 import React from "react"
-import { contactMail } from "../consts"
-import { useClipboard } from "../hooks/use-clipboard"
 import { DesktopOnly } from "../utils/styled-components"
 import { styled } from "styletron-react"
 import { breakPoint } from "../consts"
@@ -32,19 +30,8 @@ const Nav = styled("div", {
   position: "absolute",
   display: "flex",
 })
-const Email = styled("span", {
-  color: "blue",
-  cursor: "pointer",
-  display: "inline-block",
-  marginLeft: "4px",
-})
-const Twitter = styled("a", {
-  marginLeft: "4px",
-})
 
 export function Layout({ children, home = false }) {
-  const { hasCopied, onCopy } = useClipboard(contactMail)
-
   return (
     <Wrap>
       <Header />
@@ -87,17 +74,6 @@ export function Layout({ children, home = false }) {
           <Nav>
             <div>
               <DesktopOnly>
-                {/* <Email onClick={onCopy}>
-                  {hasCopied ? "copied" : contactMail}
-                </Email>
-                <br /> */}
-                {/* <Twitter
-                  href="http://twitter.com/ruucm"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  @ruucm
-                </Twitter> */}
                 <a href="/">/home</a>
                 <br />
               </DesktopOnly>

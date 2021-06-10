@@ -2,7 +2,8 @@ import React from "react"
 import { Layout } from "../../components"
 import { useESMComponent } from "../../hooks/use-esm-component"
 import { styled } from "styletron-react"
-import { breakPoint } from "../../consts"
+import { breakPoint, contactMail } from "../../consts"
+import { useClipboard } from "../../hooks/use-clipboard"
 
 const Wrap = styled("div", {
   maxWidth: "720px",
@@ -28,6 +29,15 @@ const P = styled("p", {
   marginBottom: "0px",
 })
 
+const Email = styled("span", {
+  color: "blue",
+  cursor: "pointer",
+  display: "inline-block",
+})
+const Twitter = styled("a", {
+  color: "blue",
+})
+
 export function Page() {
   const Module3: any = useESMComponent(
     "https://framerusercontent.com/modules/5EaLh0KVaiYgE67ROHLy/2kSwOAlvLpDNdFUntSDL/JgWSPuRfa.js"
@@ -36,11 +46,19 @@ export function Page() {
   const StyledModule = styled(Module3, {
     cursor: "pointer",
   })
+  const { hasCopied, onCopy } = useClipboard(contactMail)
 
   return (
     <Layout>
       <Wrap>
         <h3>About</h3>
+        <p>
+          My name is Yongmin Ji, and ruucm is my nick name. I've used to this
+          nickname from 2010~. And you can pronounce it as "room".
+          <br />I like screens and pixels. I love how people can react and
+          explore these worlds with their eyes and hands and ears, sharing it to
+          others.
+        </p>
         <ParagraphWithImage>
           <P>
             My story starts from making a simple android socket during the army
@@ -80,6 +98,25 @@ export function Page() {
           screens are essential, like making neat controllers for spaceship
           pilots to Mars.
         </p>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-end",
+          }}
+        >
+          <Email onClick={onCopy}>
+            Email ─ {hasCopied ? "copied" : contactMail}
+          </Email>
+          <Twitter
+            href="http://twitter.com/ruucm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Twitter ─ @ruucm
+          </Twitter>
+        </div>
       </Wrap>
     </Layout>
   )
