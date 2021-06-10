@@ -82,7 +82,7 @@ export const cardDatas = [
     duration: "2018 ~ ",
     slug: "harbor-school",
     tags: ["techy-designers"],
-    role: "Founder / Developer / Instructor",
+    role: "Founder / Developer / Designer / Instructor",
     links: [
       {
         text: "harbor.school",
