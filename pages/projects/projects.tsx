@@ -16,6 +16,7 @@ const Grid = styled("div", {
 const Tags = styled("div", {
   textAlign: "right",
   marginBottom: "7px",
+  whiteSpace: "nowrap",
   // move Tag's transition at here, cause it emits weird errors.
   "em::before": {
     transition: "all 0.3s ease-in-out",
