@@ -45,8 +45,8 @@ export const placeholderImages = import.meta.globEager(
  */
 export const availableTags = [
   "design-teams",
-  "techy-designers",
-  "prototypers",
+  "designers",
+  "code-beginners",
   "writers",
 ]
 export const cardDatas = [
@@ -55,7 +55,7 @@ export const cardDatas = [
     description: ``,
     duration: "2021 ─ WIP",
     slug: "3d-gradient-plugin",
-    tags: ["prototypers"],
+    tags: ["designers"],
     role: "Developer / Designer",
     links: [
       {
@@ -87,7 +87,7 @@ export const cardDatas = [
     description: `As the founder of Harbor School, I learned how software impacts people and society and markets.`,
     duration: "2018 ~ ",
     slug: "harbor-school",
-    tags: ["techy-designers"],
+    tags: ["code-beginners"],
     role: "Founder / Developer / Designer / Instructor",
     links: [
       {
@@ -105,7 +105,7 @@ export const cardDatas = [
     description: ``,
     duration: "2018 ~ 2021",
     slug: "framer-packages",
-    tags: ["prototypers"],
+    tags: ["designers"],
     role: "Developer / Designer",
     links: [
       {
@@ -131,7 +131,7 @@ export const cardDatas = [
     description: ``,
     duration: "2019",
     slug: "framer-code-generators",
-    tags: ["techy-designers"],
+    tags: ["code-beginners"],
     role: "Developer",
     links: [
       {
