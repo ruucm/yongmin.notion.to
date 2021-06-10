@@ -11,9 +11,8 @@ export function YoutubeVideoGrid({ videos }) {
       }}
     >
       {videos.map((videoId, id) => (
-        <AspectRatio ratio={youtubeVideoDefaltRatio}>
+        <AspectRatio key={id} ratio={youtubeVideoDefaltRatio}>
           <iframe
-            key={id}
             frameBorder="0"
             // allowFullScreen="1"
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
