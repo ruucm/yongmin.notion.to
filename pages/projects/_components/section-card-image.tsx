@@ -3,11 +3,12 @@ import { motion } from "framer-motion"
 import { styled } from "styletron-react"
 import {
   imageBasePath,
+  imageDefaltRatio,
   placeholderBasePath,
   placeholderImages,
 } from "../../../consts"
 import { LazyLoadImage } from "./lazy-load-image"
-import { Responsive } from "../../../utils/styled-components"
+import { AspectRatio } from "../../../utils/aspect-ratio"
 
 const Wrap = styled("div", ({ $zoomed, $filter }: any) => {
   return {
@@ -52,7 +53,7 @@ export function SectionCardImage({ imageName, grayscale, zoomed, setZoomed }) {
         onClick={() => setZoomed(false)}
       />
       {isGif && (
-        <Responsive>
+        <AspectRatio ratio={imageDefaltRatio}>
           <GifImage
             // gif imageName has it's extension
             src={`${imageBasePath}/${imageName}`}
@@ -61,7 +62,7 @@ export function SectionCardImage({ imageName, grayscale, zoomed, setZoomed }) {
             layout
             transition={defaultTransition}
           />
-        </Responsive>
+        </AspectRatio>
       )}
       {!isGif && (
         <StyledLazyLoadImage

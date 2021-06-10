@@ -2,6 +2,7 @@
  * UI
  */
 export const breakPoint = 768
+export const imageDefaltRatio = 1720 / 1053
 
 /**
  * Website

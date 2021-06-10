@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import React from "react"
 import { styled } from "styletron-react"
-import { imageBasePath } from "../../../consts"
+import { imageBasePath, imageDefaltRatio } from "../../../consts"
 import { AspectRatio } from "../../../utils/aspect-ratio"
 
 const Image = styled(motion.img, {
@@ -23,7 +23,7 @@ export function LazyLoadImage({
   transition,
 }: any) {
   return (
-    <AspectRatio ratio={1720 / 1053}>
+    <AspectRatio ratio={imageDefaltRatio}>
       <div>
         <Image
           src={placeholderImage}
