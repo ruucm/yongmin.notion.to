@@ -87,13 +87,14 @@ export function Layout({ children, home = false }) {
                   {hasCopied ? "copied" : contactMail}
                 </Email>
                 <br /> */}
-                <Twitter
+                {/* <Twitter
                   href="http://twitter.com/ruucm"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   @ruucm
-                </Twitter>
+                </Twitter> */}
+                <a href="/">/home</a>
                 <br />
               </DesktopOnly>
               <a href="/projects">/projects</a>
