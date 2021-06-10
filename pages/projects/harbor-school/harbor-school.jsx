@@ -5,7 +5,7 @@ import { SubTitle } from "../_components/sub-title"
 import { Summary } from "../_components/summary"
 import { styled } from "styletron-react"
 import { PostLayout } from "../../../components/post-layout"
-import { VideoGrid } from "../_components/video-grid"
+import { YoutubeVideoGrid } from "../_components/youtube-video-grid"
 
 const Grid = styled("div", {
   display: "grid",
@@ -16,7 +16,7 @@ export function Page({ slug }) {
   return (
     <PostLayout>
       <Summary slug={slug} />
-      <VideoGrid videos={["KIbAXnuXyd0", "nSxBeopwA7E"]} />
+      <YoutubeVideoGrid videos={["KIbAXnuXyd0", "nSxBeopwA7E"]} />
       <AnimateSharedLayout>
         <SubTitle>Education Content Experience</SubTitle>
         <Grid>

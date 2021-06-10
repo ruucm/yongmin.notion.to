@@ -2,7 +2,7 @@ import * as React from "react"
 import { youtubeVideoDefaltRatio } from "../../../consts"
 import { AspectRatio } from "../../../utils/aspect-ratio"
 
-export function VideoGrid({ videos }) {
+export function YoutubeVideoGrid({ videos }) {
   return (
     <div
       style={{
@@ -26,4 +26,4 @@ export function VideoGrid({ videos }) {
   )
 }
 
-VideoGrid.defaultProps = {}
+YoutubeVideoGrid.defaultProps = {}
