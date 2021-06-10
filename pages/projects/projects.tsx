@@ -10,12 +10,12 @@ import { getUrlParams } from "../../utils"
 const Grid = styled("div", {
   display: "grid",
   gridTemplateColumns: "1fr",
-  gap: "1.6rem",
+  rowGap: "var(--row-gap)",
 })
 
 const Tags = styled("div", {
   textAlign: "right",
-  marginBottom: "1rem",
+  marginBottom: "var(--blockSpacingBottom)",
   whiteSpace: "nowrap",
   // move Tag's transition at here, cause it emits weird errors.
   "em::before": {

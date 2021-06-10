@@ -12,9 +12,6 @@ const H2 = styled("h2", {
   marginTop: "2rem",
   marginBottom: "2.5rem",
 })
-const UnderLine = styled("span", {
-  textDecoration: "underline",
-})
 
 export function Header() {
   const [hoverRef, isHover]: any = useHover()
@@ -25,7 +22,7 @@ export function Header() {
         <H2 ref={hoverRef}>
           {isHover ? "안녕 하세요," : "Hello,"}
           <br />
-          <UnderLine>I'm yongmin ruucm.</UnderLine>
+          <span>I'm yongmin ruucm.</span>
         </H2>
       </a>
     </header>
