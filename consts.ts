@@ -74,6 +74,10 @@ export const cardDatas = [
         text: "Website",
         href: "https://lighthouse.harbor.school",
       },
+      {
+        text: "Lighthouse Gallery",
+        href: "https://framer.com/projects/lighthouse-gallery--ky1cQZRYNQoLD9MZTOC3",
+      },
     ],
   },
   {
