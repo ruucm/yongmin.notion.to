@@ -67,7 +67,7 @@ export const cardDatas = [
     description: `As the founder of Harbor School, I learned how software impacts people and society and markets.`,
     duration: "2018 ~ ",
     slug: "harbor-school",
-    tags: ["techy-designers", "prototypers"],
+    tags: ["techy-designers"],
     role: "Founder / Developer / Instructor",
     links: [
       {
@@ -103,6 +103,20 @@ export const cardDatas = [
       {
         text: "Saturation Gradients",
         href: "https://packages.framer.com/package/ruucm-h/mesh-gradients",
+      },
+    ],
+  },
+  {
+    title: "3D Gradient Plugin for Figma & Framer",
+    description: ``,
+    duration: "2021 ─ WIP",
+    slug: "3d-gradient-plugin",
+    tags: ["prototypers"],
+    role: "Developer / Designer",
+    links: [
+      {
+        text: "Prototype",
+        href: "https://elastic-lamport-d2e690.netlify.app/",
       },
     ],
   },
