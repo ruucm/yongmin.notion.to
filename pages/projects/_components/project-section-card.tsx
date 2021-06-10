@@ -18,7 +18,7 @@ const Grid = styled(motion.div, ({ $zoomed }: any) => {
   }
 })
 const Description = styled("div", {
-  padding: "30px 15px",
+  padding: "30px 0px",
   textAlign: "right",
   [`@media screen and (max-width: ${breakPoint}px)`]: {
     padding: "0px",
