@@ -34,40 +34,39 @@ export function Card({ title, duration, description, outlink, slug, tags }) {
     : { href: outlink, target: "_blank" }
 
   return (
-    <a {...linkProps}>
-      <motion.div
-        layoutId={title}
+    <motion.a
+      layoutId={title}
+      transition={{
+        duration: 0.36,
+      }}
+      {...linkProps}
+    >
+      <Wrap
+        initial={wrap.inActive}
+        animate={wrap.active}
+        exit={wrap.inActive}
         transition={{
           duration: 0.36,
         }}
       >
-        <Wrap
-          initial={wrap.inActive}
-          animate={wrap.active}
-          exit={wrap.inActive}
-          transition={{
-            duration: 0.36,
-          }}
-        >
-          <H4>
-            {title}
-            {duration && ` (${duration})`}
-          </H4>
-          <p>{description}</p>
-          <More>
-            {slug && "More"}
-            {outlink && "More (outlink)"}
-          </More>
-          <Tags>
-            {tags.map((tag, id) => (
-              <span key={id}>
-                {tag}
-                {id < tags.length - 1 && ","}{" "}
-              </span>
-            ))}
-          </Tags>
-        </Wrap>
-      </motion.div>
-    </a>
+        <H4>
+          {title}
+          {duration && ` (${duration})`}
+        </H4>
+        <p>{description}</p>
+        <More>
+          {slug && "More"}
+          {outlink && "More (outlink)"}
+        </More>
+        <Tags>
+          {tags.map((tag, id) => (
+            <span key={id}>
+              {tag}
+              {id < tags.length - 1 && ","}{" "}
+            </span>
+          ))}
+        </Tags>
+      </Wrap>
+    </motion.a>
   )
 }
