@@ -50,27 +50,30 @@ export function Layout({ children, home = false }) {
       <Grid>
         <motion.main
           initial={{
-            // opacity: 0,
+            opacity: 0,
             // scale: 1.1,
-            rotate: "90deg",
+            // rotate: "90deg",
+            y: "-5vh",
           }}
           animate={{
-            // opacity: 1,
+            opacity: 1,
             // scale: 1,
-            rotate: "0deg",
+            // rotate: "0deg",
+            y: "0vh",
             transition: {
-              duration: 0.72,
-              ease: "linear",
-              delay: 0.36,
+              duration: 0.36,
+              // ease: "linear",
+              // delay: 0.36,
             },
           }}
           exit={{
-            // opacity: 0,
+            opacity: 0,
             // scale: 0.9,
-            rotate: "90deg",
+            // rotate: "90deg",
+            y: "5vh",
             transition: {
-              duration: 0.36,
-              ease: "linear",
+              duration: 0.28,
+              // ease: "linear",
             },
           }}
           style={{
