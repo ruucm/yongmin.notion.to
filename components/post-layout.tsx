@@ -1,22 +1,24 @@
 import React from "react"
+import { isBrowser } from "../utils"
 import { Layout } from "./layout"
 
 export function PostLayout({ children }) {
   return (
     <Layout>
       {children}
-      <a
-        href="/projects"
+      <button
         style={{
           display: "block",
-          textAlign: "right",
-          fontSize: "1.5rem",
           marginTop: "2rem",
           marginBottom: "2.5rem",
+          marginLeft: "auto",
+        }}
+        onClick={() => {
+          isBrowser && history.back()
         }}
       >
         Back
-      </a>
+      </button>
     </Layout>
   )
 }
