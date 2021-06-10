@@ -9,8 +9,8 @@ export function Page({ slug }) {
       <Summary />
       <Gallery
         images={[
-          "lighthouse_09",
           "lighthouse_10",
+          "lighthouse_09",
           "lighthouse_01",
           "lighthouse_02",
           "lighthouse_03",
