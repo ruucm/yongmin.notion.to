@@ -1,5 +1,5 @@
 import React from "react"
-import { ProjectSectionCard } from "../_components/project-section-card"
+import { SectionCard } from "../_components/section-card"
 import { AnimateSharedLayout } from "framer-motion"
 import { Summary } from "../_components/summary"
 import { SubTitle } from "../_components/sub-title"

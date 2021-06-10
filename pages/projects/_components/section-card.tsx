@@ -34,7 +34,7 @@ const defaultTransition = {
   duration: 0.36,
 }
 
-export function ProjectSectionCard({
+export function SectionCard({
   imageName,
   title,
   description,

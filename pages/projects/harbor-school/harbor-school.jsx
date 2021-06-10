@@ -1,5 +1,5 @@
 import React from "react"
-import { ProjectSectionCard } from "../_components/project-section-card"
+import { SectionCard } from "../_components/section-card"
 import { AnimateSharedLayout } from "framer-motion"
 import { SubTitle } from "../_components/sub-title"
 import { Summary } from "../_components/summary"
@@ -45,7 +45,7 @@ export function Page({ slug }) {
       <AnimateSharedLayout>
         <SubTitle>Education Content Experience</SubTitle>
         <Grid>
-          <ProjectSectionCard
+          <SectionCard
             imageName={"problem-youtube"}
             title="[Problems] - Bad Education Content Experience"
             description={`I learn programming and design by myself with youtube videos and blog
@@ -58,7 +58,7 @@ export function Page({ slug }) {
         post.`}
             // grayscale
           />
-          <ProjectSectionCard
+          <SectionCard
             imageName={"solution-video-explorer.gif"}
             title="[Solution] - Video Explorer"
             description={`So I started develop a new UI called "Video Explorer". I combines good
@@ -70,7 +70,7 @@ export function Page({ slug }) {
 
         <SubTitle>Internal Student Management System</SubTitle>
         <Grid>
-          <ProjectSectionCard
+          <SectionCard
             imageName={"problem-students-management"}
             title="[Problems] - Seperated CRM and Student Managements"
             description={`I had to offer CRM(Customer relationship management) with student's achievement dashboard.`}
@@ -78,7 +78,7 @@ export function Page({ slug }) {
             // alignRight
           />
 
-          <ProjectSectionCard
+          <SectionCard
             imageName={"solution-students-management"}
             title="[Solution] - Student Management System"
             description={`And I need to collect latest resources for students. But we had only one
