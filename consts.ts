@@ -49,6 +49,20 @@ export const availableTags = [
 ]
 export const cardDatas = [
   {
+    title: "3D Gradient Plugin for Figma & Framer",
+    description: ``,
+    duration: "2021 ─ WIP",
+    slug: "3d-gradient-plugin",
+    tags: ["prototypers"],
+    role: "Developer / Designer",
+    links: [
+      {
+        text: "Prototype",
+        href: "https://elastic-lamport-d2e690.netlify.app/",
+      },
+    ],
+  },
+  {
     title: "Lighthouse Design System",
     description: `Open-sourced Design System solution to re-invent designing and developing workflows.`,
     duration: "2020 ~ ",
@@ -103,20 +117,6 @@ export const cardDatas = [
       {
         text: "Saturation Gradients",
         href: "https://packages.framer.com/package/ruucm-h/mesh-gradients",
-      },
-    ],
-  },
-  {
-    title: "3D Gradient Plugin for Figma & Framer",
-    description: ``,
-    duration: "2021 ─ WIP",
-    slug: "3d-gradient-plugin",
-    tags: ["prototypers"],
-    role: "Developer / Designer",
-    links: [
-      {
-        text: "Prototype",
-        href: "https://elastic-lamport-d2e690.netlify.app/",
       },
     ],
   },
