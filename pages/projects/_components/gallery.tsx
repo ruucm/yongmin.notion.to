@@ -8,16 +8,17 @@ import {
 } from "../../../consts"
 import { LazyLoadImage } from "./lazy-load-image"
 
-const GridWrap = styled("div", {
-  display: "grid",
+const GridWrap = styled("div", ({ $flex }: any) => ({
+  display: $flex ? "flex" : "grid",
+  flexWrap: "wrap",
+  gap: "30px",
   gridTemplateColumns: "1fr 1fr",
   marginTop: "30px",
-  gap: "30px",
   marginBottom: "30px",
   [`@media screen and (max-width: ${breakPoint}px)`]: {
     gridTemplateColumns: "1fr",
   },
-})
+}))
 const Img = styled("img", {
   width: "100%",
   display: "block",
@@ -29,9 +30,9 @@ const StyledLazyLoadImage = styled(LazyLoadImage, {
   border: "1px solid",
 })
 
-export function Gallery({ images }) {
+export function Gallery({ images, flex = true }) {
   return (
-    <GridWrap>
+    <GridWrap $flex={flex}>
       {images.map((imageName, id) => {
         const isGif = imageName.includes("gif")
 
