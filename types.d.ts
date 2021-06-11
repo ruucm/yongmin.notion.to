@@ -10,5 +10,3 @@ declare module "*.png" {
 
 declare var LoadingClass: any
 declare var Framer: any
-
-declare var useIntersection: any
