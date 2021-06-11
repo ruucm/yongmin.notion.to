@@ -20,8 +20,6 @@ export function Page({ slug }) {
   const m: any = useESM(
     "https://module.harbor.school/dist/modules/interactions/scrolling/intersecting/reveal/react/hooks/use-intersection.js"
   )
-  console.log("m", m)
-  console.log("m?.useIntersection", m?.useIntersection)
 
   return (
     <PostLayout>

@@ -7,7 +7,7 @@ export function Video({
   src,
   ratio = 1920 / 1080,
   useIntersection = () => {
-    return [null, true]
+    return [null, false]
   },
   ...rest
 }) {
