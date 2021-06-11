@@ -11,7 +11,7 @@ import { LazyLoadImage } from "./lazy-load-image"
 const GridWrap = styled("div", ({ $flex }: any) => ({
   display: $flex ? "flex" : "grid",
   flexWrap: "wrap",
-  gap: "30px",
+  gap: "var(--blockSpacingBottom)",
   gridTemplateColumns: "1fr 1fr",
   [`@media screen and (max-width: ${breakPoint}px)`]: {
     gridTemplateColumns: "1fr",
