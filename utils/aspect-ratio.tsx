@@ -1,7 +1,7 @@
 import React from "react"
 import { styled } from "styletron-react"
 
-const Responsive = styled("div", ({ $ratio }) => ({
+const Responsive = styled("div", ({ $ratio }: any) => ({
   position: "relative",
   width: "100%",
   height: "0px",
@@ -17,7 +17,7 @@ const Positioning = styled("div", {
 })
 
 export const AspectRatio = React.forwardRef(
-  ({ children, ratio = 4 / 3, ...rest }, ref) => (
+  ({ children, ratio = 4 / 3, ...rest }: any, ref) => (
     <Responsive $ratio={ratio} ref={ref} {...rest}>
       <Positioning>
         {React.cloneElement(children, {
