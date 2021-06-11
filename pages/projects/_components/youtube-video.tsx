@@ -4,7 +4,13 @@ import { AspectRatio } from "../../../utils/aspect-ratio"
 
 export function YoutubeVideo({ videoId, ...rest }) {
   return (
-    <AspectRatio ratio={youtubeVideoDefaltRatio} {...rest}>
+    <AspectRatio
+      ratio={youtubeVideoDefaltRatio}
+      style={{
+        border: "1px solid",
+      }}
+      {...rest}
+    >
       <iframe
         frameBorder="0"
         // allowFullScreen="1"
