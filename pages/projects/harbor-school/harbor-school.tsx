@@ -34,10 +34,9 @@ export function Page({ slug }) {
             // grayscale
           />
           <SectionCard
-            // imageName={"solution-video-explorer.gif"}
             videoInfo={{
-              path: "/videos/harbor.school-01.mov",
-              ratio: 2688 / 1630,
+              path: "/videos/harbor.school-02.mov",
+              ratio: 3584 / 2190,
             }}
             isZoomed
             title="[Solution] - Video Explorer"
