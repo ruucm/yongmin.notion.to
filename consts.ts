@@ -66,7 +66,8 @@ export const cardDatas = [
   },
   {
     title: "Lighthouse Design System",
-    description: `Open-sourced Design System solution to re-invent designing and developing workflows. It is one of the most popular packages in Framer Package Stores. (It's been in the top five on the Framer Packages list.)`,
+    description: `Open-sourced Design System solution to re-invent designing and developing workflows. It is one of the most popular packages in Framer Package Stores.`,
+    // (It's been in the top five on the Framer Packages list.)
     duration: "2020 ~ ",
     slug: "lighthouse-design-system",
     tags: ["design-teams"],

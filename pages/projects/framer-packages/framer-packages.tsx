@@ -25,11 +25,13 @@ export function Page({ slug }) {
     <PostLayout>
       <Summary slug={slug} />
       <Gallery images={["enhanced-lottie-01"]} />
+      <Spacing />
       <Video
         useIntersection={m?.useIntersection}
         src="/videos/enhanced-lottie-01.mov"
         ratio={1720 / 1051}
       />
+      <Spacing />
       <Video
         useIntersection={m?.useIntersection}
         src="/videos/enhanced-lottie-02.mov"
@@ -89,6 +91,7 @@ export function Page({ slug }) {
         src="/videos/bed-time-movie.mp4"
         ratio={1 / 1}
       />
+      <Spacing />
       <Tweet tweetId="1263573216091467777" />
       <Spacing />
       {/* 
@@ -99,6 +102,7 @@ export function Page({ slug }) {
       <Spacing /> */}
 
       <Gallery images={["number-count-01"]} />
+      <Spacing />
       <Video
         useIntersection={m?.useIntersection}
         src="/videos/basic-counter.mp4"
@@ -111,10 +115,12 @@ export function Page({ slug }) {
       <Spacing />
 
       <Gallery images={["confetti-plus-01"]} />
+      <Spacing />
       <Tweet tweetId="1351806402990272514" />
       <Spacing />
 
       <Gallery images={["saturation-gradients-01"]} />
+      <Spacing />
       <Video
         useIntersection={m?.useIntersection}
         src="/videos/saturation-gradients.mov"
