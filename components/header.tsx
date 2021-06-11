@@ -24,7 +24,7 @@ export function Header() {
           as={H2}
           normal={
             <>
-              Hello
+              Hello,
               <br />
               <span>I'm yongmin ruucm.</span>
             </>

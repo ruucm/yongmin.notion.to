@@ -25,7 +25,7 @@ async function addPageContext(pageContext): Promise<PageContext> {
     },
     // The page's <title>
     documentProps: {
-      title: "About",
+      title: "About me • ruucm",
       // description: projectsData.description,
     },
   }

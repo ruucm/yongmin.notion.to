@@ -3,7 +3,7 @@
  */
 export const breakPoint = 768
 export const imageDefaltRatio = 1720 / 1053
-export const youtubeVideoDefaltRatio = 3584 / 2240
+export const youtubeVideoDefaltRatio = 3584 / (2240 - 10) // calculate width of youtube videos borders
 
 /**
  * Website
@@ -53,7 +53,7 @@ export const cardDatas = [
   {
     title: "3D Gradient Plugin for Figma & Framer",
     description: ``,
-    duration: "2021 ─ WIP",
+    duration: "2021 ─ WORK IN PROGRESS",
     slug: "3d-gradient-plugin",
     tags: ["designers"],
     role: "Developer / Designer",
@@ -89,7 +89,7 @@ export const cardDatas = [
     duration: "2018 ~ ",
     slug: "harbor-school",
     tags: ["code-beginners"],
-    role: "Founder / Developer / Designer / Instructor",
+    role: "Founder / Instructor / Developer / Designer / Video Editor",
     links: [
       {
         text: "harbor.school",
