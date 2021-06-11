@@ -14,7 +14,7 @@ const GridWrap = styled("div", ({ $flex }: any) => ({
   gap: "30px",
   gridTemplateColumns: "1fr 1fr",
   marginTop: "30px",
-  marginBottom: "30px",
+  marginBottom: "var(--blockSpacingBottom)",
   [`@media screen and (max-width: ${breakPoint}px)`]: {
     gridTemplateColumns: "1fr",
   },

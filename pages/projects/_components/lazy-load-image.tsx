@@ -21,9 +21,10 @@ export function LazyLoadImage({
   onClick,
   layout,
   transition,
+  style,
 }: any) {
   return (
-    <AspectRatio ratio={imageDefaltRatio}>
+    <AspectRatio ratio={imageDefaltRatio} style={style}>
       <div>
         <Image
           src={placeholderImage}

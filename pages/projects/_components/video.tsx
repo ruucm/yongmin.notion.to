@@ -5,7 +5,7 @@ export function Video({ src, ratio = 1920 / 1080, ...rest }) {
   return (
     <AspectRatio ratio={ratio} {...rest}>
       <video
-        controls
+        // controls
         style={{
           width: "100%",
           height: "100%",
