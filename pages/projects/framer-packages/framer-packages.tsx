@@ -55,7 +55,7 @@ export function Page({ slug }) {
       </div> */}
       <Spacing />
 
-      <div
+      {/* <div
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr 1fr 1fr",
@@ -77,7 +77,14 @@ export function Page({ slug }) {
             gridColumnEnd: 5,
           }}
         />
-      </div>
+      </div> */}
+
+      <Video
+        useIntersection={m?.useIntersection}
+        src="/videos/bed-time-movie.mp4"
+        ratio={1 / 1}
+      />
+      <Tweet tweetId="1263573216091467777" />
       <Spacing />
       {/* 
       <Video
