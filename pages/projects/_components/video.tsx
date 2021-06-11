@@ -44,7 +44,7 @@ function Inner({ visible, src }) {
         border: "1px solid",
       }}
     >
-      <source src={src} type="video/mp4" />
+      <source src={`${src}#t=0.001`} type="video/mp4" />
       Sorry, your browser doesn't support embedded videos.
     </video>
   )
