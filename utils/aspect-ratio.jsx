@@ -16,9 +16,9 @@ const Positioning = styled("div", {
   height: "100%",
 })
 
-export function AspectRatio({ children, ratio = 4 / 3 }) {
+export function AspectRatio({ children, ratio = 4 / 3, ...rest }) {
   return (
-    <Responsive $ratio={ratio}>
+    <Responsive $ratio={ratio} {...rest}>
       <Positioning>
         {React.cloneElement(children, {
           style: {
