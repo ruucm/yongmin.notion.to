@@ -117,12 +117,15 @@ export function Page() {
             alignItems: "flex-end",
           }}
         >
+          <Email onClick={onCopy}>
+            {hasCopied ? "Copied" : "Email ─ ruucm@ruucm.work"}
+          </Email>
           <Twitter
             href="http://twitter.com/ruucm"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Twitter
+            Twitter ─ @ruucm
           </Twitter>
           <a
             href="https://github.com/ruucm"
@@ -132,9 +135,8 @@ export function Page() {
               color: "blue",
             }}
           >
-            Github
+            Github ─ /ruucm
           </a>
-          <Email onClick={onCopy}>{hasCopied ? "Copied" : "Email"}</Email>
         </div>
       </Wrap>
     </Layout>

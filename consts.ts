@@ -133,11 +133,15 @@ export const cardDatas = [
     duration: "2019",
     slug: "framer-code-generators",
     tags: ["code-beginners"],
-    role: "Developer",
+    role: "Developer / Designer",
     links: [
       {
-        text: "Framer Code Generators",
+        text: "VS Code Extension",
         href: "https://marketplace.visualstudio.com/items?itemName=ruucm.framerx-code-generators",
+      },
+      {
+        text: "Chrome Extension",
+        href: "https://chrome.google.com/webstore/detail/framer-code-generator/lijpejhigjbpnfgonmnknknaoneddjei",
       },
     ],
   },
