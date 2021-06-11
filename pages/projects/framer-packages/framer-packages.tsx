@@ -39,12 +39,13 @@ export function Page({ slug }) {
           imageName={"enhanced-lottie-02"}
           style={{
             display: "block",
+            border: "1px solid",
           }}
         />
         <Video
           useIntersection={m?.useIntersection}
           src="/videos/enhanced-lottie.mov"
-          ratio={2688 / 1630}
+          ratio={1720 / 1051}
         />
       </div>
       <Spacing />
