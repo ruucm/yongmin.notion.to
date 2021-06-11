@@ -3,7 +3,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { styled } from "styletron-react"
 import { breakPoint } from "../../../consts"
-import { SectionCardImage } from "./section-card-image"
+import { SectionCardMedia } from "./section-card-media"
 
 const Grid = styled(motion.div, ({ $zoomed }: any) => {
   return {
@@ -45,7 +45,7 @@ export function SectionCard({
 
   return (
     <Grid $zoomed={zoomed}>
-      <SectionCardImage
+      <SectionCardMedia
         imageName={imageName}
         grayscale={grayscale}
         zoomed={zoomed}
