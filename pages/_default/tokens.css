@@ -37,6 +37,9 @@
   );
   --background-color-hsl: 0, 0%, 76%;
   --background-color: hsl(var(--background-color-hsl));
+
+  --foreground-inverse-color: var(--background-color);
+  --background-inverse-color: var(--foreground-color);
   /* --primaryA: hsl(240, 100%, 50%); */
   /* --primaryB: #00aaaa; */
   /* --letterbox-color: #333;

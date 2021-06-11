@@ -161,7 +161,9 @@ function PlayRuucm() {
       <span
         style={{
           display: "inline-flex",
-          background: playing ? "white" : "initial",
+          background: playing
+            ? "var(--background-inverse-color)"
+            : "var(--background-color)",
           border: "1px solid",
           justifyContent: "center",
           alignItems: "center",
@@ -188,7 +190,11 @@ function PlayRuucm() {
         >
           <path
             d="M0.875 4.99219V3.67969L8.46094 0.476562V1.875L2.44531 4.34375L8.46094 6.83594V8.23438L0.875 4.99219Z"
-            fill="black"
+            fill={
+              playing
+                ? "var(--foreground-inverse-color)"
+                : "var(--foreground-color)"
+            }
           />
         </svg>
       </span>
