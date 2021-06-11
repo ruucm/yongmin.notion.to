@@ -17,7 +17,7 @@ const Positioning = styled("div", {
 })
 
 export const AspectRatio = React.forwardRef(
-  ({ children, ratio = 4 / 3, ...rest }: any, ref) => (
+  ({ children, ratio = 4 / 3, ...rest }: any, ref: any) => (
     <Responsive $ratio={ratio} ref={ref} {...rest}>
       <Positioning>
         {React.cloneElement(children, {

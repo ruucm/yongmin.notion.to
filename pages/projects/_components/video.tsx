@@ -6,7 +6,7 @@ import { useEffect } from "react"
 export function Video({
   src,
   ratio = 1920 / 1080,
-  useIntersection = () => {
+  useIntersection = (): any => {
     return [null, false]
   },
   ...rest
