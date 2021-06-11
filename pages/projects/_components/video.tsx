@@ -2,6 +2,9 @@ import React from "react"
 import { AspectRatio } from "../../../utils/aspect-ratio"
 import { useRef } from "react"
 import { useEffect } from "react"
+import { motion } from "framer-motion"
+
+const MotionAspectRatio = motion(AspectRatio)
 
 export function Video({
   src,
@@ -14,9 +17,13 @@ export function Video({
   const [ref, visible] = useIntersection({ threshold: 0.7 })
 
   return (
-    <AspectRatio ratio={ratio} ref={ref} {...rest}>
-      <Inner src={src} visible={visible} />
-    </AspectRatio>
+    // enable intersect watching
+    <div ref={ref}>
+      {/* enable layout motion */}
+      <MotionAspectRatio ratio={ratio} {...rest}>
+        <Inner src={src} visible={visible} />
+      </MotionAspectRatio>
+    </div>
   )
 }
 
