@@ -8,7 +8,8 @@
     "prod:serve": "serve dist/client/ --listen 5000",
     "server": "ts-node ./server",
     "server:prod": "cross-env NODE_ENV=production ts-node ./server",
-    "deploy": "vercel --prod"
+    "deploy": "vercel --prod",
+    "image-optimize": "node sharp.js"
   },
   "dependencies": {
     "@tanem/react-nprogress": "^3.0.67",
@@ -37,5 +38,11 @@
     "vite": "^2.3.6",
     "vite-plugin-ssr": "0.1.1",
     "zustand": "^3.5.2"
-  }
+  },
+  "devDependencies": {
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "sharp": "^0.28.3"
+  },
+  "type": "module"
 }
