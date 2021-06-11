@@ -39,6 +39,7 @@ export function Page({ slug }) {
               path: "/videos/harbor.school-01.mov",
               ratio: 2688 / 1630,
             }}
+            isZoomed
             title="[Solution] - Video Explorer"
             description={`So I started develop a new UI called "Video Explorer". I combines good
       points of video and post at the same time. It includes whole proccess

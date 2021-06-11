@@ -41,8 +41,9 @@ export function SectionCard({
   description,
   grayscale = false,
   alignRight = false,
+  isZoomed = false,
 }) {
-  const [zoomed, setZoomed] = useState(false)
+  const [zoomed, setZoomed] = useState(isZoomed)
 
   return (
     <Grid $zoomed={zoomed}>
