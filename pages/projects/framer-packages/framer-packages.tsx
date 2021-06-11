@@ -13,6 +13,7 @@ import {
   youtubeVideoDefaltRatio,
 } from "../../../consts"
 import { LazyLoadImage } from "../_components/lazy-load-image"
+import { Spacing } from "../_components/spacing"
 
 export function Page({ slug }) {
   return (
@@ -23,7 +24,6 @@ export function Page({ slug }) {
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
-          // marginBottom: "var(--blockSpacingBottom)",
         }}
       >
         <LazyLoadImage
@@ -38,28 +38,14 @@ export function Page({ slug }) {
         />
         <Video src="/videos/enhanced-lottie.mov" ratio={2688 / 1630} />
       </div>
+      <Spacing />
+
       <div
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr 1fr 1fr",
         }}
       >
-        {/* <Video
-          src="/videos/balloon-slider.mp4"
-          style={{
-            gridColumnStart: 1,
-            gridColumnEnd: 3,
-          }}
-        /> */}
-
-        {/* <Video
-          src="/videos/basic-counter.mp4"
-          ratio={1 / 1}
-          style={{
-            gridColumnStart: 1,
-            gridColumnEnd: 3,
-          }}
-        /> */}
         <Video
           src="/videos/bed-time-movie.mp4"
           ratio={1 / 1}
@@ -75,17 +61,11 @@ export function Page({ slug }) {
             gridColumnEnd: 5,
           }}
         />
-        {/*
-        <YoutubeVideo
-          videoId="NXhWymPSCpc"
-          style={{
-            gridColumnStart: 2,
-            gridColumnEnd: 5,
-          }}
-        /> */}
       </div>
+      <Spacing />
 
       <Video src="/videos/balloon-slider.mp4" />
+      <Spacing />
 
       <Gallery images={["number-count-01"]} />
       <Video
@@ -96,9 +76,11 @@ export function Page({ slug }) {
           gridColumnEnd: 3,
         }}
       />
+      <Spacing />
 
       <Gallery images={["confetti-plus-01"]} />
       <Tweet tweetId="1351806402990272514" />
+      <Spacing />
 
       <Gallery images={["saturation-gradients-01"]} />
       <Video src="/videos/saturation-gradients.mov" ratio={2688 / 1630} />
