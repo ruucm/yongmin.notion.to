@@ -25,7 +25,12 @@ export function Page({ slug }) {
     <PostLayout>
       <Summary slug={slug} />
       <Gallery images={["enhanced-lottie-01"]} />
-      <div
+      <Video
+        useIntersection={m?.useIntersection}
+        src="/videos/enhanced-lottie.mov"
+        ratio={1720 / 1051}
+      />
+      {/* <div
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
@@ -47,7 +52,7 @@ export function Page({ slug }) {
           src="/videos/enhanced-lottie.mov"
           ratio={1720 / 1051}
         />
-      </div>
+      </div> */}
       <Spacing />
 
       <div
@@ -74,12 +79,12 @@ export function Page({ slug }) {
         />
       </div>
       <Spacing />
-
+      {/* 
       <Video
         useIntersection={m?.useIntersection}
         src="/videos/balloon-slider.mp4"
       />
-      <Spacing />
+      <Spacing /> */}
 
       <Gallery images={["number-count-01"]} />
       <Video
