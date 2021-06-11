@@ -27,7 +27,12 @@ export function Page({ slug }) {
       <Gallery images={["enhanced-lottie-01"]} />
       <Video
         useIntersection={m?.useIntersection}
-        src="/videos/enhanced-lottie.mov"
+        src="/videos/enhanced-lottie-01.mov"
+        ratio={1720 / 1051}
+      />
+      <Video
+        useIntersection={m?.useIntersection}
+        src="/videos/enhanced-lottie-02.mov"
         ratio={1720 / 1051}
       />
       {/* <div
