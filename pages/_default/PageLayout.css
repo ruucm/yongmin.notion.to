@@ -60,6 +60,11 @@ video {
   margin-bottom: var(--blockSpacingBottom);
 }
 
+/* move Tag's transition at here, cause it emits weird errors. */
+em::before {
+  transition: all 0.3s ease-in-out;
+}
+
 /** Tweet **/
 .twitter-tweet {
   margin-top: 0 !important;

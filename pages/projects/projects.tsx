@@ -17,10 +17,6 @@ const Tags = styled("div", {
   textAlign: "right",
   marginBottom: "var(--blockSpacingBottom)",
   whiteSpace: "nowrap",
-  // move Tag's transition at here, cause it emits weird errors.
-  "em::before": {
-    transition: "all 0.3s ease-in-out",
-  },
 })
 
 const Tag = styled("em", ({ $active }: any): any => {
