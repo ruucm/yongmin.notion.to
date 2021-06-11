@@ -40,7 +40,7 @@ export function Page({ slug }) {
         />
 
         <Video
-          src="/public/videos/balloon-slider.mp4"
+          src="/videos/balloon-slider.mp4"
           style={{
             gridColumnStart: 1,
             gridColumnEnd: 5,
@@ -48,7 +48,7 @@ export function Page({ slug }) {
         />
 
         <Video
-          src="/public/videos/basic-counter.mp4"
+          src="/videos/basic-counter.mp4"
           ratio={1 / 1}
           style={{
             gridColumnStart: 1,
@@ -57,7 +57,7 @@ export function Page({ slug }) {
         />
 
         <Video
-          src="/public/videos/bed-time-movie.mp4"
+          src="/videos/bed-time-movie.mp4"
           ratio={1 / 1}
           style={{
             gridColumnStart: 3,
