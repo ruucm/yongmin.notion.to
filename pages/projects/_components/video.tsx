@@ -14,7 +14,7 @@ export function Video({
   const [ref, visible] = useIntersection()
 
   return (
-    <AspectRatio ratio={ratio} {...rest} $ref={ref}>
+    <AspectRatio ratio={ratio} ref={ref} {...rest}>
       <Inner src={src} visible={visible} />
     </AspectRatio>
   )
@@ -41,6 +41,7 @@ function Inner({ visible, src }) {
       style={{
         width: "100%",
         height: "100%",
+        border: "1px solid",
       }}
     >
       <source src={src} type="video/mp4" />
