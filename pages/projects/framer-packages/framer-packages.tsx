@@ -14,8 +14,15 @@ import {
 } from "../../../consts"
 import { LazyLoadImage } from "../_components/lazy-load-image"
 import { Spacing } from "../_components/spacing"
+import { useESM } from "../../../hooks/use-esm"
 
 export function Page({ slug }) {
+  const m: any = useESM(
+    "https://module.harbor.school/dist/modules/interactions/scrolling/intersecting/reveal/react/hooks/use-intersection.js"
+  )
+  console.log("m", m)
+  console.log("m?.useIntersection", m?.useIntersection)
+
   return (
     <PostLayout>
       <Summary slug={slug} />
@@ -36,7 +43,11 @@ export function Page({ slug }) {
             display: "block",
           }}
         />
-        <Video src="/videos/enhanced-lottie.mov" ratio={2688 / 1630} />
+        <Video
+          useIntersection={m?.useIntersection}
+          src="/videos/enhanced-lottie.mov"
+          ratio={2688 / 1630}
+        />
       </div>
       <Spacing />
 
@@ -47,6 +58,7 @@ export function Page({ slug }) {
         }}
       >
         <Video
+          useIntersection={m?.useIntersection}
           src="/videos/bed-time-movie.mp4"
           ratio={1 / 1}
           style={{
@@ -64,11 +76,15 @@ export function Page({ slug }) {
       </div>
       <Spacing />
 
-      <Video src="/videos/balloon-slider.mp4" />
+      <Video
+        useIntersection={m?.useIntersection}
+        src="/videos/balloon-slider.mp4"
+      />
       <Spacing />
 
       <Gallery images={["number-count-01"]} />
       <Video
+        useIntersection={m?.useIntersection}
         src="/videos/basic-counter.mp4"
         ratio={1 / 1}
         style={{
@@ -83,7 +99,11 @@ export function Page({ slug }) {
       <Spacing />
 
       <Gallery images={["saturation-gradients-01"]} />
-      <Video src="/videos/saturation-gradients.mov" ratio={2688 / 1630} />
+      <Video
+        useIntersection={m?.useIntersection}
+        src="/videos/saturation-gradients.mov"
+        ratio={2688 / 1630}
+      />
 
       <AnimateSharedLayout>
         <SubTitle>framer-packages</SubTitle>
