@@ -9,6 +9,8 @@ import {
 } from "../../../consts"
 import { LazyLoadImage } from "./lazy-load-image"
 import { AspectRatio } from "../../../utils/aspect-ratio"
+import { Video } from "./video"
+import { useESM } from "../../../hooks/use-esm"
 
 const Wrap = styled("div", ({ $zoomed, $filter }: any) => {
   return {
@@ -41,10 +43,24 @@ const defaultTransition = {
   duration: 0.36,
 }
 
-export function SectionCardMedia({ imageName, grayscale, zoomed, setZoomed }) {
+export function SectionCardMedia({
+  imageName,
+  videoInfo = { path: "", ratio: 1 / 1 },
+  grayscale,
+  zoomed,
+  setZoomed,
+}) {
   let filter = ""
   if (grayscale) filter += "grayscale(1) brightness(0.5)"
   const isGif = imageName.includes("gif")
+  const m: any = useESM(
+    "https://module.harbor.school/dist/modules/interactions/scrolling/intersecting/reveal/react/hooks/use-intersection.js"
+  )
+  const motionProps = {
+    onClick: () => setZoomed(!zoomed),
+    layout: true,
+    transition: defaultTransition,
+  }
 
   return (
     <Wrap $zoomed={zoomed} $filter={filter}>
@@ -58,22 +74,25 @@ export function SectionCardMedia({ imageName, grayscale, zoomed, setZoomed }) {
             // gif imageName has it's extension
             src={`${imageBasePath}/${imageName}`}
             alt=""
-            onClick={() => setZoomed(!zoomed)}
-            layout
-            transition={defaultTransition}
+            {...motionProps}
           />
         </AspectRatio>
       )}
-      {!isGif && (
+      {!isGif && imageName && (
         <StyledLazyLoadImage
           placeholderImage={
             placeholderImages[`${placeholderBasePath}/${imageName}.png`].default
           }
           imageName={imageName}
-          // motion props
-          onClick={() => setZoomed(!zoomed)}
-          layout
-          transition={defaultTransition}
+          {...motionProps}
+        />
+      )}
+      {videoInfo.path && (
+        <Video
+          useIntersection={m?.useIntersection}
+          src={videoInfo.path}
+          ratio={videoInfo.ratio}
+          {...motionProps}
         />
       )}
     </Wrap>

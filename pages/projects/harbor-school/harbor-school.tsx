@@ -34,7 +34,11 @@ export function Page({ slug }) {
             // grayscale
           />
           <SectionCard
-            imageName={"solution-video-explorer.gif"}
+            // imageName={"solution-video-explorer.gif"}
+            videoInfo={{
+              path: "/videos/harbor.school-01.mov",
+              ratio: 2688 / 1630,
+            }}
             title="[Solution] - Video Explorer"
             description={`So I started develop a new UI called "Video Explorer". I combines good
       points of video and post at the same time. It includes whole proccess

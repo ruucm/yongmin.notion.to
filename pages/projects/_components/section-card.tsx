@@ -35,7 +35,8 @@ const defaultTransition = {
 }
 
 export function SectionCard({
-  imageName,
+  imageName = "",
+  videoInfo = { path: "", ratio: 1 / 1 },
   title,
   description,
   grayscale = false,
@@ -47,6 +48,7 @@ export function SectionCard({
     <Grid $zoomed={zoomed}>
       <SectionCardMedia
         imageName={imageName}
+        videoInfo={videoInfo}
         grayscale={grayscale}
         zoomed={zoomed}
         setZoomed={setZoomed}

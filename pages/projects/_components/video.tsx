@@ -6,12 +6,12 @@ import { useEffect } from "react"
 export function Video({
   src,
   ratio = 1920 / 1080,
-  useIntersection = (): any => {
+  useIntersection = (opt): any => {
     return [null, false]
   },
   ...rest
 }) {
-  const [ref, visible] = useIntersection()
+  const [ref, visible] = useIntersection({ threshold: 0.7 })
 
   return (
     <AspectRatio ratio={ratio} ref={ref} {...rest}>

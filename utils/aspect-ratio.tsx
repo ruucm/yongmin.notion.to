@@ -1,7 +1,8 @@
+import { motion } from "framer-motion"
 import React from "react"
 import { styled } from "styletron-react"
 
-const Responsive = styled("div", ({ $ratio }: any) => ({
+const Responsive = styled(motion.div, ({ $ratio }: any) => ({
   position: "relative",
   width: "100%",
   height: "0px",
