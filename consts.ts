@@ -52,7 +52,8 @@ export const availableTags = [
 export const cardDatas = [
   {
     title: "3D Gradient Plugin for Figma & Framer",
-    description: ``,
+    description: `Building an HTML canvas-based design tool to generate and use 3d gradients quickly. I will be linked as a Figma plugin and Framer package.
+    `,
     duration: "2021 ─ WORK IN PROGRESS",
     slug: "3d-gradient-plugin",
     tags: ["designers"],
@@ -107,7 +108,7 @@ export const cardDatas = [
   },
   {
     title: "Framer Packages",
-    description: ``,
+    description: `I've been building many popular Framer packages for about two years for designers to create animations and prototypes quickly.`,
     duration: "2018 ~ 2021",
     slug: "framer-packages",
     tags: ["designers"],
