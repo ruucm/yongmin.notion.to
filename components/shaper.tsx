@@ -122,6 +122,14 @@ export function Shaper() {
       </Control2>
       <Control3
         onClick={() => {
+          document.documentElement.classList.toggle("debug-base-grid"),
+            document.documentElement.classList.toggle("debug")
+        }}
+      >
+        d
+      </Control3>
+      <Control3
+        onClick={() => {
           if (foregroundColorRgb === initialThemeState.foregroundColorRgb)
             setTheme({
               foregroundColorRgb: "255, 255, 255",
