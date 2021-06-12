@@ -43,6 +43,5 @@
     "fs": "^0.0.1-security",
     "path": "^0.12.7",
     "sharp": "^0.28.3"
-  },
-  "type": "module"
+  }
 }
