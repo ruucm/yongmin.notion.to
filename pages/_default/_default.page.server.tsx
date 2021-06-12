@@ -14,7 +14,7 @@ export { render }
 export { passToClient }
 
 // See https://github.com/brillout/vite-plugin-ssr#data-fetching
-const passToClient = ["pageProps", "documentProps"]
+const passToClient = ["pageProps", "documentProps", "urlParsed"]
 
 async function render(pageContext: PageContext) {
   const { Page, pageProps } = pageContext

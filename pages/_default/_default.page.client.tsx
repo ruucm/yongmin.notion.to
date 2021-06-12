@@ -18,7 +18,7 @@ async function hydrate(page) {
 
 const { hydrationPromise } = useClientRouter({
   async render(pageContext: PageContext) {
-    const { Page, pageProps } = pageContext
+    const { Page, pageProps, urlParsed } = pageContext
 
     // Hydrating Server-rendered Styles
     const hydratedStyles: any = document.getElementsByClassName(
@@ -37,7 +37,11 @@ const { hydrationPromise } = useClientRouter({
         />
         <PageLayout>
           <AnimatePresence exitBeforeEnter initial={false}>
-            <Page {...pageProps} key={`${pageProps?.slug}-page`} />
+            <Page
+              {...pageProps}
+              urlParsed={urlParsed}
+              key={`${pageProps?.slug}-page`}
+            />
           </AnimatePresence>
         </PageLayout>
       </StyletronProvider>
