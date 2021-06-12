@@ -62,13 +62,13 @@ export function Page() {
             normal={"Yongmin Ji"}
             hovered={"지 용민"}
           ></HoverText>
-          , and ruucm is my prefered nick name. I've used to this nickname from
+          , and ruucm is my preferred nickname. I've used this nickname since
           2010~. And you can pronounce it as "ro͝om
           <PlayRuucm />
-          ".
+          ."
           <br />I like screens and pixels. I love how people can react and
-          explore these worlds with their eyes and hands and ears, sharing it to
-          others.
+          explore these worlds with their eyes and hands and ears, sharing them
+          with others.
         </p>
         <ParagraphWithImage>
           <P>
