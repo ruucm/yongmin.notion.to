@@ -6,12 +6,13 @@ import { SubTitle } from "../_components/sub-title"
 import { PostLayout } from "../../../components/post-layout"
 import { YoutubeVideoGrid } from "../_components/youtube-video-grid"
 import { Spacing } from "../_components/spacing"
+import { YoutubeVideo } from "../_components/youtube-video"
 
 export function Page({ slug }) {
   return (
     <PostLayout>
       <Summary slug={slug} />
-      <YoutubeVideoGrid videos={["EpMYSzYMaEE", "npEEZecqi4g"]} />
+      <YoutubeVideo videoId="EpMYSzYMaEE" />
       <Spacing />
       <p>
         When I taught codes to designers for high-fidelity prototypes, I learned

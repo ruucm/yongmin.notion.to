@@ -51,7 +51,7 @@ export function SectionCardMedia({
   setZoomed,
 }) {
   let filter = ""
-  if (grayscale) filter += "grayscale(1) brightness(0.5)"
+  if (grayscale) filter += "grayscale(1)"
   const isGif = imageName.includes("gif")
   const m: any = useESM(
     "https://module.harbor.school/dist/modules/interactions/scrolling/intersecting/reveal/react/hooks/use-intersection.js"

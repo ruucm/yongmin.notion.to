@@ -31,10 +31,6 @@ export function Page({ slug }) {
         }
         ratio={2688 / 1630}
       />
-
-      <AnimateSharedLayout>
-        <SubTitle>3d-gradient-plugin</SubTitle>
-      </AnimateSharedLayout>
     </PostLayout>
   )
 }

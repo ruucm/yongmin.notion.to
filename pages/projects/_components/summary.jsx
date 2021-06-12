@@ -4,7 +4,7 @@ import { styled } from "styletron-react"
 
 const Wrap = styled("div", {
   display: "inline-block",
-  padding: "30px 0px",
+  padding: "var(--blockSpacingBottom) 0px",
 })
 
 const H3 = styled("h3", {

@@ -22,7 +22,7 @@ export function Page({ slug }) {
         <Grid>
           <SectionCard
             imageName={"problem-youtube"}
-            title="[Problems] - Bad Education Content Experience"
+            title="[Problems] - Bad Education Tutorial Experience"
             description={`I learn programming and design by myself with youtube videos and blog
         posts. But as a learner's view, there are solid problem on both side.
         On video side, it is always difficult to jump the point directly you
@@ -31,7 +31,7 @@ export function Page({ slug }) {
         sometimes post author could skip contents that makes students take a
         ton of times for finding why their project don't excuted like the
         post.`}
-            // grayscale
+            grayscale
           />
           <SectionCard
             videoInfo={{
@@ -40,14 +40,14 @@ export function Page({ slug }) {
               ratio: 3584 / 2190,
             }}
             isZoomed
-            title="[Solution] - Video Explorer"
-            description={`So I started develop a new UI called "Video Explorer". I combines good
+            title="[Solution] - Video Scrubber"
+            description={`So I started develop a new UI called "Video Scrubber". I combines good
       points of video and post at the same time. It includes whole proccess
       of tutorial to make the results, and user can find information quickly
       like the blog posts.`}
           />
         </Grid>
-
+        {/* 
         <SubTitle>Internal Student Management System</SubTitle>
         <Grid>
           <SectionCard
@@ -67,7 +67,7 @@ export function Page({ slug }) {
             problem.`}
             // alignRight
           />
-        </Grid>
+        </Grid> */}
       </AnimateSharedLayout>
     </PostLayout>
   )
