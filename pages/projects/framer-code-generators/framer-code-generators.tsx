@@ -11,9 +11,6 @@ export function Page({ slug }) {
     <PostLayout>
       <Summary slug={slug} />
       <YoutubeVideoGrid videos={["EpMYSzYMaEE", "npEEZecqi4g"]} />
-      <AnimateSharedLayout>
-        <SubTitle>framer-code-generators</SubTitle>
-      </AnimateSharedLayout>
     </PostLayout>
   )
 }

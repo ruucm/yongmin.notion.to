@@ -74,12 +74,16 @@ export const cardDatas = [
     role: "Developer / System Designer",
     links: [
       {
-        text: "Website",
+        text: "Documentation Website",
         href: "https://lighthouse.harbor.school",
       },
       {
         text: "Lighthouse Gallery",
         href: "https://framer.com/projects/lighthouse-gallery--ky1cQZRYNQoLD9MZTOC3",
+      },
+      {
+        text: "Harbor School",
+        href: "https://harbor.school/en/",
       },
     ],
   },
@@ -92,11 +96,11 @@ export const cardDatas = [
     role: "Founder / Instructor / Developer / Designer / Video Editor",
     links: [
       {
-        text: "harbor.school",
+        text: "Harbor School (online)",
         href: "https://harbor.school",
       },
       {
-        text: "class.harbor.school",
+        text: "Harbor School (version.1 ─ lectures)",
         href: "https://class.harbor.school",
       },
     ],
