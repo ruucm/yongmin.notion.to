@@ -21,6 +21,7 @@ export function Page({ slug }) {
         useIntersection={m?.useIntersection}
         src="/videos/3d-gradient-plugin.mov"
         ratio={2688 / 1630}
+        poster="/images/3d-gradient-plugin-poster.webp"
       />
 
       <AnimateSharedLayout>

@@ -8,6 +8,7 @@ const MotionAspectRatio = motion(AspectRatio)
 
 export function Video({
   src,
+  poster,
   ratio = 1920 / 1080,
   useIntersection = (opt): any => {
     return [null, false]
@@ -21,13 +22,13 @@ export function Video({
     <div ref={ref}>
       {/* enable layout motion */}
       <MotionAspectRatio ratio={ratio} {...rest}>
-        <Inner src={src} visible={visible} />
+        <Inner src={src} poster={poster} visible={visible} />
       </MotionAspectRatio>
     </div>
   )
 }
 
-function Inner({ visible, src }) {
+function Inner({ visible, src, poster }) {
   const videoRef = useRef(null)
 
   useEffect(() => {
@@ -45,6 +46,7 @@ function Inner({ visible, src }) {
       muted
       loop
       ref={videoRef}
+      poster={poster}
       style={{
         width: "100%",
         height: "100%",
