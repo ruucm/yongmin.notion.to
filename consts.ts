@@ -133,7 +133,7 @@ export const cardDatas = [
   },
   {
     title: "Framer Code Generators",
-    description: ``,
+    description: `Building a familiar path for designers who wants to learn codes.`,
     duration: "2019",
     slug: "framer-code-generators",
     tags: ["code-beginners"],
