@@ -52,8 +52,7 @@ export const availableTags = [
 export const cardDatas = [
   {
     title: "3D Gradient Plugin for Figma & Framer",
-    description: `Building an HTML canvas-based design tool to generate and use 3d gradients quickly. I will be linked as a Figma plugin and Framer package.
-    `,
+    description: `Building an efficient design tool to generate 3d gradients quickly. It is linked as a Figma plugin and Framer package.`,
     duration: "2021 ─ WORK IN PROGRESS",
     slug: "3d-gradient-plugin",
     tags: ["designers"],
@@ -109,7 +108,7 @@ export const cardDatas = [
   {
     title: "Framer Packages",
     description: `I've been building many popular Framer packages for about two years for designers to create animations and prototypes quickly.`,
-    duration: "2018 ~ 2021",
+    duration: "2018 ~ ",
     slug: "framer-packages",
     tags: ["designers"],
     role: "Developer / Designer",
@@ -134,7 +133,7 @@ export const cardDatas = [
   },
   {
     title: "Framer Code Generators",
-    description: `Building a familiar path for designers who wants to learn codes.`,
+    description: `Introducing a familiar path for designers who struggles to learn codes.`,
     duration: "2019",
     slug: "framer-code-generators",
     tags: ["code-beginners"],
@@ -152,7 +151,7 @@ export const cardDatas = [
   },
   {
     title: "Notion CMS",
-    description: `Developed whole system (React + Python + Github CI)`,
+    description: `I developed and designed the "Notion CMS System" for continuous writer's experiences. It applied to various websites, including the SELI Magazine.`,
     duration: "Oct 2020 ~ Dec 2020",
     slug: "notion-cms",
     tags: ["writers"],
