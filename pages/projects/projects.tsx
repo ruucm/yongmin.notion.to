@@ -3,9 +3,8 @@ import { useState } from "react"
 import { Card, Layout } from "../../components"
 import { availableTags, cardDatas } from "../../consts"
 import { AnimateSharedLayout, AnimatePresence } from "framer-motion"
-import { removeA } from "../../utils/removeA"
 import { styled } from "styletron-react"
-import { getUrlParams } from "../../utils"
+import { removeA } from "../../utils"
 
 const Grid = styled("div", {
   display: "grid",
