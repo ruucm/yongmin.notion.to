@@ -17,7 +17,7 @@ export { passToClient }
 const passToClient = ["pageProps", "documentProps", "urlParsed"]
 
 async function render(pageContext: PageContext) {
-  const { Page, pageProps } = pageContext
+  const { Page, pageProps, urlParsed } = pageContext
 
   // 1. Create a server engine instance
   const engine = new Styletron()
@@ -27,7 +27,7 @@ async function render(pageContext: PageContext) {
       <Loading />
       <PageLayout>
         <AnimatePresence exitBeforeEnter initial={false}>
-          <Page {...pageProps} />
+          <Page {...pageProps} urlParsed={urlParsed} />
         </AnimatePresence>
       </PageLayout>
     </StyletronProvider>

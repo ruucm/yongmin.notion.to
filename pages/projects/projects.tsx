@@ -41,9 +41,8 @@ const Tag = styled("em", ({ $active }: any): any => {
 
 const allTags = [...availableTags] // Make a new array. it stays as same value, after updatin states.
 
-export function Page() {
-  const params: any = getUrlParams()
-  const [tags, setTags] = useState(params?.tags?.split(",") || availableTags)
+export function Page({ urlParsed: { search } }) {
+  const [tags, setTags] = useState(search.tags || availableTags)
 
   return (
     <Layout home>
