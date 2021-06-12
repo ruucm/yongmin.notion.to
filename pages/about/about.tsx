@@ -135,6 +135,13 @@ export function Page() {
             Github ─ /ruucm
           </Link>
           <Link
+            href="https://www.youtube.com/channel/UCiy8RPplPzXrrAz29KNIDiA/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Youtube
+          </Link>
+          <Link
             href="https://medium.com/harbor-school"
             target="_blank"
             rel="noopener noreferrer"
