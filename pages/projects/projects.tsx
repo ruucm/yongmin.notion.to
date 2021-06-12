@@ -5,6 +5,7 @@ import { availableTags, cardDatas } from "../../consts"
 import { AnimateSharedLayout, AnimatePresence } from "framer-motion"
 import { styled } from "styletron-react"
 import { getUrlParams, removeA } from "../../utils"
+import { useEffect } from "react"
 
 const Grid = styled("div", {
   display: "grid",
@@ -42,14 +43,16 @@ const Tag = styled("em", ({ $active }: any): any => {
 const allTags = [...availableTags] // Make a new array. it stays as same value, after updatin states.
 
 export function Page({ urlParsed: { search } }) {
-  const tagsFromServer = search?.tags
+  const tagsFromServer = search?.tags?.split(",") // server prop not works on SSG
   const tagsFromBrowser = getUrlParams()?.tags?.split(",")
 
-  const [tags, setTags] = useState(
-    tagsFromServer || // server prop not works on SSG
-      tagsFromBrowser ||
-      availableTags
-  )
+  const [tags, setTags] = useState(tagsFromServer || tagsFromBrowser || [])
+
+  useEffect(() => {
+    // set all availableTags, if there is no available tags.
+    // It fires on client routings too.
+    if (!tagsFromServer && !tagsFromBrowser) setTags(availableTags)
+  }, [tagsFromServer, tagsFromBrowser])
 
   return (
     <Layout home>
