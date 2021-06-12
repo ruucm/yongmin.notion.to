@@ -4,7 +4,7 @@ import { Card, Layout } from "../../components"
 import { availableTags, cardDatas } from "../../consts"
 import { AnimateSharedLayout, AnimatePresence } from "framer-motion"
 import { styled } from "styletron-react"
-import { removeA } from "../../utils"
+import { getUrlParams, removeA } from "../../utils"
 
 const Grid = styled("div", {
   display: "grid",
@@ -32,6 +32,7 @@ const Tag = styled("em", ({ $active }: any): any => {
       bottom: 0,
       left: 0,
       backgroundColor: "blue",
+      // TODO: It only works when there is page routing. (eg - http://localhost:5000/projects?tags=designers not render classes correctly)
       visibility: $active ? "visible" : "hidden",
       transform: $active ? "scaleX(1)" : "scaleX(0)",
     },
@@ -41,7 +42,14 @@ const Tag = styled("em", ({ $active }: any): any => {
 const allTags = [...availableTags] // Make a new array. it stays as same value, after updatin states.
 
 export function Page({ urlParsed: { search } }) {
-  const [tags, setTags] = useState(search?.tags || availableTags)
+  const tagsFromServer = search?.tags
+  const tagsFromBrowser = getUrlParams()?.tags?.split(",")
+
+  const [tags, setTags] = useState(
+    tagsFromServer || // server prop not works on SSG
+      tagsFromBrowser ||
+      availableTags
+  )
 
   return (
     <Layout home>
