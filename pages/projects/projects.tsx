@@ -2,7 +2,7 @@ import React from "react"
 import { useState } from "react"
 import { Card, Layout } from "../../components"
 import { availableTags, cardDatas } from "../../consts"
-import { AnimateSharedLayout, AnimatePresence } from "framer-motion"
+import { AnimateSharedLayout, AnimatePresence, motion } from "framer-motion"
 import { styled } from "styletron-react"
 import { getUrlParams, removeA } from "../../utils"
 import { useEffect } from "react"
@@ -25,20 +25,17 @@ const Tag = styled("em", ({ $active }: any): any => {
     textDecoration: "none",
     cursor: "pointer",
     marginLeft: "10px",
-    "::before": {
-      content: "''",
-      position: "absolute",
-      width: "100%",
-      height: "1px",
-      bottom: 0,
-      left: 0,
-      backgroundColor: "blue",
-      // TODO: It only works when there is page routing. (eg - http://localhost:5000/projects?tags=designers not render classes correctly)
-      visibility: $active ? "visible" : "hidden",
-      transform: $active ? "scaleX(1)" : "scaleX(0)",
-    },
   }
 })
+
+const Line = styled(motion.div, ({ $active }: any) => ({
+  position: "absolute",
+  width: "100%",
+  height: "1px",
+  bottom: 0,
+  left: 0,
+  backgroundColor: "blue",
+}))
 
 const allTags = [...availableTags] // Make a new array. it stays as same value, after updatin states.
 
@@ -69,7 +66,6 @@ export function Page({ urlParsed: { search } }) {
           {allTags.map((tag, id) => (
             <Tag
               key={id}
-              $active={tags.includes(tag)}
               onClick={() =>
                 setTags(
                   tags.includes(tag) ? removeA(tags, tag) : [...tags, tag]
@@ -77,6 +73,11 @@ export function Page({ urlParsed: { search } }) {
               }
             >
               {tag}
+              <Line
+                animate={{
+                  scaleX: tags.includes(tag) ? 1 : 0,
+                }}
+              />
             </Tag>
           ))}
         </Tags>
