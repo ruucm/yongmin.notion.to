@@ -77,7 +77,7 @@ export function Layout({ children, home = false }) {
                 <a href="/">/home</a>
                 <br />
               </DesktopOnly>
-              <a href="/projects">/projects</a>
+              <a href="/projects?tags=all">/projects</a>
               <br />
               <a href="/about">/about</a>
             </div>
