@@ -37,7 +37,7 @@ const Email = styled("span", {
   cursor: "pointer",
   display: "inline-block",
 })
-const Twitter = styled("a", {
+const Link = styled("a", {
   color: "blue",
 })
 
@@ -120,23 +120,27 @@ export function Page() {
           <Email onClick={onCopy}>
             {hasCopied ? "Copied" : "Email ─ ruucm@ruucm.work"}
           </Email>
-          <Twitter
+          <Link
             href="http://twitter.com/ruucm"
             target="_blank"
             rel="noopener noreferrer"
           >
             Twitter ─ @ruucm
-          </Twitter>
-          <a
+          </Link>
+          <Link
             href="https://github.com/ruucm"
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              color: "blue",
-            }}
           >
             Github ─ /ruucm
-          </a>
+          </Link>
+          <Link
+            href="https://medium.com/harbor-school"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Medium
+          </Link>
         </div>
       </Wrap>
     </Layout>
