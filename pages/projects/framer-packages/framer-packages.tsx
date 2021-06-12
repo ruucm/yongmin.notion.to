@@ -29,12 +29,22 @@ export function Page({ slug }) {
       <Video
         useIntersection={m?.useIntersection}
         src="/videos/enhanced-lottie-01.mov"
+        poster={
+          placeholderImages[
+            `${placeholderBasePath}/enhanced-lottie-01-poster.png`
+          ].default
+        }
         ratio={1720 / 1051}
       />
       <Spacing />
       <Video
         useIntersection={m?.useIntersection}
         src="/videos/enhanced-lottie-02.mov"
+        poster={
+          placeholderImages[
+            `${placeholderBasePath}/enhanced-lottie-02-poster.png`
+          ].default
+        }
         ratio={1720 / 1051}
       />
       {/* <div
@@ -89,6 +99,10 @@ export function Page({ slug }) {
       <Video
         useIntersection={m?.useIntersection}
         src="/videos/bed-time-movie.mp4"
+        poster={
+          placeholderImages[`${placeholderBasePath}/bed-time-movie-poster.png`]
+            .default
+        }
         ratio={1 / 1}
       />
       <Spacing />
@@ -106,6 +120,10 @@ export function Page({ slug }) {
       <Video
         useIntersection={m?.useIntersection}
         src="/videos/basic-counter.mp4"
+        poster={
+          placeholderImages[`${placeholderBasePath}/basic-counter-poster.png`]
+            .default
+        }
         ratio={1 / 1}
         style={{
           gridColumnStart: 1,
@@ -124,6 +142,11 @@ export function Page({ slug }) {
       <Video
         useIntersection={m?.useIntersection}
         src="/videos/saturation-gradients.mov"
+        poster={
+          placeholderImages[
+            `${placeholderBasePath}/saturation-gradients-poster.png`
+          ].default
+        }
         ratio={2688 / 1630}
       />
 

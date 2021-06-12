@@ -36,6 +36,7 @@ export function Page({ slug }) {
           <SectionCard
             videoInfo={{
               path: "/videos/harbor.school-02.mov",
+              posterName: "harbor.school-02-poster",
               ratio: 3584 / 2190,
             }}
             isZoomed

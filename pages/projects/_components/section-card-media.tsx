@@ -45,7 +45,7 @@ const defaultTransition = {
 
 export function SectionCardMedia({
   imageName,
-  videoInfo = { path: "", ratio: 1 / 1 },
+  videoInfo = { path: "", posterName: "", ratio: 1 / 1 },
   grayscale,
   zoomed,
   setZoomed,
@@ -91,6 +91,11 @@ export function SectionCardMedia({
         <Video
           useIntersection={m?.useIntersection}
           src={videoInfo.path}
+          poster={
+            placeholderImages[
+              `${placeholderBasePath}/${videoInfo.posterName}.png`
+            ].default
+          }
           ratio={videoInfo.ratio}
           {...motionProps}
         />

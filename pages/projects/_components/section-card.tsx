@@ -36,7 +36,7 @@ const defaultTransition = {
 
 export function SectionCard({
   imageName = "",
-  videoInfo = { path: "", ratio: 1 / 1 },
+  videoInfo = { path: "", posterName: "", ratio: 1 / 1 },
   title,
   description,
   grayscale = false,
