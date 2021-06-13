@@ -50,6 +50,19 @@ async function render(pageContext: PageContext) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="${desc}" />
         <title>${title}</title>
+        <meta property="og:url" content="https://www.ruucm.work" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="${title}" />
+        <meta property="og:description" content="${desc}" />
+        <meta
+          property="og:image"
+          content="https://www.ruucm.work/images/brand/og.png"
+        />
+        <meta property="og:image:alt" content="${title}" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="en_IE" />
+        <link rel="canonical" href="https://www.ruucm.work" />
         ${html.dangerouslySkipEscape(styles)}
       </head>
       <body>
