@@ -42,11 +42,11 @@ const Link = styled("a", {
 })
 
 export function Page() {
-  const Module3: any = useESMComponent(
+  const profileModule: any = useESMComponent(
     "https://framerusercontent.com/modules/5EaLh0KVaiYgE67ROHLy/2kSwOAlvLpDNdFUntSDL/JgWSPuRfa.js"
   )
-  console.log("Module3", Module3)
-  const StyledModule = styled(Module3, {
+  console.log("profileModule", profileModule)
+  const StyledModule = styled(profileModule, {
     cursor: "pointer",
   })
   const { hasCopied, onCopy } = useClipboard(contactMail)
