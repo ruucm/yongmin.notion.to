@@ -1,8 +1,7 @@
 import React from "react"
 import { Layout } from "../../components"
-import { useESMComponent } from "../../hooks/use-esm-component"
 import { styled } from "styletron-react"
-import { breakPoint, contactMail } from "../../consts"
+import { breakPoint, contactMail, imageBasePath } from "../../consts"
 import { useClipboard } from "../../hooks/use-clipboard"
 import { HoverText } from "../../components/hover-text"
 import { useRef } from "react"
@@ -40,15 +39,15 @@ const Email = styled("span", {
 const Link = styled("a", {
   color: "blue",
 })
+const Img = styled("img", {
+  width: "160px",
+  height: "160px",
+  display: "block",
+  border: "1px solid",
+  borderRadius: "1000px",
+})
 
 export function Page() {
-  const profileSticker: any = useESMComponent(
-    "https://framerusercontent.com/modules/5EaLh0KVaiYgE67ROHLy/2kSwOAlvLpDNdFUntSDL/JgWSPuRfa.js"
-  )
-  console.log("profileSticker", profileSticker)
-  const StyledModule = styled(profileSticker, {
-    cursor: "pointer",
-  })
   const { hasCopied, onCopy } = useClipboard(contactMail)
 
   return (
@@ -85,7 +84,7 @@ export function Page() {
           </P>
 
           <ProfileWrap>
-            <StyledModule />
+            <Img src={`${imageBasePath}/profile-duotone.png`} />
           </ProfileWrap>
         </ParagraphWithImage>
 
