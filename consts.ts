@@ -62,6 +62,10 @@ export const cardDatas = [
         text: "Prototype",
         href: "https://elastic-lamport-d2e690.netlify.app/",
       },
+      {
+        text: "Website (WIP)",
+        href: "https://www.shadergradient.com/",
+      },
     ],
   },
   {
