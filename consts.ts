@@ -53,18 +53,18 @@ export const cardDatas = [
   {
     title: "3D Gradient Plugin for Figma & Framer",
     description: `Building an efficient design tool to generate 3d gradients quickly. It is linked as a Figma plugin and Framer package.`,
-    duration: "2021 ─ WORK IN PROGRESS",
+    duration: "2021 ─ 2022",
     slug: "3d-gradient-plugin",
     tags: ["designers"],
     role: "Developer / Designer",
     links: [
       {
         text: "Prototype",
-        href: "https://elastic-lamport-d2e690.netlify.app/",
+        href: "https://shadergradient-8pju2hxvd-ruucm.vercel.app/landing",
       },
       {
         text: "Website (WIP)",
-        href: "https://www.shadergradient.com/",
+        href: "https://www.shadergradient.co",
       },
     ],
   },
