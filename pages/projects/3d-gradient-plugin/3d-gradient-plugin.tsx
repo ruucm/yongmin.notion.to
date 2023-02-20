@@ -12,6 +12,7 @@ import {
 } from "../../../consts"
 import { Video } from "../_components/video"
 import { useESM } from "../../../hooks/use-esm"
+import { Spacing } from "../_components/spacing"
 
 export function Page({ slug }) {
   const m: any = useESM(
@@ -30,6 +31,28 @@ export function Page({ slug }) {
           ].default
         }
         ratio={2688 / 1630}
+      />
+      <Spacing />
+      <Video
+        useIntersection={m?.useIntersection}
+        src="/videos/shadergradient-customize.mov"
+        poster={
+          placeholderImages[
+            `${placeholderBasePath}/shadergradient-customize-poster.png`
+          ].default
+        }
+        ratio={1280 / 880}
+      />
+       <Spacing />
+      <Video
+        useIntersection={m?.useIntersection}
+        src="/videos/shadergradient-landing.mp4"
+        poster={
+          placeholderImages[
+            `${placeholderBasePath}/shadergradient-landing-poster.png`
+          ].default
+        }
+        ratio={1280 / 880}
       />
     </PostLayout>
   )
