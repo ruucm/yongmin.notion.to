@@ -44,7 +44,7 @@ export const placeholderImages = import.meta.globEager(
  * Data
  */
 export const availableTags = [
-  "design-teams",
+  "teams",
   "designers",
   "code-beginners",
   "writers",
@@ -63,7 +63,7 @@ export const cardDatas = [
         href: "https://shadergradient-8pju2hxvd-ruucm.vercel.app/landing",
       },
       {
-        text: "Website (WIP)",
+        text: "Website",
         href: "https://www.shadergradient.co",
       },
     ],
@@ -74,7 +74,7 @@ export const cardDatas = [
     // (It's been in the top five on the Framer Packages list.)
     duration: "2020 ~ ",
     slug: "lighthouse-design-system",
-    tags: ["design-teams"],
+    tags: ["teams"],
     role: "Developer / System Designer",
     links: [
       {
