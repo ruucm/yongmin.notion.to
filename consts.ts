@@ -51,10 +51,10 @@ export const availableTags = [
 ]
 export const cardDatas = [
   {
-    title: "3D Gradient Plugin for Figma & Framer",
+    title: "Shader Gradient - 3D Gradient Plugin for Figma & Framer",
     description: `Building an efficient design tool to generate 3d gradients quickly. It is linked as a Figma plugin and Framer package.`,
     duration: "2021 ─ 2022",
-    slug: "3d-gradient-plugin",
+    slug: "shadergradient",
     tags: ["designers"],
     role: "Developer / Designer",
     links: [

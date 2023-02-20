@@ -24,10 +24,10 @@ export function Page({ slug }) {
       <Summary slug={slug} />
       <Video
         useIntersection={m?.useIntersection}
-        src="/videos/3d-gradient-plugin.mov"
+        src="/videos/shadergradient-proto.mov"
         poster={
           placeholderImages[
-            `${placeholderBasePath}/3d-gradient-plugin-poster.png`
+            `${placeholderBasePath}/shadergradient-proto-poster.png`
           ].default
         }
         ratio={2688 / 1630}
