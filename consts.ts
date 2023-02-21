@@ -92,8 +92,8 @@ export const cardDatas = [
     ],
   },
   {
-    title: "Harbor School",
-    description: `As the founder of Harbor School, I learned how software impacts people and society and markets.`,
+    title: "Harbor School & Video Scrubber",
+    description: `As the founder of Harbor School, I learned how software impacts people and society and markets. So I started to build a school to teach people how to code. I've been teaching about 100 students for about two years.`,
     duration: "2018 ~ ",
     slug: "harbor-school",
     tags: ["code-beginners"],
@@ -104,8 +104,12 @@ export const cardDatas = [
         href: "https://harbor.school",
       },
       {
-        text: "Harbor School (version.1 ─ lectures)",
+        text: "Harbor School (version.1 ─ offline lectures)",
         href: "https://class.harbor.school",
+      },
+       {
+        text: "Video Scrubber (Demo)",
+        href: "https://harbor.school/en/modern-html-css/html-basics/prerequisites/",
       },
     ],
   },
