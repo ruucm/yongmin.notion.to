@@ -10,6 +10,7 @@ export function Page({ slug }) {
       <Gallery
         images={["cynttan_01", "cynttan_02", "cynttan_03", "cynttan_04"]}
       />
+      <br/>
       <p>
         I handled whole WordPress shopping functions (cart, checkout, refund,
         membership, shipping) as REST API for making dynamic checkout front page

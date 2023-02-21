@@ -63,7 +63,7 @@ export function SectionCard({
             <br />
           </>
         )}
-        <motion.p layout transition={defaultTransition}>
+        <motion.p layout transition={defaultTransition} style={{ whiteSpace: 'pre-wrap' }}>
           {description}
         </motion.p>
       </Description>
