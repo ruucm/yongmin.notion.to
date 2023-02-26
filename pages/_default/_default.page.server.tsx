@@ -16,6 +16,9 @@ export { passToClient }
 // See https://github.com/brillout/vite-plugin-ssr#data-fetching
 const passToClient = ["pageProps", "documentProps", "urlParsed"]
 
+// @ts-ignore
+const GA_ID = import.meta.env.VITE_GA_ID
+
 async function render(pageContext: PageContext) {
   const { Page, pageProps, urlParsed } = pageContext
 
@@ -54,16 +57,24 @@ async function render(pageContext: PageContext) {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="${title}" />
         <meta property="og:description" content="${desc}" />
-        <meta
-          property="og:image"
-          content="https://www.ruucm.work/images/brand/og.png"
-        />
+        <meta property="og:image" content="https://www.ruucm.work/images/brand/og.png" />
         <meta property="og:image:alt" content="${title}" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:locale" content="en_IE" />
         <link rel="canonical" href="https://www.ruucm.work" />
         ${html.dangerouslySkipEscape(styles)}
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=${GA_ID}"></script>
+        <script>
+          window.dataLayer = window.dataLayer || []
+          function gtag() {
+            dataLayer.push(arguments)
+          }
+          gtag("js", new Date())
+          gtag("config", "${GA_ID}")
+        </script>
       </head>
       <body>
         <div id="page-view">${html.dangerouslySkipEscape(pageHtml)}</div>
