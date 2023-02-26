@@ -3,6 +3,9 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -11,5 +14,5 @@
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  }
 }

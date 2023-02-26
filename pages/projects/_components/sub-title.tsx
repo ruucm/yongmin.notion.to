@@ -6,6 +6,8 @@ const H4 = styled("h4", {
   fontWeight: 400,
   color: "blue",
   marginTop: "64px",
+
+  whiteSpace: "pre-wrap",
 })
 
 export function SubTitle({ children }) {

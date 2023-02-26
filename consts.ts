@@ -69,6 +69,21 @@ export const cardDatas = [
     ],
   },
   {
+    title: "Payroller Design System",
+    excerpt: `Super efficient workflow for designers and developers to work together.`,
+    description: `Designers can draw real system components and it automatically converted to codes that can be used directly by developers. It was an innovative workflow for all team members and improved efficiency dramatically.`,
+    duration: "2022 ~ ",
+    slug: "payroller-design-system",
+    tags: ["teams", "highlights"],
+    role: "DevOps (Webpack + esbuild + Turborepo & Framer) / System Designer",
+    links: [
+      {
+        text: "Website",
+        href: "https://new-auth.d.payroller.io/signup/",
+      },
+    ],
+  },
+  {
     title: "Lighthouse Design System",
     description: `Open-sourced Design System solution to re-invent designing and developing workflows. It is one of the most popular packages in Framer Package Stores.`,
     // (It's been in the top five on the Framer Packages list.)
