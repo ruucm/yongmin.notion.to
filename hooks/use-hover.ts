@@ -1,14 +1,15 @@
 import { useEffect, useRef, useState } from "react"
 
-export function useHover(option = { thresholdTime: 0 }) {
-  const { thresholdTime } = option
+export function useHover(option: any = { thresholdTime: 0, passedRef: null }) {
+  const { thresholdTime, passedRef } = option
   const [value, setValue] = useState(false)
 
-  const ref = useRef(null)
+  const ref = passedRef || useRef(null)
 
   let lock = false
   const threshold = thresholdTime || 0
   const handleMouseOver = () => {
+    // @ts-ignore
     clearTimeout() // stop mouseout codes
     lock = true
     setValue(true)
