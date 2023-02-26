@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { useHover } from "../../../hooks/use-hover"
 
 import { styled } from "styletron-react"
+import { breakPoint } from "../../../consts"
 
 const Title = styled(motion.h3, {
   background: "white",
@@ -17,6 +18,14 @@ const Title = styled(motion.h3, {
   position: "absolute",
   bottom: "16px",
   right: "16px",
+
+  [`@media screen and (max-width: ${breakPoint}px)`]: {
+    bottom: "0px",
+    right: "0px",
+    margin: "0px",
+    padding: "6px 8px",
+    fontSize: "14px",
+  },
 })
 
 const MotionAspectRatio = motion(AspectRatio)
