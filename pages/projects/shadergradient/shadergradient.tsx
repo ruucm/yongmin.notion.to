@@ -65,6 +65,7 @@ export function Page({ slug }) {
         <Tweet tweetId="1628874572501233665" />
         <Tweet tweetId="1620978926091898881" />
       </GridWrap>
+      <Spacing />
       <Description>
         <Title>Real people are using it so creatively!</Title>
       </Description>
