@@ -7,6 +7,7 @@ import { useHover } from "../../../hooks/use-hover"
 
 import { styled } from "styletron-react"
 import { breakPoint } from "../../../consts"
+import { useMobile } from "../../../hooks/use-mobile"
 
 const Title = styled(motion.h3, {
   background: "white",
@@ -56,6 +57,7 @@ export function Video({
 function Inner({ visible, src, poster, title }) {
   const videoRef = useRef(null)
   const [, isHover]: any = useHover({ passedRef: videoRef })
+  const isMobile = useMobile()
 
   useEffect(() => {
     const vid: any = videoRef.current
@@ -69,7 +71,7 @@ function Inner({ visible, src, poster, title }) {
   return (
     <>
       <video
-        // controls
+        controls={isMobile}
         muted
         loop
         ref={videoRef}
