@@ -54,24 +54,14 @@ export function Page({ urlParsed: { search } }) {
   return (
     <Layout home>
       <h3>Projects</h3>
-      <p>
-        I'm making projects and experiments for productivity and pleasure in
-        screens.
-      </p>
+      <p>I'm making projects and experiments for productivity and pleasure in screens.</p>
       <br />
       <br />
       <br />
       <AnimateSharedLayout>
         <Tags>
           {allTags.map((tag, id) => (
-            <Tag
-              key={id}
-              onClick={() =>
-                setTags(
-                  tags.includes(tag) ? removeA(tags, tag) : [...tags, tag]
-                )
-              }
-            >
+            <Tag key={id} onClick={() => setTags(tags.includes(tag) ? removeA(tags, tag) : [...tags, tag])}>
               {tag}
               <Line
                 animate={{
@@ -89,7 +79,7 @@ export function Page({ urlParsed: { search } }) {
                 <Card
                   title={item.title}
                   duration={item.duration}
-                  description={item.description}
+                  description={item.excerpt || item.description}
                   outlink={item.outlink}
                   slug={item.slug}
                   // link={item.key && `/projects/${item.key}`}
