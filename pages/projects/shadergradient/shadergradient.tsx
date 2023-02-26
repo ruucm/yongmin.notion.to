@@ -19,58 +19,45 @@ export function Page({ slug }) {
   return (
     <PostLayout>
       <Summary slug={slug} />
-
-      <SectionCard
-        videoInfo={{
-          path: "/videos/shadergradient-landing.mp4",
-          posterName: "shadergradient-landing-poster",
-          ratio: 1280 / 880,
-        }}
-        isZoomed
+      <Video
+        useIntersection={m?.useIntersection}
+        src="/videos/shadergradient-landing.mp4"
+        poster={placeholderImages[`${placeholderBasePath}/shadergradient-landing-poster.png`].default}
+        ratio={1280 / 880}
         title="Website's Scroll Interaction (Landing Page)"
       />
       <Spacing />
-
-      <SectionCard
-        videoInfo={{
-          path: "/videos/shadergradient-customize.mov",
-          posterName: "shadergradient-customize-poster",
-          ratio: 1280 / 880,
-        }}
-        isZoomed
+      <Video
+        useIntersection={m?.useIntersection}
+        src="/videos/shadergradient-customize.mov"
+        poster={placeholderImages[`${placeholderBasePath}/shadergradient-customize-poster.png`].default}
+        ratio={1280 / 880}
         title="Customize Gradient"
       />
       <Spacing />
-
-      <SectionCard
-        videoInfo={{
-          path: "/videos/shadergradient-proto.mov",
-          posterName: "shadergradient-proto-poster",
-          ratio: 2688 / 1630,
-        }}
-        isZoomed
+      <Video
+        useIntersection={m?.useIntersection}
+        src="/videos/shadergradient-proto.mov"
+        poster={placeholderImages[`${placeholderBasePath}/shadergradient-proto-poster.png`].default}
+        ratio={2688 / 1630}
         title="Early Prototypes (Figma Plugin)"
       />
-      <SectionCard
-        videoInfo={{
-          path: "/videos/shadergradient-figma.mp4",
-          posterName: "shadergradient-figma-poster",
-          ratio: 2992 / 1934,
-        }}
-        isZoomed
+      <Spacing />
+      <Video
+        useIntersection={m?.useIntersection}
+        src="/videos/shadergradient-figma.mp4"
+        poster={placeholderImages[`${placeholderBasePath}/shadergradient-figma-poster.png`].default}
+        ratio={2992 / 1934}
         title="Figma Plugin"
       />
-
-      <SectionCard
-        videoInfo={{
-          path: "/videos/shadergradient-framer.mp4",
-          posterName: "shadergradient-framer-poster",
-          ratio: 1280 / 732,
-        }}
-        isZoomed
+      <Spacing />
+      <Video
+        useIntersection={m?.useIntersection}
+        src="/videos/shadergradient-framer.mp4"
+        poster={placeholderImages[`${placeholderBasePath}/shadergradient-framer-poster.png`].default}
+        ratio={1280 / 732}
         title="Framer Package"
       />
-
       <Spacing />
       <GridWrap>
         <Tweet tweetId="1627861756700762114" />
@@ -78,7 +65,6 @@ export function Page({ slug }) {
         <Tweet tweetId="1628874572501233665" />
         <Tweet tweetId="1620978926091898881" />
       </GridWrap>
-
       <Description>
         <Title>Real people are using it so creatively!</Title>
       </Description>
