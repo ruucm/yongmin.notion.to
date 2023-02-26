@@ -1,12 +1,7 @@
 import React from "react"
 import { motion } from "framer-motion"
 import { styled } from "styletron-react"
-import {
-  imageBasePath,
-  imageDefaltRatio,
-  placeholderBasePath,
-  placeholderImages,
-} from "../../../consts"
+import { imageBasePath, imageDefaltRatio, placeholderBasePath, placeholderImages } from "../../../consts"
 import { LazyLoadImage } from "./lazy-load-image"
 import { AspectRatio } from "../../../utils/aspect-ratio"
 import { Video } from "./video"
@@ -45,7 +40,7 @@ const defaultTransition = {
 
 export function SectionCardMedia({
   imageName,
-  videoInfo = { path: "", posterName: "", ratio: 1 / 1 },
+  videoInfo = { path: "", posterName: "", ratio: 1 / 1, title: "" },
   grayscale,
   zoomed,
   setZoomed,
@@ -64,10 +59,7 @@ export function SectionCardMedia({
 
   return (
     <Wrap $zoomed={zoomed} $filter={filter}>
-      <motion.div
-        animate={{ opacity: zoomed ? 1 : 0 }}
-        onClick={() => setZoomed(false)}
-      />
+      <motion.div animate={{ opacity: zoomed ? 1 : 0 }} onClick={() => setZoomed(false)} />
       {isGif && (
         <AspectRatio ratio={imageDefaltRatio}>
           <GifImage
@@ -80,9 +72,7 @@ export function SectionCardMedia({
       )}
       {!isGif && imageName && (
         <StyledLazyLoadImage
-          placeholderImage={
-            placeholderImages[`${placeholderBasePath}/${imageName}.png`].default
-          }
+          placeholderImage={placeholderImages[`${placeholderBasePath}/${imageName}.png`].default}
           imageName={imageName}
           {...motionProps}
         />
@@ -91,12 +81,9 @@ export function SectionCardMedia({
         <Video
           useIntersection={m?.useIntersection}
           src={videoInfo.path}
-          poster={
-            placeholderImages[
-              `${placeholderBasePath}/${videoInfo.posterName}.png`
-            ].default
-          }
+          poster={placeholderImages[`${placeholderBasePath}/${videoInfo.posterName}.png`].default}
           ratio={videoInfo.ratio}
+          title={videoInfo.title}
           {...motionProps}
         />
       )}

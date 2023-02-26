@@ -20,6 +20,9 @@ export function Page() {
     <Layout home>
       <h3>Design Engineer</h3>
       <p>A journey of programming to solving creative people's problems.</p>
+      <a href="/projects?tags=highlights" style={{ color: "blue" }}>
+        → highlights
+      </a>
       <br />
       <br />
       <br />
@@ -29,15 +32,18 @@ export function Page() {
           flexWrap: "wrap",
         }}
       >
-        {availableTags.map((tag, id) => (
-          <Circle key={id} href={`/projects?tags=${tag}`}>
-            <div>
-              <em>for</em>
-              <br />
-              {titleCase(tag.replace("-", " "))}
-            </div>
-          </Circle>
-        ))}
+        {availableTags.map((tag, id) => {
+          if (tag === "highlights") return null
+          return (
+            <Circle key={id} href={`/projects?tags=${tag}`}>
+              <div>
+                <em>for</em>
+                <br />
+                {titleCase(tag.replace("-", " "))}
+              </div>
+            </Circle>
+          )
+        })}
       </div>
     </Layout>
   )

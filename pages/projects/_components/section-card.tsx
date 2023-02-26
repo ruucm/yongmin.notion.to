@@ -36,13 +36,13 @@ const defaultTransition = {
 
 export function SectionCard({
   imageName = "",
-  videoInfo = { path: "", posterName: "", ratio: 1 / 1 },
+  videoInfo = { path: "", posterName: "", ratio: 1 / 1, title: "" },
   title,
   description = "",
   grayscale = false,
   alignRight = false,
   isZoomed = false,
-}) {
+}: any) {
   const [zoomed, setZoomed] = useState(isZoomed)
 
   return (

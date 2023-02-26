@@ -40,14 +40,14 @@ export const placeholderImages = import.meta.globEager(`/pages/assets/placeholde
 /**
  * Data
  */
-export const availableTags = ["teams", "designers", "code-beginners", "writers"]
+export const availableTags = ["teams", "designers", "code-beginners", "writers", "highlights"]
 export const cardDatas = [
   {
     title: "Shader Gradient",
     description: `3D Gradient Plugin & Package for Figma & Framer.`,
     duration: "2021 ─ 2023",
     slug: "shadergradient",
-    tags: ["designers"],
+    tags: ["designers", "highlights"],
     role: "Developer / Designer (Director)",
     links: [
       {
@@ -100,7 +100,7 @@ export const cardDatas = [
     description: `As the founder of Harbor School, I learned how software impacts people and society and markets. So I started to build a school to teach people how to code. I've been teaching about 100 students for about two years.`,
     duration: "2018 ~ ",
     slug: "harbor-school",
-    tags: ["code-beginners"],
+    tags: ["code-beginners", "highlights"],
     role: "Founder / Instructor / Developer / Designer / Video Editor",
     links: [
       {

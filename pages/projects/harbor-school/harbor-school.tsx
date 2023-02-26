@@ -50,6 +50,7 @@ export function Page({ slug }) {
               path: "/videos/harbor.school-03.mp4",
               posterName: "harbor.school-03-poster",
               ratio: 2992 / 1934,
+              title: "All searchable tutorial contents",
             }}
             isZoomed
             title="[Solution] - Video Scrubber"
