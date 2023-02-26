@@ -17,14 +17,14 @@ const Grid = styled(motion.div, ({ $zoomed }: any) => {
     },
   }
 })
-const Description = styled("div", {
+export const Description = styled("div", {
   padding: "30px 0px",
   textAlign: "right",
   [`@media screen and (max-width: ${breakPoint}px)`]: {
     padding: "0px",
   },
 })
-const Title = styled(motion.h4, {
+export const Title = styled(motion.h4, {
   textDecoration: "underline",
   display: "inline-block",
   fontWeight: 400,
@@ -38,7 +38,7 @@ export function SectionCard({
   imageName = "",
   videoInfo = { path: "", posterName: "", ratio: 1 / 1 },
   title,
-  description,
+  description = "",
   grayscale = false,
   alignRight = false,
   isZoomed = false,
@@ -63,7 +63,7 @@ export function SectionCard({
             <br />
           </>
         )}
-        <motion.p layout transition={defaultTransition} style={{ whiteSpace: 'pre-wrap' }}>
+        <motion.p layout transition={defaultTransition} style={{ whiteSpace: "pre-wrap" }}>
           {description}
         </motion.p>
       </Description>

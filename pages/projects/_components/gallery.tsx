@@ -1,14 +1,9 @@
 import React from "react"
 import { styled } from "styletron-react"
-import {
-  breakPoint,
-  imageBasePath,
-  placeholderBasePath,
-  placeholderImages,
-} from "../../../consts"
+import { breakPoint, imageBasePath, placeholderBasePath, placeholderImages } from "../../../consts"
 import { LazyLoadImage } from "./lazy-load-image"
 
-const GridWrap = styled("div", ({ $flex }: any) => ({
+export const GridWrap = styled("div", ({ $flex }: any) => ({
   display: $flex ? "flex" : "grid",
   flexWrap: "wrap",
   gap: "var(--blockSpacingBottom)",
@@ -44,15 +39,8 @@ export function Gallery({ images, flex = true }) {
             />
           )
         else {
-          const placeholderImage =
-            placeholderImages[`${placeholderBasePath}/${imageName}.png`].default
-          return (
-            <StyledLazyLoadImage
-              key={id}
-              placeholderImage={placeholderImage}
-              imageName={imageName}
-            />
-          )
+          const placeholderImage = placeholderImages[`${placeholderBasePath}/${imageName}.png`].default
+          return <StyledLazyLoadImage key={id} placeholderImage={placeholderImage} imageName={imageName} />
         }
       })}
     </GridWrap>

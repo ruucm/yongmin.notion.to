@@ -10,8 +10,7 @@ export const youtubeVideoDefaltRatio = 3584 / (2240 - 10) // calculate width of 
  */
 export const defaultMeta = {
   title: "yongmin ruucm",
-  description:
-    "A journey of programming to solving creative people's problems.",
+  description: "A journey of programming to solving creative people's problems.",
 }
 export const initialThemeState = {
   fontFamily: "system-ui, sans-serif",
@@ -36,27 +35,20 @@ export const imageBasePath = "/images"
 export const placeholderBasePath = "/pages/assets/placeholders"
 
 // @ts-ignore
-export const placeholderImages = import.meta.globEager(
-  `/pages/assets/placeholders/*.png`
-)
+export const placeholderImages = import.meta.globEager(`/pages/assets/placeholders/*.png`)
 
 /**
  * Data
  */
-export const availableTags = [
-  "teams",
-  "designers",
-  "code-beginners",
-  "writers",
-]
+export const availableTags = ["teams", "designers", "code-beginners", "writers"]
 export const cardDatas = [
   {
     title: "Shader Gradient - 3D Gradient Plugin for Figma & Framer",
-    description: `Building an efficient design tool to generate 3d gradients quickly. It is linked as a Figma plugin and Framer package.`,
+    description: `Building an efficient design tool to generate 3d gradients quickly. It is seamlessly integrated as a Figma plugin and Framer package.`,
     duration: "2021 ─ 2022",
     slug: "shadergradient",
     tags: ["designers"],
-    role: "Developer / Designer",
+    role: "Developer / Designer (Director)",
     links: [
       {
         text: "Prototype",
@@ -65,6 +57,14 @@ export const cardDatas = [
       {
         text: "Website",
         href: "https://www.shadergradient.co",
+      },
+      {
+        text: "Framer",
+        href: "https://framer.com/projects/new?duplicate=sJitbgOn6on6Savojbyk",
+      },
+      {
+        text: "Figma Plugin",
+        href: "https://www.figma.com/community/plugin/1203016883447870818/ShaderGradient",
       },
     ],
   },
@@ -84,6 +84,10 @@ export const cardDatas = [
       {
         text: "Lighthouse Gallery",
         href: "https://framer.com/projects/lighthouse-gallery--ky1cQZRYNQoLD9MZTOC3",
+      },
+      {
+        text: "GitHub",
+        href: "https://github.com/harbor-school/lighthouse",
       },
       {
         text: "Harbor School",
@@ -107,7 +111,7 @@ export const cardDatas = [
         text: "Harbor School (version.1 ─ offline lectures)",
         href: "https://class.harbor.school",
       },
-       {
+      {
         text: "Video Scrubber (Demo)",
         href: "https://harbor.school/en/modern-html-css/html-basics/prerequisites/",
       },
