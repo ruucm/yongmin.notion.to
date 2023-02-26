@@ -21,11 +21,12 @@ export function LazyLoadImage({
   onClick,
   layout,
   transition,
+  ratio = imageDefaltRatio,
   // style,
   ...rest
 }: any) {
   return (
-    <AspectRatio ratio={imageDefaltRatio} {...rest}>
+    <AspectRatio ratio={ratio} {...rest}>
       <div>
         <Image
           src={placeholderImage}
@@ -36,22 +37,10 @@ export function LazyLoadImage({
           transition={transition}
         />
         <picture>
-          <source
-            srcSet={`${imageBasePath}/${imageName}.webp`}
-            type="image/webp"
-          />
-          <source
-            srcSet={`${imageBasePath}/${imageName}.png`}
-            type="image/png"
-          />
-          <source
-            srcSet={`${imageBasePath}/${imageName}.jpg`}
-            type="image/jpg"
-          />
-          <source
-            srcSet={`${imageBasePath}/${imageName}.jpeg`}
-            type="image/jpeg"
-          />
+          <source srcSet={`${imageBasePath}/${imageName}.webp`} type="image/webp" />
+          <source srcSet={`${imageBasePath}/${imageName}.png`} type="image/png" />
+          <source srcSet={`${imageBasePath}/${imageName}.jpg`} type="image/jpg" />
+          <source srcSet={`${imageBasePath}/${imageName}.jpeg`} type="image/jpeg" />
 
           <Image
             src={`${imageBasePath}/${imageName}.png`}

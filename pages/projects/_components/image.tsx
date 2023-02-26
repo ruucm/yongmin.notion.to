@@ -9,7 +9,7 @@ const StyledLazyLoadImage = styled(LazyLoadImage, {
   border: "1px solid",
 })
 
-export function Image({ imageName }) {
+export function Image({ imageName, ...rest }) {
   const placeholderImage = placeholderImages[`${placeholderBasePath}/${imageName}.png`].default
-  return <StyledLazyLoadImage placeholderImage={placeholderImage} imageName={imageName} />
+  return <StyledLazyLoadImage placeholderImage={placeholderImage} imageName={imageName} {...rest} />
 }
