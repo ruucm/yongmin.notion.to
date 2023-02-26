@@ -44,7 +44,7 @@ export const availableTags = ["teams", "designers", "code-beginners", "writers",
 export const cardDatas = [
   {
     title: "Shader Gradient",
-    description: `3D Gradient Plugin & Package for Figma & Framer.`,
+    description: `3D Gradient Plugin & Package for Figma & Framer and React.`,
     duration: "2021 ─ 2023",
     slug: "shadergradient",
     tags: ["designers", "highlights"],
@@ -70,7 +70,7 @@ export const cardDatas = [
   },
   {
     title: "Payroller Design System",
-    excerpt: `Super efficient workflow for designers and developers to work together.`,
+    excerpt: `Designs are automatically converted to system & production codes now.`,
     description: `Designers can draw real system components and it automatically converted to codes that can be used directly by developers. It was an innovative workflow for all team members and improved efficiency dramatically.`,
     duration: "2022 ~ ",
     slug: "payroller-design-system",
@@ -85,6 +85,7 @@ export const cardDatas = [
   },
   {
     title: "Lighthouse Design System",
+    excerpt: `Open-sourced Design System solution to re-invent designing and developing workflows.`,
     description: `Open-sourced Design System solution to re-invent designing and developing workflows. It is one of the most popular packages in Framer Package Stores.`,
     // (It's been in the top five on the Framer Packages list.)
     duration: "2020 ~ ",
@@ -112,6 +113,7 @@ export const cardDatas = [
   },
   {
     title: "Harbor School & Video Scrubber",
+    excerpt: `Offline & Online School for Beginners to Learn How to Code.`,
     description: `As the founder of Harbor School, I learned how software impacts people and society and markets. So I started to build a school to teach people how to code. I've been teaching about 100 students for about two years.`,
     duration: "2018 ~ ",
     slug: "harbor-school",
@@ -134,6 +136,7 @@ export const cardDatas = [
   },
   {
     title: "Framer Packages",
+    excerpt: `Framer Packages for Designers to Create Animations & Prototypes Quickly.`,
     description: `I've been building many popular Framer packages for about two years for designers to create animations and prototypes quickly.`,
     duration: "2018 ~ ",
     slug: "framer-packages",
@@ -160,7 +163,7 @@ export const cardDatas = [
   },
   {
     title: "Framer Code Generators",
-    description: `Introducing a familiar path for designers who struggles to learn codes.`,
+    description: `Invented a toolkit that generates codes for designers who struggles to learn codes.`,
     duration: "2019",
     slug: "framer-code-generators",
     tags: ["code-beginners"],
@@ -178,6 +181,7 @@ export const cardDatas = [
   },
   {
     title: "Notion CMS",
+    excerpt: `Magazine Website that uses Notion as a CMS.`,
     description: `I developed and designed the "Notion CMS System" for continuous writer's experiences. It applied to various websites, including the SELI Magazine.`,
     duration: "Oct 2020 ~ Dec 2020",
     slug: "notion-cms",
