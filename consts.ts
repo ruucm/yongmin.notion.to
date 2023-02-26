@@ -43,9 +43,9 @@ export const placeholderImages = import.meta.globEager(`/pages/assets/placeholde
 export const availableTags = ["teams", "designers", "code-beginners", "writers"]
 export const cardDatas = [
   {
-    title: "Shader Gradient - 3D Gradient Plugin for Figma & Framer",
-    description: `Building an efficient design tool to generate 3d gradients quickly. It is seamlessly integrated as a Figma plugin and Framer package.`,
-    duration: "2021 ─ 2022",
+    title: "Shader Gradient",
+    description: `3D Gradient Plugin & Package for Figma & Framer.`,
+    duration: "2021 ─ 2023",
     slug: "shadergradient",
     tags: ["designers"],
     role: "Developer / Designer (Director)",

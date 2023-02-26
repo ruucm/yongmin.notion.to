@@ -43,6 +43,7 @@ export function Page({ slug }) {
             src="/videos/harbor.school-02.mov"
             poster={placeholderImages[`${placeholderBasePath}/harbor.school-02-poster.png`].default}
             ratio={3584 / 2190}
+            title="[Solution] - Video Scrubber"
           />
           <SectionCard
             videoInfo={{

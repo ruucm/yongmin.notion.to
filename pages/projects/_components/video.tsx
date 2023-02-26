@@ -15,6 +15,7 @@ const Title = styled(motion.h3, {
   fontSize: "16px",
   fontWeight: 400,
   padding: "10px 20px",
+  margin: "0px",
 
   position: "absolute",
   bottom: "16px",
@@ -23,7 +24,6 @@ const Title = styled(motion.h3, {
   [`@media screen and (max-width: ${breakPoint}px)`]: {
     bottom: "0px",
     right: "0px",
-    margin: "0px",
     padding: "6px 8px",
     fontSize: "14px",
   },
@@ -86,7 +86,7 @@ function Inner({ visible, src, poster, title }) {
         <source src={`${src}#t=0.001`} type="video/mp4" />
         Sorry, your browser doesn't support embedded videos.
       </video>
-      <Title animate={{ opacity: isHover ? 0 : 0.9 }}>{title}</Title>
+      {title && <Title animate={{ opacity: isHover ? 0 : 0.9 }}>{title}</Title>}
     </>
   )
 }
