@@ -70,8 +70,8 @@ export const cardDatas = [
   },
   {
     title: "Payroller Design System",
-    excerpt: `Designs are automatically converted to system & production codes now.`,
-    description: `Designers can draw real system components and it automatically converted to codes that can be used directly by developers. It was an innovative workflow for all team members and improved efficiency dramatically.`,
+    excerpt: `Super efficient team workflow that converts designs to codes of system & production.`,
+    description: `Designers can draw real system components and it automatically converted to codes that can be directly used by developers. It was an innovative workflow for all team members and improved efficiency dramatically.`,
     duration: "2022 ~ ",
     slug: "payroller-design-system",
     tags: ["teams", "highlights"],
@@ -85,8 +85,8 @@ export const cardDatas = [
   },
   {
     title: "Lighthouse Design System",
-    excerpt: `Open-sourced Design System solution to re-invent designing and developing workflows.`,
-    description: `Open-sourced Design System solution to re-invent designing and developing workflows. It is one of the most popular packages in Framer Package Stores.`,
+    excerpt: `Open-sourced Design System to re-invent designing and developing workflows.`,
+    description: `Open-sourced Design System to re-invent designing and developing workflows. It is one of the most popular packages in Framer Package Stores.`,
     // (It's been in the top five on the Framer Packages list.)
     duration: "2020 ~ ",
     slug: "lighthouse-design-system",
