@@ -97,7 +97,7 @@ export function Page() {
             alignItems: "flex-end",
           }}
         >
-          <Email onClick={onCopy}>{hasCopied ? "Copied" : "Email ─ ruucm@ruucm.work"}</Email>
+          <Email onClick={onCopy}>{hasCopied ? "Copied" : "Email ─ ruucm.a@gmail.com"}</Email>
           <Link href="http://twitter.com/ruucm" target="_blank" rel="noopener noreferrer">
             Twitter ─ @ruucm
           </Link>

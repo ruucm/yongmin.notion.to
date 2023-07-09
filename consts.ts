@@ -281,4 +281,4 @@ export const cardDatas = [
   },
 ]
 
-export const contactMail = "ruucm@ruucm.work"
+export const contactMail = "ruucm.a@gmail.com"
