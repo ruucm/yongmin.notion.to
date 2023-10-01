@@ -189,7 +189,7 @@ export const cardDatas = [
     role: "Founder",
     links: [
       {
-        text: "notion.to",
+        text: "Web App (notion.to)",
         href: "https://notion.to",
       },
       {
