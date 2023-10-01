@@ -180,6 +180,25 @@ export const cardDatas = [
     ],
   },
   {
+    title: "notion.to",
+    excerpt: `Magazine Website that uses Notion as a CMS.`,
+    description: `Made a website builder using Notion (notion.so)’s database. Built a fully functional design (style) editor inside. Users can edit or add any styles to their websites like Webflow or Wix but in more intuitive ways. Structured all DevOps flow with ECS, Vercel, and Render that has sustainable server costs.`,
+    duration: "Jan 2022 ~ Aug 2023",
+    slug: "notion-to",
+    tags: ["writers"],
+    role: "Founder",
+    links: [
+      {
+        text: "notion.to",
+        href: "https://notion.to",
+      },
+      {
+        text: "Product Hunt",
+        href: "https://www.producthunt.com/posts/notion-to",
+      },
+    ],
+  },
+  {
     title: "Notion CMS",
     excerpt: `Magazine Website that uses Notion as a CMS.`,
     description: `I developed and designed the "Notion CMS System" for continuous writer's experiences. It applied to various websites, including the SELI Magazine.`,
