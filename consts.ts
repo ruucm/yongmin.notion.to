@@ -69,6 +69,25 @@ export const cardDatas = [
     ],
   },
   {
+    title: "notion.to",
+    excerpt: `Magazine Website that uses Notion as a CMS.`,
+    description: `Made a website builder using Notion (notion.so)’s database. Built a fully functional design (style) editor inside. Users can edit or add any styles to their websites like Webflow or Wix but in more intuitive ways. Structured all DevOps flow with ECS, Vercel, and Render that has sustainable server costs.`,
+    duration: "Jan 2022 ~ Aug 2023",
+    slug: "notion-to",
+    tags: ["writers", "highlights"],
+    role: "Founder",
+    links: [
+      {
+        text: "Web App (notion.to)",
+        href: "https://notion.to",
+      },
+      {
+        text: "Product Hunt",
+        href: "https://www.producthunt.com/posts/notion-to",
+      },
+    ],
+  },
+  {
     title: "Payroller Design System",
     excerpt: `Super efficient team workflow that converts designs to codes of system & production.`,
     description: `Designers can draw real system components and it automatically converted to codes that can be directly used by developers. It was an innovative workflow for all team members and improved efficiency dramatically.`,
@@ -176,25 +195,6 @@ export const cardDatas = [
       {
         text: "Chrome Extension",
         href: "https://chrome.google.com/webstore/detail/framer-code-generator/lijpejhigjbpnfgonmnknknaoneddjei",
-      },
-    ],
-  },
-  {
-    title: "notion.to",
-    excerpt: `Magazine Website that uses Notion as a CMS.`,
-    description: `Made a website builder using Notion (notion.so)’s database. Built a fully functional design (style) editor inside. Users can edit or add any styles to their websites like Webflow or Wix but in more intuitive ways. Structured all DevOps flow with ECS, Vercel, and Render that has sustainable server costs.`,
-    duration: "Jan 2022 ~ Aug 2023",
-    slug: "notion-to",
-    tags: ["writers"],
-    role: "Founder",
-    links: [
-      {
-        text: "Web App (notion.to)",
-        href: "https://notion.to",
-      },
-      {
-        text: "Product Hunt",
-        href: "https://www.producthunt.com/posts/notion-to",
       },
     ],
   },
