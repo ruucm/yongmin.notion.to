@@ -70,7 +70,7 @@ export const cardDatas = [
   },
   {
     title: "notion.to",
-    excerpt: `Magazine Website that uses Notion as a CMS.`,
+    excerpt: `NotionTo - Free Website Builder for Notion Users.`,
     description: `Made a website builder using Notion (notion.so)’s database. Built a fully functional design (style) editor inside. Users can edit or add any styles to their websites like Webflow or Wix but in more intuitive ways. Structured all DevOps flow with ECS, Vercel, and Render that has sustainable server costs.`,
     duration: "Jan 2022 ~ Aug 2023",
     slug: "notion-to",
