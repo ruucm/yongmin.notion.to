@@ -1,7 +1,7 @@
 import React from "react"
 import { useState } from "react"
 import { Card, Layout } from "../../components"
-import { availableTags, cardDatas } from "../../consts"
+import { availableTags, breakPoint, cardDatas } from "../../consts"
 import { AnimateSharedLayout, AnimatePresence, motion } from "framer-motion"
 import { styled } from "styletron-react"
 import { getUrlParams, removeA } from "../../utils"
@@ -17,6 +17,11 @@ const Tags = styled("div", {
   textAlign: "right",
   marginBottom: "var(--blockSpacingBottom)",
   whiteSpace: "nowrap",
+  [`@media screen and (max-width: ${breakPoint}px)`]: {
+    display: "flex",
+    flexWrap: "wrap",
+    rowGap: "12px",
+  },
 })
 
 const Tag = styled("em", ({ $active }: any): any => {
